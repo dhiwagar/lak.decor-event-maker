@@ -13,7 +13,7 @@ import {
   Clock,
   HeartHandshake,
 } from 'lucide-react';
-import { siteConfig, eventCategories, budgetRanges } from '../../data/siteConfig';
+import { siteConfig, eventCategories } from '../../data/siteConfig';
 import { EnquiryFormData } from '../../types';
 
 interface EventEnquiryFormProps {
@@ -32,7 +32,6 @@ export const EventEnquiryForm: React.FC<EventEnquiryFormProps> = ({
     eventType: preselectedEventType || 'Wedding',
     eventDate: '',
     eventLocation: '',
-    estimatedBudget: budgetRanges[2],
     guestCount: '200-500 Guests',
     requirements: '',
   });
@@ -94,7 +93,6 @@ export const EventEnquiryForm: React.FC<EventEnquiryFormProps> = ({
 *Event Type:* ${formData.eventType}
 *Event Date:* ${formData.eventDate}
 *Event Venue/City:* ${formData.eventLocation}
-*Estimated Budget:* ${formData.estimatedBudget}
 *Approx Guests:* ${formData.guestCount}
 *Special Wishes / Decor Concept:*
 ${formData.requirements || 'Standard bespoke theme consultation'}
@@ -253,7 +251,7 @@ _Sent from lak.decor website enquiry form._`;
                 name="eventLocation"
                 value={formData.eventLocation}
                 onChange={handleChange}
-                placeholder="e.g. Leela Palace, Chennai / ECR Beach Lawn"
+                placeholder="e.g. Ganapathichettikulam / Pondicherry venue"
                 className={`w-full px-4 py-3 rounded-xl bg-[#FAF8F4] border text-[#29251F] text-sm focus:outline-none focus:ring-2 focus:ring-[#B18B59]/50 transition-all ${
                   errors.eventLocation
                     ? 'border-red-400 bg-red-50/20'
@@ -267,25 +265,6 @@ _Sent from lak.decor website enquiry form._`;
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {/* Estimated Budget */}
-            <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-[#4A443D] mb-2">
-                Estimated Decor Budget
-              </label>
-              <select
-                name="estimatedBudget"
-                value={formData.estimatedBudget}
-                onChange={handleChange}
-                className="w-full px-4 py-3 rounded-xl bg-[#FAF8F4] border border-stone-200 text-[#29251F] text-sm focus:outline-none focus:ring-2 focus:ring-[#B18B59]/50 transition-all cursor-pointer"
-              >
-                {budgetRanges.map((range) => (
-                  <option key={range} value={range}>
-                    {range}
-                  </option>
-                ))}
-              </select>
-            </div>
-
             {/* Guest Count */}
             <div>
               <label className="block text-xs font-semibold uppercase tracking-wider text-[#4A443D] mb-2">
@@ -374,10 +353,6 @@ _Sent from lak.decor website enquiry form._`;
             <div className="flex justify-between border-b border-stone-200/60 pb-2">
               <span className="text-stone-500">Venue / City:</span>
               <span className="font-semibold text-[#29251F]">{formData.eventLocation}</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-stone-500">Budget Tier:</span>
-              <span className="font-semibold text-[#7A245A]">{formData.estimatedBudget}</span>
             </div>
           </div>
 

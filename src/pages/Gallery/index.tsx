@@ -14,7 +14,7 @@ export const GalleryPage: React.FC = () => {
         title="Visual Symphony Portfolio"
         subtitle="Explore our gallery of mandaps, floral arches, illuminated stage backdrops, and joyous festive settings."
         badge="OUR GALLERY"
-        image="/assets/images/ai-hero-mandap.jpg"
+        image="/assets/images/ai-hero-mandap.webp"
         breadcrumbs={[{ label: 'Gallery' }]}
       />
 

@@ -8,8 +8,8 @@ import {
   ChevronDown,
   ArrowRight,
   Calendar,
-  Flower2,
 } from 'lucide-react';
+import logo from '../../assets/logo.webp';
 import { siteConfig } from '../../data/siteConfig';
 import { servicesData } from '../../data/services';
 
@@ -64,22 +64,12 @@ export const Navbar: React.FC = () => {
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4">
           
-          {/* Logo with Lotus Flower Emblem & Explicit Brand Name */}
+          {/* Business logo */}
           <Link
             to="/"
-            className="flex items-center gap-2.5 sm:gap-3 flex-shrink-0 group"
+            className="flex items-center flex-shrink-0 group"
           >
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-tr from-[#7A245A] to-[#B18B59] flex items-center justify-center text-white shadow-md shadow-[#7A245A]/20 transition-transform group-hover:scale-105 flex-shrink-0">
-              <Flower2 className="w-5 h-5 text-amber-100" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-lg sm:text-xl xl:text-2xl font-serif font-bold tracking-tight text-[#231E26] group-hover:text-[#7A245A] transition-colors leading-none whitespace-nowrap">
-                lak.decor <span className="text-[#B18B59] font-normal text-base xl:text-lg">&</span> event maker
-              </span>
-              <span className="text-[9px] sm:text-[10px] tracking-[0.2em] uppercase text-[#8A685E] font-bold mt-1 whitespace-nowrap">
-                Event Decoration Studio
-              </span>
-            </div>
+            <img src={logo} alt="LAK Decors & Events" className="h-11 sm:h-12 xl:h-14 w-auto max-w-[150px] sm:max-w-[170px] object-contain transition-transform group-hover:scale-[1.02]" />
           </Link>
 
           {/* Desktop Nav Links (Hidden below 1180px to prevent wrapping on 13-inch laptops) */}

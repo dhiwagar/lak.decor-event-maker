@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { UserRound } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import {
   Star,
@@ -44,7 +45,7 @@ export const TestimonialsPage: React.FC = () => {
         title="Client Stories & Celebratory Love"
         subtitle="Read real words of joy from brides, grooms, and families whose milestone moments we have had the honor to elevate."
         badge="EXPERIENCE & REVIEWS"
-        image="/assets/images/ai-reception-stage.jpg"
+        image="/assets/images/ai-reception-stage.webp"
         breadcrumbs={[{ label: 'Testimonials' }]}
       />
 
@@ -111,11 +112,7 @@ export const TestimonialsPage: React.FC = () => {
                 </div>
 
                 <div className="pt-4 border-t border-stone-100 flex items-center gap-3">
-                  <img
-                    src={t.clientAvatar}
-                    alt={t.clientName}
-                    className="w-11 h-11 rounded-full object-cover border border-[#B18B59]"
-                  />
+                  <div className="w-11 h-11 rounded-full border border-[#B18B59] bg-[#FAF8F4] text-[#7A245A] flex items-center justify-center" aria-hidden="true"><UserRound className="w-5 h-5" /></div>
                   <div>
                     <h4 className="text-sm font-semibold text-[#29251F] flex items-center gap-1">
                       {t.clientName}

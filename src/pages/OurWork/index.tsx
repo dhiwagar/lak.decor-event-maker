@@ -30,7 +30,7 @@ export const OurWorkPage: React.FC = () => {
         title="Featured Case Studies & Productions"
         subtitle="Go behind the scenes of our signature events, from creative concept blueprints to on-site ballroom execution."
         badge="PORTFOLIO ARCHIVE"
-        image="/assets/images/ai-royal-mandap.jpg"
+        image="/assets/images/ai-royal-mandap.webp"
         breadcrumbs={[{ label: 'Our Work' }]}
       />
 

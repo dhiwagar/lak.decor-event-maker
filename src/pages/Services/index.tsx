@@ -52,7 +52,7 @@ export const ServicesPage: React.FC = () => {
         title="Bespoke Event Decoration Services"
         subtitle="From grand traditional South Indian wedding mandaps to chic contemporary celebrations, we create unforgettable visual magic."
         badge="OUR CAPABILITIES"
-        image="/assets/images/ai-reception-stage.jpg"
+        image="/assets/images/ai-reception-stage.webp"
         breadcrumbs={[{ label: 'Services' }]}
       />
 

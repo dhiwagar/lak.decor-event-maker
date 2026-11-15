@@ -52,12 +52,12 @@ export const AboutPage: React.FC = () => {
     {
       year: '2016',
       title: 'Humble Beginnings',
-      desc: 'Founded with a passion for handcrafted floral garlands and intimate family celebrations in Chennai.',
+      desc: 'Founded with a passion for handcrafted floral garlands and intimate family celebrations.',
     },
     {
       year: '2019',
       title: 'Expanded to Grand Ballrooms',
-      desc: 'Commissioned for our first 1,000+ guest royal wedding at Leela Palace, setting a new benchmark for jasmine mandaps.',
+      desc: 'Expanded our wedding decoration work with bespoke floral mandaps and celebration styling.',
     },
     {
       year: '2022',
@@ -67,7 +67,7 @@ export const AboutPage: React.FC = () => {
     {
       year: '2026',
       title: '500+ Unforgettable Milestones',
-      desc: 'Now serving destination weddings across Chennai, Mahabalipuram, ECR, and prestigious banquet halls.',
+      desc: 'Now welcoming wedding and event decoration enquiries in Pondicherry and Puducherry.',
     },
   ];
 
@@ -78,7 +78,7 @@ export const AboutPage: React.FC = () => {
         title="Our Story & Creative Philosophy"
         subtitle="Crafting extraordinary, emotionally resonant celebratory spaces where tradition blossoms into modern luxury."
         badge="ABOUT LAK.DECOR & EVENT MAKER"
-        image="/assets/images/ai-hero-mandap.jpg"
+        image="/assets/images/ai-hero-mandap.webp"
         breadcrumbs={[{ label: 'About Us' }]}
       />
 
@@ -91,7 +91,7 @@ export const AboutPage: React.FC = () => {
               <div className="space-y-4">
                 <div className="rounded-3xl overflow-hidden shadow-xl h-64 sm:h-80">
                   <img
-                    src="/assets/images/ai-royal-mandap.jpg"
+                    src="/assets/images/ai-royal-mandap.webp"
                     alt="Floral Mandap Artistry"
                     className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                   />
@@ -118,7 +118,7 @@ export const AboutPage: React.FC = () => {
                 </div>
                 <div className="rounded-3xl overflow-hidden shadow-xl h-64 sm:h-80">
                   <img
-                    src="/assets/images/ai-engagement-ring.jpg"
+                    src="/assets/images/ai-engagement-ring.webp"
                     alt="Engagement Ring Ceremony Decor"
                     className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                   />

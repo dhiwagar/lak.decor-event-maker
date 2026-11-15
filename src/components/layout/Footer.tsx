@@ -12,6 +12,7 @@ import {
   ShieldCheck,
   Sparkles,
 } from 'lucide-react';
+import logo from '../../assets/logo.webp';
 import { siteConfig } from '../../data/siteConfig';
 import { servicesData } from '../../data/services';
 
@@ -26,18 +27,8 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-16 border-b border-stone-800">
           {/* Col 1 & 2: Brand Information */}
           <div className="lg:col-span-2 space-y-6">
-            <Link to="/" className="flex items-center gap-3 group">
-              <div className="w-11 h-11 rounded-full bg-gradient-to-tr from-[#7A245A] to-[#B18B59] flex items-center justify-center text-white shadow-lg shadow-[#7A245A]/30">
-                <Flower2 className="w-6 h-6 text-amber-100" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-2xl font-serif font-bold tracking-tight text-white group-hover:text-amber-200 transition-colors leading-none">
-                  lak.decor <span className="text-[#B18B59] font-normal text-xl">&</span> event maker
-                </span>
-                <span className="text-[11px] tracking-[0.2em] uppercase text-stone-400 font-medium mt-1">
-                  Event Decoration Studio
-                </span>
-              </div>
+            <Link to="/" className="inline-flex group">
+              <img src={logo} alt="LAK Decors & Events" className="h-16 w-auto max-w-[240px] rounded-sm object-contain transition-transform group-hover:scale-[1.02]" />
             </Link>
 
             <p className="text-sm text-stone-400 leading-relaxed max-w-sm">

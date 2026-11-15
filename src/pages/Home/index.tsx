@@ -33,7 +33,7 @@ export const HomePage: React.FC = () => {
     {
       title: 'Wedding Decorations',
       slug: 'wedding-decorations',
-      image: '/assets/images/ai-royal-mandap.jpg',
+      image: '/assets/images/ai-royal-mandap.webp',
       icon: (
         <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <circle cx="12" cy="14" r="7" />
@@ -45,13 +45,13 @@ export const HomePage: React.FC = () => {
     {
       title: 'Birthday Celebrations',
       slug: 'birthday-celebrations',
-      image: '/assets/images/ai-birthday-party.jpg',
+      image: '/assets/images/ai-birthday-party.webp',
       icon: <Cake className="w-4 h-4 text-white" />,
     },
     {
       title: 'Engagement Ceremonies',
       slug: 'engagement-ceremonies',
-      image: '/assets/images/ai-engagement-ring.jpg',
+      image: '/assets/images/ai-engagement-ring.webp',
       icon: (
         <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <circle cx="9" cy="13" r="5" />
@@ -63,19 +63,19 @@ export const HomePage: React.FC = () => {
     {
       title: 'Reception Decorations',
       slug: 'reception-decorations',
-      image: '/assets/images/ai-reception-stage.jpg',
+      image: '/assets/images/ai-reception-stage.webp',
       icon: <Wine className="w-4 h-4 text-white" />,
     },
     {
       title: 'Baby Shower Events',
       slug: 'baby-shower-events',
-      image: '/assets/images/ai-baby-shower.jpg',
+      image: '/assets/images/ai-baby-shower.webp',
       icon: <Baby className="w-4 h-4 text-white" />,
     },
     {
       title: 'Corporate Celebrations',
       slug: 'corporate-event-decorations',
-      image: '/assets/images/ai-corporate-banquet.jpg',
+      image: '/assets/images/ai-corporate-banquet.webp',
       icon: <Building2 className="w-4 h-4 text-white" />,
     },
   ];
@@ -110,7 +110,7 @@ export const HomePage: React.FC = () => {
                   onClick={() => setVideoModalOpen(true)}
                 >
                   <img
-                    src="/assets/images/ai-hero-mandap.jpg"
+                    src="/assets/images/ai-hero-mandap.webp"
                     alt="lak.decor & event maker celebration film preview"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
@@ -359,7 +359,7 @@ export const HomePage: React.FC = () => {
       <section className="relative py-24 sm:py-28 lg:py-32 bg-stone-950 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/assets/images/ai-hero-mandap.jpg"
+            src="/assets/images/ai-hero-mandap.webp"
             alt="Celebration banquet backdrop"
             className="w-full h-full object-cover opacity-25"
           />

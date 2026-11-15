@@ -21,9 +21,9 @@ export const ContactPage: React.FC = () => {
       {/* Banner */}
       <PageBanner
         title="Let’s Create Something Beautiful Together"
-        subtitle="Reserve your date, explore custom themes, and get an instant transparent decor estimate on WhatsApp."
+        subtitle="Reserve your date and explore custom themes for your celebration."
         badge="GET IN TOUCH"
-        image="/assets/images/ai-hero-mandap.jpg"
+        image="/assets/images/ai-hero-mandap.webp"
         breadcrumbs={[{ label: 'Contact & Bookings' }]}
       />
 
@@ -44,7 +44,7 @@ export const ContactPage: React.FC = () => {
               <div className="bg-white rounded-3xl p-8 border border-stone-200/80 shadow-lg space-y-6">
                 <div>
                   <span className="text-xs font-semibold uppercase tracking-widest text-[#B18B59] block mb-1">
-                    CHENNAI MAIN STUDIO
+                    GANAPATHICHETTIKULAM STUDIO
                   </span>
                   <h3 className="text-2xl font-serif font-medium text-[#29251F]">
                     lak.decor & event maker

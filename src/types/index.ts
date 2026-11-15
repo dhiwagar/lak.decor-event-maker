@@ -106,7 +106,6 @@ export interface EnquiryFormData {
   eventType: string;
   eventDate: string;
   eventLocation: string;
-  estimatedBudget: string;
   guestCount: string;
   requirements: string;
 }

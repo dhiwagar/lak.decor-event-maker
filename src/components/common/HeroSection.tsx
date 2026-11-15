@@ -177,7 +177,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onVideoClick }) => {
               {/* Organic Arch Frame Mask */}
               <div className="w-full h-full relative overflow-hidden lg:rounded-l-[140px] shadow-inner bg-stone-900">
                 <img
-                  src="/assets/images/ai-hero-mandap.jpg"
+                  src="/assets/images/ai-hero-mandap.webp"
                   alt="Luxury Royal Indian Wedding Stage Mandap Decoration - lak.decor & event maker"
                   className="w-full h-full object-cover object-center transform scale-102 hover:scale-105 transition-transform duration-1000"
                 />

@@ -7,12 +7,12 @@ export const servicesData: ServiceItem[] = [
     title: 'Wedding Decorations',
     shortDescription: 'Grand royal mandaps, magnificent floral aisles, and bespoke wedding stage artistry crafted for unforgettable vows.',
     fullDescription: 'Our signature wedding decoration service transforms traditional ceremonies and modern unions into breathtaking visual fairytales. From celestial floral mandaps and magnificent welcome arches to intimate bridal seating and mood lighting, every inch is customized to reflect your heritage, taste, and grand celebration.',
-    heroImage: '/assets/images/ai-royal-mandap.jpg',
+    heroImage: '/assets/images/ai-royal-mandap.webp',
     galleryImages: [
-      '/assets/images/ai-hero-mandap.jpg',
-      '/assets/images/ai-royal-mandap.jpg',
-      '/assets/images/ai-reception-stage.jpg',
-      '/assets/images/ai-engagement-ring.jpg',
+      '/assets/images/ai-hero-mandap.webp',
+      '/assets/images/ai-royal-mandap.webp',
+      '/assets/images/ai-reception-stage.webp',
+      '/assets/images/ai-engagement-ring.webp',
     ],
     features: [
       'Custom Sacred Mandap Structure & Floral Canopy',
@@ -26,17 +26,17 @@ export const servicesData: ServiceItem[] = [
       {
         name: 'Royal Chettinad & Temple Gold',
         description: 'Traditional brass bell structures, marigold cascades, lotus ponds, and warm temple architecture accents.',
-        image: '/assets/images/ai-royal-mandap.jpg',
+        image: '/assets/images/ai-royal-mandap.webp',
       },
       {
         name: 'Enchanted Pastel Blossom',
         description: 'Imported hydrangeas, blush English roses, floating glass globes, and delicate ivory draping.',
-        image: '/assets/images/ai-hero-mandap.jpg',
+        image: '/assets/images/ai-hero-mandap.webp',
       },
       {
         name: 'Mughal Courtyard & Crystal Chandelier',
         description: 'Intricate jaali backdrops, cascading wisteria, crystal candelabras, and rich velvet drapes.',
-        image: '/assets/images/ai-reception-stage.jpg',
+        image: '/assets/images/ai-reception-stage.webp',
       },
     ],
     planningTimeline: [
@@ -56,10 +56,10 @@ export const servicesData: ServiceItem[] = [
     title: 'Birthday Celebrations',
     shortDescription: 'Magical organic balloon installations, whimsical neon backdrops, and customized thematic worlds for all ages.',
     fullDescription: 'From 1st birthday milestone celebrations to grand 50th jubilee bashes, we turn venues into vibrant celebratory wonderlands. We integrate organic balloon arches, marquee numbers with retro lighting, personalized acrylic cutouts, dessert table styling, and immersive entrance arches.',
-    heroImage: '/assets/images/ai-birthday-party.jpg',
+    heroImage: '/assets/images/ai-birthday-party.webp',
     galleryImages: [
-      '/assets/images/ai-birthday-party.jpg',
-      '/assets/images/ai-baby-shower.jpg',
+      '/assets/images/ai-birthday-party.webp',
+      '/assets/images/ai-baby-shower.webp',
     ],
     features: [
       'Custom Multi-Tone Organic Balloon Garland & Arches',
@@ -73,7 +73,7 @@ export const servicesData: ServiceItem[] = [
       {
         name: 'Pastel Safari & Woodland Friends',
         description: 'Earthy sage, champagne chrome balloons, plush animal props, and rustic wooden plinths.',
-        image: '/assets/images/ai-birthday-party.jpg',
+        image: '/assets/images/ai-birthday-party.webp',
       },
     ],
     planningTimeline: [
@@ -91,11 +91,11 @@ export const servicesData: ServiceItem[] = [
     title: 'Engagement Ceremonies',
     shortDescription: 'Romantic floral ring backdrops, delicate drapery, and ethereal photo zones celebrating your official beginning.',
     fullDescription: 'An engagement marks the joyful promise of forever. We create breathtaking, romance-infused stages featuring circular floral wreaths, suspended botanical installations, warm fairy curtains, and personalized initials to make the ring exchange truly unforgettable.',
-    heroImage: '/assets/images/ai-engagement-ring.jpg',
+    heroImage: '/assets/images/ai-engagement-ring.webp',
     galleryImages: [
-      '/assets/images/ai-engagement-ring.jpg',
-      '/assets/images/ai-hero-mandap.jpg',
-      '/assets/images/ai-royal-mandap.jpg',
+      '/assets/images/ai-engagement-ring.webp',
+      '/assets/images/ai-hero-mandap.webp',
+      '/assets/images/ai-royal-mandap.webp',
     ],
     features: [
       'Infinity Ring Floral Arch & Circular Backdrop Frame',
@@ -108,7 +108,7 @@ export const servicesData: ServiceItem[] = [
       {
         name: 'The Golden Eternity Circle',
         description: 'Gilded brass ring smothered in cream orchids, white roses, and trailing ivy greens.',
-        image: '/assets/images/ai-engagement-ring.jpg',
+        image: '/assets/images/ai-engagement-ring.webp',
       },
     ],
     planningTimeline: [
@@ -126,11 +126,11 @@ export const servicesData: ServiceItem[] = [
     title: 'Reception Stage Decorations',
     shortDescription: 'Cinematic grand stages with opulent flower walls, dynamic LED chandeliers, and royal theatrical grandeur.',
     fullDescription: 'The reception is your celebratory grand finale with friends and family. We engineer majestic stages featuring grand floral walls, geometric gold mirrored arches, ambient intelligent lighting, plush royal couches, and photo-ready luxury staging designed for spectacular photography.',
-    heroImage: '/assets/images/ai-reception-stage.jpg',
+    heroImage: '/assets/images/ai-reception-stage.webp',
     galleryImages: [
-      '/assets/images/ai-reception-stage.jpg',
-      '/assets/images/ai-hero-mandap.jpg',
-      '/assets/images/ai-corporate-banquet.jpg',
+      '/assets/images/ai-reception-stage.webp',
+      '/assets/images/ai-hero-mandap.webp',
+      '/assets/images/ai-corporate-banquet.webp',
     ],
     features: [
       'Grand Floral Wall or 3D Scaffolding Backdrop',
@@ -142,7 +142,7 @@ export const servicesData: ServiceItem[] = [
       {
         name: 'Royal Velvet & Mirror Symphony',
         description: 'Deep plum and blush drape layering with mirrored geometric frames and crystal drops.',
-        image: '/assets/images/ai-reception-stage.jpg',
+        image: '/assets/images/ai-reception-stage.webp',
       },
     ],
     planningTimeline: [
@@ -160,10 +160,10 @@ export const servicesData: ServiceItem[] = [
     title: 'Baby Shower & Valaikappu',
     shortDescription: 'Tender pastel clouds, charming teddy bear themes, and traditional bangles and jasmine ceremonies.',
     fullDescription: 'Welcome the new bundle of joy with heartwarming warmth. We curate both traditional South Indian Valaikappu setups with fragrant jasmine garlands, brass deepams, and mango leaves, as well as chic modern pastel baby showers featuring hot air balloons and teddy bears.',
-    heroImage: '/assets/images/ai-baby-shower.jpg',
+    heroImage: '/assets/images/ai-baby-shower.webp',
     galleryImages: [
-      '/assets/images/ai-baby-shower.jpg',
-      '/assets/images/ai-birthday-party.jpg',
+      '/assets/images/ai-baby-shower.webp',
+      '/assets/images/ai-birthday-party.webp',
     ],
     features: [
       'Hot Air Balloon / Moon & Star Backdrop Frame',
@@ -175,7 +175,7 @@ export const servicesData: ServiceItem[] = [
       {
         name: 'Over the Moon & Cloud Nine',
         description: 'Pearly white and gold balloons with oversized plush teddy bears.',
-        image: '/assets/images/ai-baby-shower.jpg',
+        image: '/assets/images/ai-baby-shower.webp',
       },
     ],
     planningTimeline: [
@@ -193,10 +193,10 @@ export const servicesData: ServiceItem[] = [
     title: 'Haldi & Mehendi Decorations',
     shortDescription: 'Sun-drenched yellow marigold backdrops, playful tassel hangings, brass urlis, and bohemian seating.',
     fullDescription: 'The most joyful, spirited, and photogenic rituals! We craft vibrant Haldi setups featuring overflowing marigold waterfalls, customized flower baths in royal brass URLIs, and chic Mehendi cabanas with kaleidoscopic cushions, pom-poms, and dreamcatchers.',
-    heroImage: '/assets/images/ai-haldi-mehendi.jpg',
+    heroImage: '/assets/images/ai-haldi-mehendi.webp',
     galleryImages: [
-      '/assets/images/ai-haldi-mehendi.jpg',
-      '/assets/images/ai-royal-mandap.jpg',
+      '/assets/images/ai-haldi-mehendi.webp',
+      '/assets/images/ai-royal-mandap.webp',
     ],
     features: [
       'Giant Brass Urli with Lotus Petals for Haldi Bath',
@@ -208,7 +208,7 @@ export const servicesData: ServiceItem[] = [
       {
         name: 'Genda Phool Marigold Paradise',
         description: 'Vibrant yellow and orange marigold chains with hanging brass bells and traditional brass pots.',
-        image: '/assets/images/ai-haldi-mehendi.jpg',
+        image: '/assets/images/ai-haldi-mehendi.webp',
       },
     ],
     planningTimeline: [
@@ -226,10 +226,10 @@ export const servicesData: ServiceItem[] = [
     title: 'Corporate Event Decorations',
     shortDescription: 'Professional gala dinners, annual conferences, brand product launches, and award night stage productions.',
     fullDescription: 'Corporate events require sleek professionalism, brand identity synergy, and immaculate time management. We deliver modern podiums, LED backdrop integrations, step-and-repeat media walls, elegant banquet table centerpieces, and keynote stage styling.',
-    heroImage: '/assets/images/ai-corporate-banquet.jpg',
+    heroImage: '/assets/images/ai-corporate-banquet.webp',
     galleryImages: [
-      '/assets/images/ai-corporate-banquet.jpg',
-      '/assets/images/ai-reception-stage.jpg',
+      '/assets/images/ai-corporate-banquet.webp',
+      '/assets/images/ai-reception-stage.webp',
     ],
     features: [
       'Brand Identity Compliant Color Theming & 3D Logo Fabrication',
@@ -240,7 +240,7 @@ export const servicesData: ServiceItem[] = [
       {
         name: 'The Modern Executive Gala',
         description: 'Sleek geometric lines, frosted glass plinths, and understated architectural greenery.',
-        image: '/assets/images/ai-corporate-banquet.jpg',
+        image: '/assets/images/ai-corporate-banquet.webp',
       },
     ],
     planningTimeline: [
@@ -258,10 +258,10 @@ export const servicesData: ServiceItem[] = [
     title: 'Exotic Floral Decorations',
     shortDescription: 'Masterful botanical arrangements, imported blooms, suspended floral chandeliers, and fragrant floral walls.',
     fullDescription: 'Flowers are the beating heart of our studio. Our master florists source seasonal blossoms from across India and internationally, sculpting botanical installations, lush table runners, ceiling waterfalls, and fragrance-rich traditional garland backdrops.',
-    heroImage: '/assets/images/ai-royal-mandap.jpg',
+    heroImage: '/assets/images/ai-royal-mandap.webp',
     galleryImages: [
-      '/assets/images/ai-royal-mandap.jpg',
-      '/assets/images/ai-hero-mandap.jpg',
+      '/assets/images/ai-royal-mandap.webp',
+      '/assets/images/ai-hero-mandap.webp',
     ],
     features: [
       'Suspended Floral Chandeliers & Overhead Canopies',
@@ -272,7 +272,7 @@ export const servicesData: ServiceItem[] = [
       {
         name: 'The Royal Jasmine & Orchid Cascade',
         description: 'Fresh Madurai malli with orchids and English garden roses.',
-        image: '/assets/images/ai-royal-mandap.jpg',
+        image: '/assets/images/ai-royal-mandap.webp',
       },
     ],
     planningTimeline: [
@@ -290,10 +290,10 @@ export const servicesData: ServiceItem[] = [
     title: 'Anniversary Celebrations',
     shortDescription: 'Silver, Golden, and intimate milestone anniversaries with candlelit tables, photo memory tunnels, and romance.',
     fullDescription: 'Honor decades of love with timeless sophistication. We curate intimate dining gazebos, grand 25th Silver Jubilee stages, and 50th Golden Jubilee milestones featuring photo memory corridors, romantic candle arrangements, and fine floral centerpieces.',
-    heroImage: '/assets/images/ai-hero-mandap.jpg',
+    heroImage: '/assets/images/ai-hero-mandap.webp',
     galleryImages: [
-      '/assets/images/ai-reception-stage.jpg',
-      '/assets/images/ai-hero-mandap.jpg',
+      '/assets/images/ai-reception-stage.webp',
+      '/assets/images/ai-hero-mandap.webp',
     ],
     features: [
       'Romantic Canopy or Gazebo Setup with Silk Drapes',
@@ -304,7 +304,7 @@ export const servicesData: ServiceItem[] = [
       {
         name: 'The 25th Silver Twilight',
         description: 'Mirrored chargers, sterling silver accents, white orchids, and crystal votives.',
-        image: '/assets/images/ai-hero-mandap.jpg',
+        image: '/assets/images/ai-hero-mandap.webp',
       },
     ],
     planningTimeline: [
@@ -322,10 +322,10 @@ export const servicesData: ServiceItem[] = [
     title: 'Custom Theme Decorations',
     shortDescription: 'Unconstrained imagination brought to life. Bespoke stage fabrication, thematic scenery, and signature concepts.',
     fullDescription: 'If you can dream it, we can build it. Whether you envision a whimsical enchanted forest with whispering trees and luminescent moss, a vintage Venetian carnival, or a futuristic neon wonderland, our team crafts custom sets and structures from sketch to reality.',
-    heroImage: '/assets/images/ai-birthday-party.jpg',
+    heroImage: '/assets/images/ai-birthday-party.webp',
     galleryImages: [
-      '/assets/images/ai-birthday-party.jpg',
-      '/assets/images/ai-royal-mandap.jpg',
+      '/assets/images/ai-birthday-party.webp',
+      '/assets/images/ai-royal-mandap.webp',
     ],
     features: [
       'Full 3D Concept Modeling & Color Renderings',
@@ -336,7 +336,7 @@ export const servicesData: ServiceItem[] = [
       {
         name: 'The Bespoke Fantasy Wonderland',
         description: 'Custom lighting, personalized 3D structures, and bespoke entrance gateways.',
-        image: '/assets/images/ai-birthday-party.jpg',
+        image: '/assets/images/ai-birthday-party.webp',
       },
     ],
     planningTimeline: [

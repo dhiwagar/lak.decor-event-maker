@@ -8,6 +8,7 @@ import {
   Sparkles,
   MapPin,
   CheckCircle,
+  UserRound,
 } from 'lucide-react';
 import { testimonialsData } from '../../data/testimonials';
 
@@ -78,11 +79,7 @@ export const TestimonialSlider: React.FC = () => {
           {/* Client Details & Event Location */}
           <div className="mt-8 pt-6 border-t border-stone-200/60 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="flex items-center gap-4">
-              <img
-                src={current.clientAvatar}
-                alt={current.clientName}
-                className="w-12 h-12 rounded-full object-cover border-2 border-[#B18B59] shadow-sm"
-              />
+              <div className="w-12 h-12 rounded-full border-2 border-[#B18B59] bg-[#FAF8F4] text-[#7A245A] flex items-center justify-center" aria-hidden="true"><UserRound className="w-6 h-6" /></div>
               <div>
                 <h4 className="text-base font-semibold text-[#29251F] flex items-center gap-1.5">
                   {current.clientName}

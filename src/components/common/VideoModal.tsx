@@ -78,7 +78,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({
 
         {/* Footer info */}
         <div className="p-4 bg-stone-950 flex flex-wrap items-center justify-between gap-4 text-xs text-stone-400">
-          <span>lak.decor & event maker • Chennai Studio</span>
+          <span>lak.decor & event maker • Pondicherry</span>
           <span className="text-[#B18B59] font-medium">
             Contact: +91 95972 65450
           </span>

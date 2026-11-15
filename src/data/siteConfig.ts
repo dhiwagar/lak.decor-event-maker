@@ -8,13 +8,13 @@ export const siteConfig: SiteConfig = {
   phoneDisplay: "+91 95972 65450",
   whatsapp: "9597265450",
   whatsappDisplay: "+91 95972 65450",
-  email: "contact@lakdecor.com",
+  email: "dhivakar234@gmail.com",
   address: {
-    line1: "No. 42, Royal Grand Avenue, Near Flower Bazaar",
-    line2: "Opposite Celebration Hall, Main Road",
-    city: "Chennai",
+    line1: "52, SH 49, Ellaitharisu",
+    line2: "Ganapathichettikulam",
+    city: "Pondicherry",
     state: "Tamil Nadu",
-    pincode: "600001",
+    pincode: "605014",
   },
   social: {
     instagram: "https://instagram.com/lak.decor",
@@ -26,7 +26,7 @@ export const siteConfig: SiteConfig = {
   experienceYears: 10,
   eventsCompleted: 500,
   happyClientsPercentage: 98,
-  googleMapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.0022361665427!2d80.27071851482315!3d13.082680190783457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265ea4f7d3361%3A0x6e61a70b6863d433!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin",
+  googleMapsEmbedUrl: "https://maps.google.com/maps?q=Lak.decors%2C%2052%2C%20SH%2049%2C%20Ellaitharisu%2C%20Ganapathichettikulam%2C%20Tamil%20Nadu%20605014&t=&z=15&ie=UTF8&iwloc=&output=embed",
 };
 
 export const eventCategories = [
