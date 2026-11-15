@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Maximize2, MapPin, Sparkles } from 'lucide-react';
+import { Maximize2, MapPin } from 'lucide-react';
 import { GalleryItem } from '../../types';
 import { galleryItems } from '../../data/gallery';
 import { GalleryLightbox } from './GalleryLightbox';
@@ -26,7 +26,7 @@ export const GalleryGrid: React.FC<GalleryGridProps> = ({
     { id: 'engagements', label: 'Engagements' },
     { id: 'birthdays', label: 'Birthdays' },
     { id: 'haldi', label: 'Haldi & Mehendi' },
-    { id: 'floral', label: 'Floral Setups' },
+    { id: 'floral', label: 'Floral & Entrances' },
     { id: 'babyshower', label: 'Baby Shower' },
   ];
 
@@ -82,47 +82,48 @@ export const GalleryGrid: React.FC<GalleryGridProps> = ({
           {displayedItems.map((item) => (
             <motion.div
               layout
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.4 }}
+              exit={{ opacity: 0, scale: 0.96 }}
+              transition={{ duration: 0.35 }}
               key={item.id}
-              className="group relative rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 bg-stone-100 cursor-pointer h-80 sm:h-96"
+              className="group rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 bg-white border border-stone-200/80 cursor-pointer flex flex-col"
               onClick={() => setSelectedItem(item)}
             >
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-full object-cover object-center transform transition-transform duration-700 ease-out group-hover:scale-108"
-                loading="lazy"
-              />
+              {/* Image Container: Clean image with subtle smooth zoom only. NO text overlay on hover */}
+              <div className="relative h-72 sm:h-80 overflow-hidden bg-stone-100">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover object-center transform transition-transform duration-700 ease-out group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6">
-                {/* Top Badge */}
-                <div className="flex items-center justify-between">
-                  <span className="px-3 py-1 rounded-full text-[10px] font-semibold tracking-wider uppercase bg-white/20 backdrop-blur-md text-amber-200 border border-white/20">
-                    {item.categoryLabel}
-                  </span>
-                  <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                    <Maximize2 className="w-4 h-4" />
+              {/* Clean Card Info Below Image - Never obscured by hover text */}
+              <div className="p-4 sm:p-5 flex items-center justify-between gap-3 bg-white">
+                <div className="min-w-0">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#B18B59]">
+                      {item.categoryLabel}
+                    </span>
+                    {item.location && (
+                      <>
+                        <span className="text-stone-300 text-xs">•</span>
+                        <div className="flex items-center gap-1 text-[11px] text-stone-500 font-medium">
+                          <MapPin className="w-3 h-3 text-[#B18B59]" />
+                          <span>{item.location}</span>
+                        </div>
+                      </>
+                    )}
                   </div>
-                </div>
-
-                {/* Bottom Details */}
-                <div className="transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-xl font-serif font-medium text-white mb-1">
+                  <h3 className="text-base sm:text-lg font-serif font-semibold text-[#29251F] group-hover:text-[#7A245A] transition-colors truncate mt-0.5">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-stone-300 font-light line-clamp-2 mb-2">
-                    {item.caption}
-                  </p>
-                  {item.location && (
-                    <div className="flex items-center gap-1.5 text-xs text-amber-300/90 font-medium">
-                      <MapPin className="w-3.5 h-3.5" />
-                      <span>{item.location}</span>
-                    </div>
-                  )}
+                </div>
+
+                <div className="w-9 h-9 rounded-full bg-[#FAF8F4] border border-stone-200 flex items-center justify-center text-stone-500 group-hover:text-[#7A245A] group-hover:border-[#7A245A]/40 transition-colors flex-shrink-0 shadow-xs">
+                  <Maximize2 className="w-4 h-4" />
                 </div>
               </div>
             </motion.div>

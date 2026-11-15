@@ -91,8 +91,8 @@ export const AboutPage: React.FC = () => {
               <div className="space-y-4">
                 <div className="rounded-3xl overflow-hidden shadow-xl h-64 sm:h-80">
                   <img
-                    src="/assets/images/ai-royal-mandap.webp"
-                    alt="Floral Mandap Artistry"
+                    src="/assets/images/real/signature-royal-wedding-mandap.jpg"
+                    alt="Floral Mandap Artistry by lak.decor & event maker"
                     className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                   />
                 </div>
@@ -118,8 +118,8 @@ export const AboutPage: React.FC = () => {
                 </div>
                 <div className="rounded-3xl overflow-hidden shadow-xl h-64 sm:h-80">
                   <img
-                    src="/assets/images/ai-engagement-ring.webp"
-                    alt="Engagement Ring Ceremony Decor"
+                    src="/assets/images/real/reception-modern-petal-stage.jpg"
+                    alt="Celebration Decor by lak.decor & event maker"
                     className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                   />
                 </div>

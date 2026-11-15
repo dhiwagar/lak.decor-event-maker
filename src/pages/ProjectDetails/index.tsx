@@ -109,7 +109,7 @@ export const ProjectDetailsPage: React.FC = () => {
                   {project.galleryImages.map((img, i) => (
                     <div
                       key={i}
-                      className="relative h-72 rounded-2xl overflow-hidden shadow-md cursor-pointer group"
+                      className="relative h-72 rounded-2xl overflow-hidden shadow-md cursor-pointer group bg-stone-100"
                       onClick={() => setSelectedImg(img)}
                     >
                       <img
@@ -117,9 +117,6 @@ export const ProjectDetailsPage: React.FC = () => {
                         alt={`${project.title} photograph ${i + 1}`}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
-                        <Maximize2 className="w-6 h-6" />
-                      </div>
                     </div>
                   ))}
                 </div>

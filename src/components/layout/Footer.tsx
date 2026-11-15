@@ -27,8 +27,22 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-16 border-b border-stone-800">
           {/* Col 1 & 2: Brand Information */}
           <div className="lg:col-span-2 space-y-6">
-            <Link to="/" className="inline-flex group">
-              <img src={logo} alt="LAK Decors & Events" className="h-16 w-auto max-w-[240px] rounded-sm object-contain transition-transform group-hover:scale-[1.02]" />
+            <Link to="/" className="inline-flex items-center gap-3 group">
+              <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#8A685E] via-[#662045] to-[#3B1428] flex items-center justify-center text-[#E8D8B8] shadow-md flex-shrink-0 border border-[#B18B59]/40 group-hover:scale-105 transition-transform">
+                <svg className="w-5 h-5 stroke-[1.8] fill-none" viewBox="0 0 24 24" stroke="currentColor">
+                  <circle cx="12" cy="12" r="3" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 3a4.5 4.5 0 0 0-4.5 4.5c0 2.5 4.5 7.5 4.5 7.5s4.5-5 4.5-7.5A4.5 4.5 0 0 0 12 3z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-6" />
+                </svg>
+              </div>
+              <div className="flex flex-col">
+                <span className="font-serif text-xl sm:text-2xl font-medium tracking-tight text-white leading-none">
+                  lak.decor <span className="text-[#B18B59]">&</span> event maker
+                </span>
+                <span className="text-[9px] sm:text-[10px] tracking-[0.22em] text-[#B18B59] font-medium uppercase mt-1 leading-none">
+                  EVENT DECORATION STUDIO
+                </span>
+              </div>
             </Link>
 
             <p className="text-sm text-stone-400 leading-relaxed max-w-sm">
