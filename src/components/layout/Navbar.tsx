@@ -69,22 +69,11 @@ export const Navbar: React.FC = () => {
             to="/"
             className="flex items-center gap-2.5 sm:gap-3 flex-shrink-0 group"
           >
-            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-gradient-to-br from-[#8A685E] via-[#662045] to-[#3B1428] flex items-center justify-center text-[#E8D8B8] shadow-md flex-shrink-0 border border-[#B18B59]/30 group-hover:scale-105 transition-transform">
-              <svg className="w-5 h-5 sm:w-5.5 sm:h-5.5 stroke-[1.8] fill-none" viewBox="0 0 24 24" stroke="currentColor">
-                <circle cx="12" cy="12" r="3" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 3a4.5 4.5 0 0 0-4.5 4.5c0 2.5 4.5 7.5 4.5 7.5s4.5-5 4.5-7.5A4.5 4.5 0 0 0 12 3z" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-6" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 18c1.5-1 3-1 3-1" />
-              </svg>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-serif text-lg sm:text-xl xl:text-[22px] font-medium tracking-tight text-[#29251F] leading-none whitespace-nowrap">
-                lak.decor <span className="text-[#B18B59] font-normal">&</span> event maker
-              </span>
-              <span className="text-[9px] sm:text-[10px] tracking-[0.22em] text-[#8A685E] font-medium uppercase mt-1 leading-none whitespace-nowrap">
-                EVENT DECORATION STUDIO
-              </span>
-            </div>
+            <img
+              src={logo}
+              alt="LAK Decors & Events"
+              className="h-12 sm:h-14 w-auto max-w-[112px] object-contain group-hover:scale-[1.03] transition-transform"
+            />
           </Link>
 
           {/* Desktop Nav Links (Hidden below 1180px to prevent wrapping on 13-inch laptops) */}
