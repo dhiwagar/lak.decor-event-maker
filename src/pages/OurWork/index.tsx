@@ -29,7 +29,7 @@ export const OurWorkPage: React.FC = () => {
         badge="REAL CELEBRATIONS"
         title="Our Featured Event Portfolio"
         subtitle="Explore our in-depth case studies celebrating exquisite weddings, milestone birthdays, and lavish receptions executed with precision."
-        image="/assets/images/real/signature-royal-wedding-mandap.jpg"
+        image="/assets/images/real/signature-royal-wedding-mandap.webp"
         breadcrumbs={[
           { label: 'Home', path: '/' },
           { label: 'Our Work' },

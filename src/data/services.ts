@@ -7,14 +7,14 @@ export const servicesData: ServiceItem[] = [
     title: 'Wedding Decorations',
     shortDescription: 'Grand royal mandaps, magnificent floral aisles, and bespoke wedding stage artistry crafted for unforgettable vows.',
     fullDescription: 'Our signature wedding decoration service transforms traditional ceremonies and modern unions into breathtaking visual fairytales. From celestial floral mandaps and magnificent welcome arches to intimate bridal seating and mood lighting, every inch is customized to reflect your heritage, taste, and grand celebration.',
-    heroImage: '/assets/images/real/signature-royal-wedding-mandap.jpg',
+    heroImage: '/assets/images/real/signature-royal-wedding-mandap.webp',
     galleryImages: [
-      '/assets/images/real/signature-royal-wedding-mandap.jpg',
-      '/assets/images/real/wedding-royal-golden-mandap.jpg',
-      '/assets/images/real/wedding-traditional-temple-stage.jpg',
-      '/assets/images/real/wedding-grand-floral-chandelier.jpg',
-      '/assets/images/real/entrance-traditional-carved-door.jpg',
-      '/assets/images/real/wedding-wooden-temple-pillars.jpg',
+      '/assets/images/real/signature-royal-wedding-mandap.webp',
+      '/assets/images/real/wedding-royal-golden-mandap.webp',
+      '/assets/images/real/wedding-traditional-temple-stage.webp',
+      '/assets/images/real/wedding-grand-floral-chandelier.webp',
+      '/assets/images/real/entrance-traditional-carved-door.webp',
+      '/assets/images/real/wedding-wooden-temple-pillars.webp',
     ],
     features: [
       'Custom Sacred Mandap Structure & Floral Canopy',
@@ -28,17 +28,17 @@ export const servicesData: ServiceItem[] = [
       {
         name: 'Royal Chettinad & Temple Gold',
         description: 'Traditional brass bell structures, marigold cascades, lotus ponds, and authentic temple architecture accents.',
-        image: '/assets/images/real/wedding-royal-golden-mandap.jpg',
+        image: '/assets/images/real/wedding-royal-golden-mandap.webp',
       },
       {
         name: 'Heritage Wooden Gopuram Stage',
         description: 'Hand-carved wooden temple pillars, fresh jasmine garlands, and authentic brass kuthu vilakku oil lamps.',
-        image: '/assets/images/real/wedding-wooden-temple-pillars.jpg',
+        image: '/assets/images/real/wedding-wooden-temple-pillars.webp',
       },
       {
         name: 'Sacred Lotus Motif Temple Stage',
         description: 'Intricate lotus backdrop, cascading floral borders, and warm golden architectural relief.',
-        image: '/assets/images/real/wedding-lotus-motif-mandap.jpg',
+        image: '/assets/images/real/wedding-lotus-motif-mandap.webp',
       },
     ],
     planningTimeline: [
@@ -58,12 +58,12 @@ export const servicesData: ServiceItem[] = [
     title: 'Birthday Celebrations',
     shortDescription: 'Magical organic balloon installations, whimsical neon backdrops, and customized thematic worlds for all ages.',
     fullDescription: 'From 1st birthday milestone celebrations to grand jubilee bashes, we turn venues into vibrant celebratory wonderlands. We integrate organic balloon arches, marquee numbers with retro lighting, personalized acrylic cutouts, dessert table styling, and immersive entrance arches.',
-    heroImage: '/assets/images/real/birthday-sarvesh-balloon-clouds.jpg',
+    heroImage: '/assets/images/real/birthday-sarvesh-balloon-clouds.webp',
     galleryImages: [
-      '/assets/images/real/birthday-sarvesh-balloon-clouds.jpg',
-      '/assets/images/real/birthday-dhisan-blue-marquee.jpg',
-      '/assets/images/real/baby-first-birthday-backdrop.jpg',
-      '/assets/images/real/birthday-purple-balloon-arch.jpg',
+      '/assets/images/real/birthday-sarvesh-balloon-clouds.webp',
+      '/assets/images/real/birthday-dhisan-blue-marquee.webp',
+      '/assets/images/real/baby-first-birthday-backdrop.webp',
+      '/assets/images/real/birthday-purple-balloon-arch.webp',
     ],
     features: [
       'Custom Multi-Tone Organic Balloon Garland & Arches',
@@ -77,12 +77,12 @@ export const servicesData: ServiceItem[] = [
       {
         name: 'Pastel Blue & Gold Cloud Wonderland',
         description: 'Multi-size balloon clouds, illuminated circular halos, marquee name lettering, and golden mirror plinths.',
-        image: '/assets/images/real/birthday-sarvesh-balloon-clouds.jpg',
+        image: '/assets/images/real/birthday-sarvesh-balloon-clouds.webp',
       },
       {
         name: 'Marquee 3D Letter Stage',
         description: 'Vibrant organic balloon arch with illuminated 3D name marquee letters and dessert plinths.',
-        image: '/assets/images/real/birthday-dhisan-blue-marquee.jpg',
+        image: '/assets/images/real/birthday-dhisan-blue-marquee.webp',
       },
     ],
     planningTimeline: [
@@ -100,12 +100,12 @@ export const servicesData: ServiceItem[] = [
     title: 'Engagement Ceremonies',
     shortDescription: 'Romantic floral ring backdrops, delicate drapery, and ethereal photo zones celebrating your official beginning.',
     fullDescription: 'An engagement marks the joyful promise of forever. We create breathtaking, romance-infused stages featuring circular floral wreaths, suspended botanical installations, warm fairy curtains, and personalized initials to make the ring exchange truly unforgettable.',
-    heroImage: '/assets/images/real/engagement-floral-halo-ring.jpg',
+    heroImage: '/assets/images/real/engagement-floral-halo-ring.webp',
     galleryImages: [
-      '/assets/images/real/engagement-floral-halo-ring.jpg',
-      '/assets/images/real/reception-floral-arches.jpg',
-      '/assets/images/real/wedding-welcome-easel-sign.jpg',
-      '/assets/images/real/wedding-just-married-crimson.jpg',
+      '/assets/images/real/engagement-floral-halo-ring.webp',
+      '/assets/images/real/reception-floral-arches.webp',
+      '/assets/images/real/wedding-welcome-easel-sign.webp',
+      '/assets/images/real/wedding-just-married-crimson.webp',
     ],
     features: [
       'Infinity Ring Floral Arch & Circular Backdrop Frame',
@@ -118,12 +118,12 @@ export const servicesData: ServiceItem[] = [
       {
         name: 'The Golden Infinity Floral Halo',
         description: 'Circular floral ring wrapped in blush roses, orchids, and warm fairy lights with couple couch.',
-        image: '/assets/images/real/engagement-floral-halo-ring.jpg',
+        image: '/assets/images/real/engagement-floral-halo-ring.webp',
       },
       {
         name: 'Triple Floral Arch Candlelit Stage',
         description: 'Romantic multi-arch circular rings with glowing pillar candle lanterns and rose headers.',
-        image: '/assets/images/real/reception-floral-arches.jpg',
+        image: '/assets/images/real/reception-floral-arches.webp',
       },
     ],
     planningTimeline: [
@@ -141,14 +141,14 @@ export const servicesData: ServiceItem[] = [
     title: 'Reception Stage Decorations',
     shortDescription: 'Cinematic grand stages with opulent flower walls, dynamic LED chandeliers, and royal theatrical grandeur.',
     fullDescription: 'The reception is your celebratory grand finale with friends and family. We engineer majestic stages featuring sculptural petal walls, geometric gold mirrored arches, ambient intelligent lighting, plush royal couches, and photo-ready luxury staging designed for spectacular photography.',
-    heroImage: '/assets/images/real/reception-modern-petal-stage.jpg',
+    heroImage: '/assets/images/real/reception-modern-petal-stage.webp',
     galleryImages: [
-      '/assets/images/real/reception-modern-petal-stage.jpg',
-      '/assets/images/real/modern-wave-glow-stage.jpg',
-      '/assets/images/real/reception-golden-petal-luxury.jpg',
-      '/assets/images/real/reception-suspended-cloud-runway.jpg',
-      '/assets/images/real/reception-grand-floral-dome.jpg',
-      '/assets/images/real/reception-multi-arch-stage.jpg',
+      '/assets/images/real/reception-modern-petal-stage.webp',
+      '/assets/images/real/modern-wave-glow-stage.webp',
+      '/assets/images/real/reception-golden-petal-luxury.webp',
+      '/assets/images/real/reception-suspended-cloud-runway.webp',
+      '/assets/images/real/reception-grand-floral-dome.webp',
+      '/assets/images/real/reception-multi-arch-stage.webp',
     ],
     features: [
       'Sculptural Wave Petal Backdrop with Ambient LED Glow',
@@ -161,17 +161,17 @@ export const servicesData: ServiceItem[] = [
       {
         name: 'Sculptural Petal Wave Glow',
         description: 'Modern curved petal contours with warm neon ambient wash and crystal pendant chandeliers.',
-        image: '/assets/images/real/reception-modern-petal-stage.jpg',
+        image: '/assets/images/real/reception-modern-petal-stage.webp',
       },
       {
         name: 'Suspended Floral Cloud Runway',
         description: 'Bespoke floating floral ceiling with mirror runway ramp and warm chandelier glow.',
-        image: '/assets/images/real/reception-suspended-cloud-runway.jpg',
+        image: '/assets/images/real/reception-suspended-cloud-runway.webp',
       },
       {
         name: 'Gilded Petal Ambient Stage',
         description: 'Warm golden leaf-contour backdrop with uplighting and luxury couple seating.',
-        image: '/assets/images/real/reception-golden-petal-luxury.jpg',
+        image: '/assets/images/real/reception-golden-petal-luxury.webp',
       },
     ],
     planningTimeline: [
@@ -189,12 +189,12 @@ export const servicesData: ServiceItem[] = [
     title: 'Baby Shower & Valaikappu',
     shortDescription: 'Tender pastel clouds, charming teddy bear themes, and traditional bangles and jasmine ceremonies.',
     fullDescription: 'Welcome the new bundle of joy with heartwarming warmth. We curate both traditional South Indian Valaikappu setups with fragrant jasmine garlands, brass deepams, and mango leaves, as well as chic modern pastel baby showers featuring organic balloon clouds and cradle styling.',
-    heroImage: '/assets/images/real/baby-first-birthday-backdrop.jpg',
+    heroImage: '/assets/images/real/baby-first-birthday-backdrop.webp',
     galleryImages: [
-      '/assets/images/real/baby-first-birthday-backdrop.jpg',
-      '/assets/images/real/birthday-sarvesh-balloon-clouds.jpg',
-      '/assets/images/real/welcome-board-tropical.jpg',
-      '/assets/images/real/birthday-purple-balloon-arch.jpg',
+      '/assets/images/real/baby-first-birthday-backdrop.webp',
+      '/assets/images/real/birthday-sarvesh-balloon-clouds.webp',
+      '/assets/images/real/welcome-board-tropical.webp',
+      '/assets/images/real/birthday-purple-balloon-arch.webp',
     ],
     features: [
       'Delicate Floral Backdrop Frame & Candle Lanterns',
@@ -206,7 +206,7 @@ export const servicesData: ServiceItem[] = [
       {
         name: 'Cradle & Floral Lantern Sanctuary',
         description: 'Fragrant floral frames, glass lanterns, and traditional auspicious decor.',
-        image: '/assets/images/real/baby-first-birthday-backdrop.jpg',
+        image: '/assets/images/real/baby-first-birthday-backdrop.webp',
       },
     ],
     planningTimeline: [
@@ -224,12 +224,12 @@ export const servicesData: ServiceItem[] = [
     title: 'Haldi & Mehendi Decorations',
     shortDescription: 'Sun-drenched yellow marigold backdrops, playful swing decor, heirloom brass urlis, and festive setups.',
     fullDescription: 'The most joyful, spirited, and photogenic rituals! We craft vibrant Haldi setups featuring garden floral swings, overflowing marigold waterfalls, customized flower baths in royal brass urlis, and chic Mehendi cabanas with kaleidoscopic cushions.',
-    heroImage: '/assets/images/real/haldi-mehendi-floral-swing.jpg',
+    heroImage: '/assets/images/real/haldi-mehendi-floral-swing.webp',
     galleryImages: [
-      '/assets/images/real/haldi-mehendi-floral-swing.jpg',
-      '/assets/images/real/haldi-marigold-ganesha-wall.jpg',
-      '/assets/images/real/tropical-green-entrance.jpg',
-      '/assets/images/real/yellow-draped-pathway-arch.jpg',
+      '/assets/images/real/haldi-mehendi-floral-swing.webp',
+      '/assets/images/real/haldi-marigold-ganesha-wall.webp',
+      '/assets/images/real/tropical-green-entrance.webp',
+      '/assets/images/real/yellow-draped-pathway-arch.webp',
     ],
     features: [
       'Authentic Garden Lawn Floral Swing (Jhula) with Marigolds',
@@ -241,12 +241,12 @@ export const servicesData: ServiceItem[] = [
       {
         name: 'Sunkissed Marigold Garden Swing',
         description: 'Traditional lawn swing draped in marigold garlands, roses, and heirloom brass urlis.',
-        image: '/assets/images/real/haldi-mehendi-floral-swing.jpg',
+        image: '/assets/images/real/haldi-mehendi-floral-swing.webp',
       },
       {
         name: 'Sacred Ganesha Marigold Grid',
         description: 'Auspicious yellow and orange marigold floral wall with brass Ganesha idol and floral carpet.',
-        image: '/assets/images/real/haldi-marigold-ganesha-wall.jpg',
+        image: '/assets/images/real/haldi-marigold-ganesha-wall.webp',
       },
     ],
     planningTimeline: [
@@ -264,12 +264,12 @@ export const servicesData: ServiceItem[] = [
     title: 'Corporate Event Decorations',
     shortDescription: 'Professional gala dinners, annual conferences, brand product launches, and award night stage productions.',
     fullDescription: 'Corporate events require sleek professionalism, brand identity synergy, and immaculate time management. We deliver modern podiums, LED backdrop integrations, step-and-repeat media walls, elegant banquet table centerpieces, and keynote stage styling.',
-    heroImage: '/assets/images/real/banquet-hall-red-carpet-aisle.jpg',
+    heroImage: '/assets/images/real/banquet-hall-red-carpet-aisle.webp',
     galleryImages: [
-      '/assets/images/real/banquet-hall-red-carpet-aisle.jpg',
-      '/assets/images/real/decor-starlit-canopy-ceiling.jpg',
-      '/assets/images/real/reception-multi-arch-stage.jpg',
-      '/assets/images/real/entrance-illuminated-arch-tunnel.jpg',
+      '/assets/images/real/banquet-hall-red-carpet-aisle.webp',
+      '/assets/images/real/decor-starlit-canopy-ceiling.webp',
+      '/assets/images/real/reception-multi-arch-stage.webp',
+      '/assets/images/real/entrance-illuminated-arch-tunnel.webp',
     ],
     features: [
       'Brand Identity Compliant Color Theming & 3D Logo Fabrication',
@@ -281,7 +281,7 @@ export const servicesData: ServiceItem[] = [
       {
         name: 'Grand Red Carpet Gala Ballroom',
         description: 'Red carpet walkway, grand floral pillars, banquet table styling, and ambient hall wash.',
-        image: '/assets/images/real/banquet-hall-red-carpet-aisle.jpg',
+        image: '/assets/images/real/banquet-hall-red-carpet-aisle.webp',
       },
     ],
     planningTimeline: [
@@ -299,14 +299,14 @@ export const servicesData: ServiceItem[] = [
     title: 'Exotic Floral & Grand Entrances',
     shortDescription: 'Masterful botanical arrangements, starry fairy-light canopies, illuminated walkway tunnels, and fragrant florals.',
     fullDescription: 'Flowers and lighting are the beating heart of our studio. Our master florists and lighting engineers sculpt magnificent starry fairy canopies, grand staircase garlands, illuminated walkway tunnels, and fragrance-rich traditional garland backdrops.',
-    heroImage: '/assets/images/real/decor-starlit-canopy-ceiling.jpg',
+    heroImage: '/assets/images/real/decor-starlit-canopy-ceiling.webp',
     galleryImages: [
-      '/assets/images/real/decor-starlit-canopy-ceiling.jpg',
-      '/assets/images/real/banquet-staircase-floral-rail.jpg',
-      '/assets/images/real/entrance-illuminated-arch-tunnel.jpg',
-      '/assets/images/real/entrance-teal-floral-passage.jpg',
-      '/assets/images/real/tropical-green-entrance.jpg',
-      '/assets/images/real/emerald-lounge-foliage.jpg',
+      '/assets/images/real/decor-starlit-canopy-ceiling.webp',
+      '/assets/images/real/banquet-staircase-floral-rail.webp',
+      '/assets/images/real/entrance-illuminated-arch-tunnel.webp',
+      '/assets/images/real/entrance-teal-floral-passage.webp',
+      '/assets/images/real/tropical-green-entrance.webp',
+      '/assets/images/real/emerald-lounge-foliage.webp',
     ],
     features: [
       'Starry Night Fairy-Light Ceiling Canopy with 50,000 Micro Bulbs',
@@ -318,12 +318,12 @@ export const servicesData: ServiceItem[] = [
       {
         name: 'The Starry Night Canopy',
         description: 'Dazzling overhead fairy-light ceiling creating an immersive celestial ballroom tent.',
-        image: '/assets/images/real/decor-starlit-canopy-ceiling.jpg',
+        image: '/assets/images/real/decor-starlit-canopy-ceiling.webp',
       },
       {
         name: 'Illuminated Floral Tunnel',
         description: 'Multi-arch illuminated tunnel creating a grand red-carpet arrival experience.',
-        image: '/assets/images/real/entrance-illuminated-arch-tunnel.jpg',
+        image: '/assets/images/real/entrance-illuminated-arch-tunnel.webp',
       },
     ],
     planningTimeline: [
@@ -341,12 +341,12 @@ export const servicesData: ServiceItem[] = [
     title: 'Anniversary Celebrations',
     shortDescription: 'Silver, Golden, and intimate milestone anniversaries with candlelit tables, photo memory tunnels, and romance.',
     fullDescription: 'Honor decades of love with timeless sophistication. We curate intimate dining gazebos, grand 25th Silver Jubilee stages, and 50th Golden Jubilee milestones featuring photo memory corridors, romantic candle arrangements, and fine floral centerpieces.',
-    heroImage: '/assets/images/real/wedding-just-married-crimson.jpg',
+    heroImage: '/assets/images/real/wedding-just-married-crimson.webp',
     galleryImages: [
-      '/assets/images/real/wedding-just-married-crimson.jpg',
-      '/assets/images/real/reception-golden-petal-luxury.jpg',
-      '/assets/images/real/engagement-floral-halo-ring.jpg',
-      '/assets/images/real/reception-purple-elegance.jpg',
+      '/assets/images/real/wedding-just-married-crimson.webp',
+      '/assets/images/real/reception-golden-petal-luxury.webp',
+      '/assets/images/real/engagement-floral-halo-ring.webp',
+      '/assets/images/real/reception-purple-elegance.webp',
     ],
     features: [
       'Romantic Canopy or Gazebo Setup with Silk Drapes',
@@ -357,7 +357,7 @@ export const servicesData: ServiceItem[] = [
       {
         name: 'Crimson Rose & Neon Celebration',
         description: 'Deep crimson rose backdrop accented with illuminated neon script and luxury seating.',
-        image: '/assets/images/real/wedding-just-married-crimson.jpg',
+        image: '/assets/images/real/wedding-just-married-crimson.webp',
       },
     ],
     planningTimeline: [
@@ -375,12 +375,12 @@ export const servicesData: ServiceItem[] = [
     title: 'Custom Theme Decorations',
     shortDescription: 'Unconstrained imagination brought to life. Bespoke stage fabrication, thematic scenery, and signature concepts.',
     fullDescription: 'If you can dream it, we can build it. Whether you envision a sculptural modern wave, a starlit canopy, or a whimsical balloon cloud wonderland, our team crafts custom sets and structures from sketch to reality.',
-    heroImage: '/assets/images/real/reception-suspended-cloud-runway.jpg',
+    heroImage: '/assets/images/real/reception-suspended-cloud-runway.webp',
     galleryImages: [
-      '/assets/images/real/reception-suspended-cloud-runway.jpg',
-      '/assets/images/real/decor-starlit-canopy-ceiling.jpg',
-      '/assets/images/real/birthday-sarvesh-balloon-clouds.jpg',
-      '/assets/images/real/reception-grand-floral-dome.jpg',
+      '/assets/images/real/reception-suspended-cloud-runway.webp',
+      '/assets/images/real/decor-starlit-canopy-ceiling.webp',
+      '/assets/images/real/birthday-sarvesh-balloon-clouds.webp',
+      '/assets/images/real/reception-grand-floral-dome.webp',
     ],
     features: [
       'Full 3D Concept Modeling & Color Renderings',
@@ -391,7 +391,7 @@ export const servicesData: ServiceItem[] = [
       {
         name: 'Suspended Floral Cloud & Runway',
         description: 'Floating floral ceiling with integrated LED runway ramp for high-impact celebrations.',
-        image: '/assets/images/real/reception-suspended-cloud-runway.jpg',
+        image: '/assets/images/real/reception-suspended-cloud-runway.webp',
       },
     ],
     planningTimeline: [
