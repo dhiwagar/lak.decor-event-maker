@@ -243,7 +243,7 @@ for (const route of routes) {
       `<meta name="keywords" content="${route.keywords}" />`);
   }
 
-  // Canonical Tag (Ensure it exists in head)
+  // Canonical Tag (Ensure exact match with sitemap)
   const canonicalTag = `<link rel="canonical" href="${routeCanonical}" />`;
   if (html.includes('rel="canonical"')) {
     html = html.replace(/<link\s+rel=["']canonical["']\s+href=["'].*?["']\s*\/?>/i, canonicalTag);
@@ -269,28 +269,128 @@ for (const route of routes) {
   html = html.replace(/<meta\s+name=["']twitter:image["']\s+content=["'].*?["']\s*\/?>/i,
     `<meta name="twitter:image" content="${routeImage}" />`);
 
-  // Inject crawlable fallback container into #root for no-JS crawlers
-  const fallbackContent = `
-    <noscript>
-      <div style="font-family: sans-serif; padding: 2rem; max-width: 900px; margin: 0 auto; line-height: 1.6;">
-        <h1>${route.title}</h1>
-        <p>${route.description}</p>
-        <p><strong>Studio Location:</strong> 52, SH 49, Ellaitharisu, Ganapathichettikulam, Pondicherry, Tamil Nadu 605014</p>
-        <p><strong>Phone:</strong> <a href="tel:+919597265450">+91 95972 65450</a> | <strong>WhatsApp:</strong> <a href="https://wa.me/919597265450">+91 95972 65450</a></p>
-        <nav aria-label="Quick Links">
-          <ul>
-            <li><a href="${BASE_URL}/wedding-decoration-pondicherry">Wedding Decoration Pondicherry</a></li>
-            <li><a href="${BASE_URL}/birthday-decoration-pondicherry">Birthday Decoration Pondicherry</a></li>
-            <li><a href="${BASE_URL}/engagement-decoration-pondicherry">Engagement Decoration Pondicherry</a></li>
-            <li><a href="${BASE_URL}/reception-decoration-pondicherry">Reception Stage Decoration Pondicherry</a></li>
-            <li><a href="${BASE_URL}/event-decorators-pondicherry">Event Decorators Pondicherry</a></li>
+  // Gallery route custom preview markup
+  let routeCustomSection = '';
+  if (route.path === 'gallery') {
+    routeCustomSection = `
+      <section style="margin: 2rem 0;">
+        <h2 style="font-size: 1.5rem; color: #29251F; margin-bottom: 1.5rem;">Event &amp; Wedding Decoration Portfolio Gallery</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+          <div style="background: #FFF; border: 1px solid #E7E5E4; border-radius: 1rem; overflow: hidden; padding: 0.75rem;">
+            <img src="${BASE_URL}/assets/images/real/signature-royal-wedding-mandap.webp" alt="Wedding Decorators in Pondicherry - Signature Royal Mandap Decoration" style="width: 100%; height: 220px; object-fit: cover; border-radius: 0.5rem;" loading="lazy" />
+            <h3 style="font-size: 1rem; margin: 0.75rem 0 0.25rem; color: #29251F;">Signature Royal Kalyana Mandap</h3>
+            <p style="font-size: 0.8125rem; color: #78716C; margin: 0;">Pondicherry Wedding Stage &amp; Flower Decoration</p>
+          </div>
+          <div style="background: #FFF; border: 1px solid #E7E5E4; border-radius: 1rem; overflow: hidden; padding: 0.75rem;">
+            <img src="${BASE_URL}/assets/images/real/wedding-royal-golden-mandap.webp" alt="Wedding Decoration in Pondicherry - Grand Temple Gopuram Mandap" style="width: 100%; height: 220px; object-fit: cover; border-radius: 0.5rem;" loading="lazy" />
+            <h3 style="font-size: 1rem; margin: 0.75rem 0 0.25rem; color: #29251F;">Grand Temple Gopuram Mandap</h3>
+            <p style="font-size: 0.8125rem; color: #78716C; margin: 0;">Authentic Temple Architecture &amp; Fresh Jasmine Garland</p>
+          </div>
+          <div style="background: #FFF; border: 1px solid #E7E5E4; border-radius: 1rem; overflow: hidden; padding: 0.75rem;">
+            <img src="${BASE_URL}/assets/images/real/reception-modern-petal-stage.webp" alt="Reception Stage Decoration Pondicherry - Sculptural Petal Wave" style="width: 100%; height: 220px; object-fit: cover; border-radius: 0.5rem;" loading="lazy" />
+            <h3 style="font-size: 1rem; margin: 0.75rem 0 0.25rem; color: #29251F;">Sculptural Petal Wave Reception</h3>
+            <p style="font-size: 0.8125rem; color: #78716C; margin: 0;">Modern 3D Petal Stage &amp; Crystal Chandeliers</p>
+          </div>
+          <div style="background: #FFF; border: 1px solid #E7E5E4; border-radius: 1rem; overflow: hidden; padding: 0.75rem;">
+            <img src="${BASE_URL}/assets/images/real/birthday-sarvesh-balloon-clouds.webp" alt="Birthday Decoration in Pondicherry - Sarvesh Milestone Birthday" style="width: 100%; height: 220px; object-fit: cover; border-radius: 0.5rem;" loading="lazy" />
+            <h3 style="font-size: 1rem; margin: 0.75rem 0 0.25rem; color: #29251F;">Sarvesh Milestone Birthday</h3>
+            <p style="font-size: 0.8125rem; color: #78716C; margin: 0;">Organic Balloon Clouds &amp; Thematic Stage Setup</p>
+          </div>
+          <div style="background: #FFF; border: 1px solid #E7E5E4; border-radius: 1rem; overflow: hidden; padding: 0.75rem;">
+            <img src="${BASE_URL}/assets/images/real/engagement-infinity-floral-ring.webp" alt="Engagement Ceremony Decorators Puducherry - Infinity Floral Ring" style="width: 100%; height: 220px; object-fit: cover; border-radius: 0.5rem;" loading="lazy" />
+            <h3 style="font-size: 1rem; margin: 0.75rem 0 0.25rem; color: #29251F;">Infinity Floral Ring Engagement</h3>
+            <p style="font-size: 0.8125rem; color: #78716C; margin: 0;">Circular Couple Ring Arch &amp; Fairylight Canopy</p>
+          </div>
+          <div style="background: #FFF; border: 1px solid #E7E5E4; border-radius: 1rem; overflow: hidden; padding: 0.75rem;">
+            <img src="${BASE_URL}/assets/images/real/haldi-marigold-traditional-swing.webp" alt="Haldi and Mehendi Decorators Pondicherry - Marigold Garden Swing" style="width: 100%; height: 220px; object-fit: cover; border-radius: 0.5rem;" loading="lazy" />
+            <h3 style="font-size: 1rem; margin: 0.75rem 0 0.25rem; color: #29251F;">Garden Marigold Haldi Swing</h3>
+            <p style="font-size: 0.8125rem; color: #78716C; margin: 0;">Traditional Lawn Swing with Yellow Floral Grid Wall</p>
+          </div>
+        </div>
+      </section>
+    `;
+  }
+
+  // Pre-rendered crawlable DOM shell (Hydrated by React on load)
+  const prerenderShell = `
+    <div class="static-prerender-shell" style="min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #29251F; background: #FAF8F4; line-height: 1.6;">
+      <header style="padding: 1.25rem 2rem; border-bottom: 1px solid #E7E5E4; background: #FFFFFF;">
+        <div style="max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+          <a href="${BASE_URL}/" style="font-size: 1.25rem; font-family: serif; font-weight: bold; color: #7A245A; text-decoration: none;">
+            lak.decor &amp; event maker
+          </a>
+          <nav aria-label="Primary Navigation">
+            <ul style="display: flex; gap: 1.25rem; list-style: none; margin: 0; padding: 0; font-size: 0.875rem; font-weight: 500; flex-wrap: wrap;">
+              <li><a href="${BASE_URL}/" style="color: #29251F; text-decoration: none;">Home</a></li>
+              <li><a href="${BASE_URL}/about" style="color: #29251F; text-decoration: none;">About</a></li>
+              <li><a href="${BASE_URL}/services" style="color: #29251F; text-decoration: none;">Services</a></li>
+              <li><a href="${BASE_URL}/gallery" style="color: #7A245A; text-decoration: underline; font-weight: 600;">Gallery</a></li>
+              <li><a href="${BASE_URL}/our-work" style="color: #29251F; text-decoration: none;">Our Work</a></li>
+              <li><a href="${BASE_URL}/testimonials" style="color: #29251F; text-decoration: none;">Testimonials</a></li>
+              <li><a href="${BASE_URL}/contact" style="color: #29251F; text-decoration: none;">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main style="max-width: 1100px; margin: 3rem auto; padding: 0 1.5rem;">
+        <h1 style="font-size: 2.25rem; font-family: serif; color: #29251F; margin-bottom: 1rem; line-height: 1.2;">${route.title}</h1>
+        <p style="font-size: 1.125rem; color: #57534E; margin-bottom: 2rem; max-width: 850px;">${route.description}</p>
+        
+        <section style="background: #FFFFFF; border: 1px solid #E7E5E4; border-radius: 1rem; padding: 1.5rem; margin-bottom: 2.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+          <h2 style="font-size: 1.125rem; color: #7A245A; margin-top: 0; margin-bottom: 0.5rem; font-family: serif;">Verified Pondicherry Event Decoration Studio</h2>
+          <p style="margin: 0.35rem 0;"><strong>Studio Address:</strong> 52, SH 49, Ellaitharisu, Ganapathichettikulam, Pondicherry, Tamil Nadu 605014</p>
+          <p style="margin: 0.35rem 0;"><strong>Direct Hotline:</strong> <a href="tel:+919597265450" style="color: #7A245A; font-weight: 600;">+91 95972 65450</a> | <strong>WhatsApp Booking:</strong> <a href="https://wa.me/919597265450" style="color: #25D366; font-weight: 600;">+91 95972 65450</a></p>
+          <p style="margin: 0.35rem 0;"><strong>Consultation Hours:</strong> Mon - Sun: 9:00 AM - 9:00 PM (IST)</p>
+        </section>
+
+        <section style="margin-bottom: 2.5rem;">
+          <h2 style="font-size: 1.25rem; color: #29251F; margin-bottom: 1rem; font-family: serif;">Popular Celebration Services in Pondicherry</h2>
+          <ul style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem; list-style: none; padding: 0;">
+            <li><a href="${BASE_URL}/wedding-decoration-pondicherry" style="color: #7A245A; font-weight: 500;">• Wedding Decorators in Pondicherry</a></li>
+            <li><a href="${BASE_URL}/birthday-decoration-pondicherry" style="color: #7A245A; font-weight: 500;">• Birthday Decoration in Pondicherry</a></li>
+            <li><a href="${BASE_URL}/engagement-decoration-pondicherry" style="color: #7A245A; font-weight: 500;">• Engagement Decoration Pondicherry</a></li>
+            <li><a href="${BASE_URL}/reception-decoration-pondicherry" style="color: #7A245A; font-weight: 500;">• Reception Stage Decoration Pondicherry</a></li>
+            <li><a href="${BASE_URL}/event-decorators-pondicherry" style="color: #7A245A; font-weight: 500;">• Event Decorators in Puducherry</a></li>
           </ul>
-        </nav>
-      </div>
-    </noscript>
+        </section>
+
+        ${routeCustomSection}
+      </main>
+
+      <footer style="background: #1C1917; color: #D6D3D1; padding: 3rem 1.5rem; margin-top: 4rem;">
+        <div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem;">
+          <div>
+            <h3 style="color: #FFFFFF; font-size: 1.125rem; margin-top: 0; font-family: serif;">lak.decor &amp; event maker</h3>
+            <p style="font-size: 0.875rem; color: #A8A29E; line-height: 1.6;">Premium wedding mandaps, reception stages, and milestone birthday decorations in Pondicherry, Puducherry, Cuddalore, and Villupuram.</p>
+          </div>
+          <div>
+            <h4 style="color: #FFFFFF; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Core Navigation</h4>
+            <ul style="list-style: none; padding: 0; font-size: 0.875rem; line-height: 2;">
+              <li><a href="${BASE_URL}/" style="color: #D6D3D1; text-decoration: none;">Home</a></li>
+              <li><a href="${BASE_URL}/services" style="color: #D6D3D1; text-decoration: none;">Services</a></li>
+              <li><a href="${BASE_URL}/gallery" style="color: #D6D3D1; text-decoration: none;">Gallery</a></li>
+              <li><a href="${BASE_URL}/our-work" style="color: #D6D3D1; text-decoration: none;">Our Work</a></li>
+              <li><a href="${BASE_URL}/about" style="color: #D6D3D1; text-decoration: none;">About</a></li>
+              <li><a href="${BASE_URL}/contact" style="color: #D6D3D1; text-decoration: none;">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="color: #FFFFFF; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Studio Contacts</h4>
+            <p style="font-size: 0.875rem; margin: 0.35rem 0;">Phone: <a href="tel:+919597265450" style="color: #D6D3D1;">+91 95972 65450</a></p>
+            <p style="font-size: 0.875rem; margin: 0.35rem 0;">Instagram: <a href="https://www.instagram.com/lak.decors?rpxt=OG55bXduNDNwamdv&amp;utm_source=qr" style="color: #E8C585;" target="_blank" rel="noopener">@lak.decors</a></p>
+            <p style="font-size: 0.875rem; margin: 0.35rem 0;">Email: dhivakar234@gmail.com</p>
+            <p style="font-size: 0.875rem; margin: 0.35rem 0; color: #A8A29E;">52, SH 49, Ganapathichettikulam, Pondicherry 605014</p>
+          </div>
+        </div>
+        <div style="max-width: 1280px; margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid #292524; font-size: 0.75rem; color: #78716C; text-align: center;">
+          &copy; 2026 lak.decor &amp; event maker. All rights reserved. Ganapathichettikulam, Pondicherry.
+        </div>
+      </footer>
+    </div>
   `;
 
-  html = html.replace('<div id="root"></div>', `<div id="root">${fallbackContent}</div>`);
+  html = html.replace('<div id="root"></div>', `<div id="root">${prerenderShell}</div>`);
 
   // Target directory
   if (!route.path) {
@@ -300,9 +400,23 @@ for (const route of routes) {
     const routeDir = path.join(distDir, route.path);
     fs.mkdirSync(routeDir, { recursive: true });
     fs.writeFileSync(path.join(routeDir, 'index.html'), html, 'utf-8');
+
+    // Also output flat <route>.html for Vercel/Netlify cleanUrls (prevents 308 trailing slash redirect!)
+    const flatHtmlPath = path.join(distDir, `${route.path}.html`);
+    fs.mkdirSync(path.dirname(flatHtmlPath), { recursive: true });
+    fs.writeFileSync(flatHtmlPath, html, 'utf-8');
   }
 
   generatedCount++;
+}
+
+// Copy robots.txt and sitemap.xml to dist
+const publicDir = path.resolve(__dirname, '../public');
+if (fs.existsSync(path.join(publicDir, 'sitemap.xml'))) {
+  fs.copyFileSync(path.join(publicDir, 'sitemap.xml'), path.join(distDir, 'sitemap.xml'));
+}
+if (fs.existsSync(path.join(publicDir, 'robots.txt'))) {
+  fs.copyFileSync(path.join(publicDir, 'robots.txt'), path.join(distDir, 'robots.txt'));
 }
 
 console.log(`Successfully generated ${generatedCount} static prerendered HTML route files in dist/!`);

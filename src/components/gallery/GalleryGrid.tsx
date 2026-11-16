@@ -94,9 +94,10 @@ export const GalleryGrid: React.FC<GalleryGridProps> = ({
               <div className="relative h-72 sm:h-80 overflow-hidden bg-stone-100">
                 <img
                   src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover object-center transform transition-transform duration-700 ease-out group-hover:scale-105"
+                  alt={`${item.title} - ${item.categoryLabel} Decoration in ${item.location || 'Pondicherry'} | lak.decor`}
+                  className="w-full h-full object-cover object-center transform transition-transform duration-500 ease-out group-hover:scale-105"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
 

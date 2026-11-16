@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const distDir = path.resolve(__dirname, '../dist');
+const rootDir = path.resolve(__dirname, '..');
 
 console.log('=== LAK.DECOR SEO VERIFICATION SUITE ===\n');
 
@@ -38,6 +39,9 @@ if (fs.existsSync(sitemapPath)) {
   const sitemap = fs.readFileSync(sitemapPath, 'utf-8');
   assert(sitemap.startsWith('<?xml'), 'sitemap.xml has valid XML declaration');
   assert(sitemap.includes('<loc>https://www.lakdecor.com/</loc>'), 'sitemap.xml contains homepage');
+  assert(sitemap.includes('<loc>https://www.lakdecor.com/gallery</loc>'), 'sitemap.xml contains /gallery');
+  assert(sitemap.includes('<loc>https://www.lakdecor.com/services</loc>'), 'sitemap.xml contains /services');
+  assert(sitemap.includes('<loc>https://www.lakdecor.com/contact</loc>'), 'sitemap.xml contains /contact');
   assert(sitemap.includes('<loc>https://www.lakdecor.com/wedding-decoration-pondicherry</loc>'), 'sitemap.xml contains wedding-decoration-pondicherry');
   assert(sitemap.includes('<loc>https://www.lakdecor.com/birthday-decoration-pondicherry</loc>'), 'sitemap.xml contains birthday-decoration-pondicherry');
   assert(sitemap.includes('<loc>https://www.lakdecor.com/engagement-decoration-pondicherry</loc>'), 'sitemap.xml contains engagement-decoration-pondicherry');
@@ -47,7 +51,16 @@ if (fs.existsSync(sitemapPath)) {
   assert(urlCount >= 28, `sitemap.xml contains all ${urlCount} canonical URLs (>= 28 expected)`);
 }
 
-// 3. Verify Google Search Console verification file
+// 3. Verify vercel.json configuration
+const vercelConfigPath = path.join(rootDir, 'vercel.json');
+assert(fs.existsSync(vercelConfigPath), 'vercel.json exists');
+if (fs.existsSync(vercelConfigPath)) {
+  const vercel = JSON.parse(fs.readFileSync(vercelConfigPath, 'utf-8'));
+  assert(vercel.cleanUrls === true, 'vercel.json enables cleanUrls to eliminate 308 redirects');
+  assert(vercel.trailingSlash === false, 'vercel.json sets trailingSlash: false for canonical consistency');
+}
+
+// 4. Verify Google Search Console verification file
 const gscPath = path.join(distDir, 'google499fb3e8a1e16a57.html');
 assert(fs.existsSync(gscPath), 'dist/google499fb3e8a1e16a57.html exists in root');
 if (fs.existsSync(gscPath)) {
@@ -55,9 +68,22 @@ if (fs.existsSync(gscPath)) {
   assert(content.includes('google499fb3e8a1e16a57'), 'Verification file contains correct verification code');
 }
 
-// 4. Verify Local SEO Routes & Pre-rendered HTML Pages
+// 5. Verify /gallery is crawlable and indexed
+const galleryHtmlPath = path.join(distDir, 'gallery.html');
+assert(fs.existsSync(galleryHtmlPath), 'dist/gallery.html exists for cleanUrls');
+if (fs.existsSync(galleryHtmlPath)) {
+  const gHtml = fs.readFileSync(galleryHtmlPath, 'utf-8');
+  assert(gHtml.includes('Event Decoration Gallery Pondicherry'), 'gallery.html has optimized title');
+  assert(gHtml.includes('rel="canonical" href="https://www.lakdecor.com/gallery"'), 'gallery.html has exact canonical tag');
+  assert(gHtml.includes('alt="Wedding Decorators in Pondicherry'), 'gallery.html has crawlable images with local keywords');
+}
+
+// 6. Verify Local SEO Routes & Pre-rendered HTML Pages
 const routesToTest = [
   { path: 'index.html', title: 'Wedding Decorators in Pondicherry' },
+  { path: 'gallery.html', title: 'Event Decoration Gallery Pondicherry' },
+  { path: 'services.html', title: 'Event & Wedding Decoration Services in Pondicherry' },
+  { path: 'contact.html', title: 'Contact Wedding & Event Decorators in Pondicherry' },
   { path: 'wedding-decoration-pondicherry/index.html', title: 'Wedding Decorators in Pondicherry' },
   { path: 'birthday-decoration-pondicherry/index.html', title: 'Birthday Decoration in Pondicherry' },
   { path: 'engagement-decoration-pondicherry/index.html', title: 'Engagement Decoration Pondicherry' },
@@ -66,7 +92,6 @@ const routesToTest = [
   { path: 'services/wedding-decorations/index.html', title: 'Wedding Decorations in Pondicherry' },
   { path: 'our-work/signature-royal-kalyana-mandap/index.html', title: 'Signature Royal Kalyana Mandap Project' },
   { path: 'about/index.html', title: 'About Us' },
-  { path: 'contact/index.html', title: 'Contact Wedding & Event Decorators in Pondicherry' },
 ];
 
 for (const r of routesToTest) {
@@ -81,10 +106,11 @@ for (const r of routesToTest) {
     assert(html.includes('name="geo.region" content="IN-PY"'), `${r.path} has geo.region IN-PY`);
     assert(html.includes('name="google-site-verification" content="google499fb3e8a1e16a57"'), `${r.path} has google verification tag`);
     assert(html.includes('+91 95972 65450'), `${r.path} has verified contact phone in pre-rendered body`);
+    assert(html.includes('<a href="https://www.lakdecor.com/gallery"'), `${r.path} has crawlable link to /gallery`);
   }
 }
 
-// 5. Verify Favicon Suite
+// 7. Verify Favicon Suite
 const favicons = [
   'favicon.ico',
   'favicon.svg',

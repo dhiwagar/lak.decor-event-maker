@@ -43,7 +43,28 @@ export const GalleryPage: React.FC = () => {
             subtitle="Click on any photograph to launch the interactive full-screen visualizer with detail captions and venue locations."
           />
 
-          <div className="mt-14">
+          {/* Contextual Local SEO Narrative */}
+          <div className="mt-6 max-w-3xl mx-auto text-center">
+            <p className="text-stone-600 text-sm sm:text-base font-light leading-relaxed">
+              Welcome to the official gallery of <strong className="font-semibold text-[#29251F]">lak.decor & event maker</strong>. Browse real photographs of our bespoke wedding mandaps, grand reception stages, thematic 1st birthday celebrations, and traditional flower decorations delivered across Pondicherry and Puducherry.
+            </p>
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-3 text-xs font-medium text-[#7A245A]">
+              <Link to="/wedding-decoration-pondicherry" className="hover:underline">
+                • Wedding Decorators in Pondicherry
+              </Link>
+              <Link to="/birthday-decoration-pondicherry" className="hover:underline">
+                • Birthday Decoration in Pondicherry
+              </Link>
+              <Link to="/reception-decoration-pondicherry" className="hover:underline">
+                • Reception Stage Decoration Pondicherry
+              </Link>
+              <Link to="/event-decorators-pondicherry" className="hover:underline">
+                • Event Decorators in Puducherry
+              </Link>
+            </div>
+          </div>
+
+          <div className="mt-12">
             <GalleryGrid showFilters={true} />
           </div>
         </div>
