@@ -18,6 +18,8 @@ import {
   Baby,
   Building2,
   Gem,
+  MapPin,
+  Flower2,
 } from 'lucide-react';
 import { siteConfig } from '../../data/siteConfig';
 import { HeroSection } from '../../components/common/HeroSection';
@@ -346,6 +348,204 @@ export const HomePage: React.FC = () => {
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* 4.5 LOCAL SEO SPOTLIGHT: PONDICHERRY WEDDING DECORATION */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-[#FAF7F5] border-t border-stone-200/60">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="text-center mb-12 max-w-3xl mx-auto">
+            <span className="text-xs font-bold tracking-[0.25em] uppercase text-[#88245D] block mb-2">
+              PONDICHERRY &amp; PUDUCHERRY SPECIALISTS
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#231E26] tracking-tight">
+              Premier Wedding Decorators in Pondicherry
+            </h2>
+            <p className="text-sm sm:text-base text-[#554E58] mt-3 leading-relaxed">
+              From majestic South Indian temple mandaps and modern 3D sculptural reception stages to romantic coastal beach setups along the ECR, <strong>lak.decor &amp; event maker</strong> is your trusted celebration styling partner.
+            </p>
+          </div>
+
+          {/* 6 Targeted Wedding & Event Service Cards with Direct Internal Links */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            {/* Card 1: Wedding Decoration in Pondicherry */}
+            <div className="bg-white rounded-3xl p-6 sm:p-7 border border-stone-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-[#88245D]/10 text-[#88245D] flex items-center justify-center mb-5 group-hover:bg-[#88245D] group-hover:text-white transition-colors">
+                  <Sparkles className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-serif font-bold text-[#231E26] mb-2">
+                  Wedding Decoration in Pondicherry
+                </h3>
+                <p className="text-xs sm:text-sm text-[#554E58] leading-relaxed mb-4">
+                  Traditional Chettinad carved gopuram mandaps, authentic brass kuthu vilakku, sacred banana tree entrances, and 100% fresh Madurai jasmine garlands for memorable vows.
+                </p>
+              </div>
+              <Link
+                to="/wedding-decoration-pondicherry"
+                className="text-xs sm:text-sm font-bold text-[#88245D] inline-flex items-center gap-1.5 hover:gap-2.5 transition-all"
+              >
+                <span>Explore Wedding Decor</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+            {/* Card 2: Wedding Stage Decoration in Pondicherry */}
+            <div className="bg-white rounded-3xl p-6 sm:p-7 border border-stone-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-[#B18B59]/15 text-[#8E6838] flex items-center justify-center mb-5 group-hover:bg-[#B18B59] group-hover:text-white transition-colors">
+                  <Gem className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-serif font-bold text-[#231E26] mb-2">
+                  Wedding Stage Decoration
+                </h3>
+                <p className="text-xs sm:text-sm text-[#554E58] leading-relaxed mb-4">
+                  Grand 20ft to 60ft stages featuring royal Maharaja couple seating, crystal chandeliers, warm 3000K video-calibrated lighting, and thematic floral framing.
+                </p>
+              </div>
+              <Link
+                to="/wedding-stage-decoration-pondicherry"
+                className="text-xs sm:text-sm font-bold text-[#88245D] inline-flex items-center gap-1.5 hover:gap-2.5 transition-all"
+              >
+                <span>View Stage Designs</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+            {/* Card 3: Floral Wedding Decoration */}
+            <div className="bg-white rounded-3xl p-6 sm:p-7 border border-stone-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-[#88245D]/10 text-[#88245D] flex items-center justify-center mb-5 group-hover:bg-[#88245D] group-hover:text-white transition-colors">
+                  <Flower2 className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-serif font-bold text-[#231E26] mb-2">
+                  Floral Wedding Decoration
+                </h3>
+                <p className="text-xs sm:text-sm text-[#554E58] leading-relaxed mb-4">
+                  Cold-storage fresh blooms direct from Madurai, Bangalore, and Ooty. Hanging botanical canopies, rose arches, and water urli displays crafted for coastal freshness.
+                </p>
+              </div>
+              <Link
+                to="/floral-wedding-decoration-pondicherry"
+                className="text-xs sm:text-sm font-bold text-[#88245D] inline-flex items-center gap-1.5 hover:gap-2.5 transition-all"
+              >
+                <span>Explore Floral Artistry</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+            {/* Card 4: Reception Decoration in Pondicherry */}
+            <div className="bg-white rounded-3xl p-6 sm:p-7 border border-stone-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-[#88245D]/10 text-[#88245D] flex items-center justify-center mb-5 group-hover:bg-[#88245D] group-hover:text-white transition-colors">
+                  <Wine className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-serif font-bold text-[#231E26] mb-2">
+                  Reception Decoration
+                </h3>
+                <p className="text-xs sm:text-sm text-[#554E58] leading-relaxed mb-4">
+                  Sculptural 3D wave backdrops, suspended floral cloud runways, high-gloss mirrors, and ambient mood lighting designed for ballroom celebrations.
+                </p>
+              </div>
+              <Link
+                to="/reception-decoration-pondicherry"
+                className="text-xs sm:text-sm font-bold text-[#88245D] inline-flex items-center gap-1.5 hover:gap-2.5 transition-all"
+              >
+                <span>Explore Reception Stages</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+            {/* Card 5: Engagement Ceremony Decoration */}
+            <div className="bg-white rounded-3xl p-6 sm:p-7 border border-stone-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-[#B18B59]/15 text-[#8E6838] flex items-center justify-center mb-5 group-hover:bg-[#B18B59] group-hover:text-white transition-colors">
+                  <Heart className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-serif font-bold text-[#231E26] mb-2">
+                  Engagement Decoration
+                </h3>
+                <p className="text-xs sm:text-sm text-[#554E58] leading-relaxed mb-4">
+                  Romantic infinity circular floral halo arches, blush rose bouquets, ring ceremony pedestals, and customized couple neon signboards.
+                </p>
+              </div>
+              <Link
+                to="/engagement-decoration-pondicherry"
+                className="text-xs sm:text-sm font-bold text-[#88245D] inline-flex items-center gap-1.5 hover:gap-2.5 transition-all"
+              >
+                <span>View Engagement Stages</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+            {/* Card 6: Birthday & Event Styling */}
+            <div className="bg-white rounded-3xl p-6 sm:p-7 border border-stone-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-[#88245D]/10 text-[#88245D] flex items-center justify-center mb-5 group-hover:bg-[#88245D] group-hover:text-white transition-colors">
+                  <Cake className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-serif font-bold text-[#231E26] mb-2">
+                  Birthday &amp; Party Decoration
+                </h3>
+                <p className="text-xs sm:text-sm text-[#554E58] leading-relaxed mb-4">
+                  Organic double-stuffed pastel balloon arches, 3D character props, dessert table plinths, and 4ft marquee LED numbers for milestone birthdays.
+                </p>
+              </div>
+              <Link
+                to="/birthday-decoration-pondicherry"
+                className="text-xs sm:text-sm font-bold text-[#88245D] inline-flex items-center gap-1.5 hover:gap-2.5 transition-all"
+              >
+                <span>View Birthday Themes</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+          </div>
+
+          {/* Service Areas & Venue Coverage Strip */}
+          <div className="mt-12 bg-white rounded-3xl p-6 sm:p-8 border border-stone-200/80 shadow-sm">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+              <div className="lg:col-span-4 flex items-start gap-3">
+                <div className="w-10 h-10 rounded-xl bg-[#88245D]/10 text-[#88245D] flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-base font-serif font-bold text-[#231E26]">
+                    Our Service Locations
+                  </h4>
+                  <p className="text-xs text-stone-500 mt-1">
+                    Serving all of Puducherry &amp; surrounding wedding destinations.
+                  </p>
+                </div>
+              </div>
+
+              <div className="lg:col-span-8 flex flex-wrap gap-2 text-xs font-medium text-stone-600">
+                {[
+                  'Pondicherry City',
+                  'White Town (French Quarter)',
+                  'Lawspet',
+                  'Kalapet',
+                  'ECR Beach Resorts',
+                  'Villianur',
+                  'Muthialpet',
+                  'Cuddalore',
+                  'Villupuram',
+                  'Tindivanam',
+                  'Chennai ECR Corridor',
+                ].map((loc) => (
+                  <span
+                    key={loc}
+                    className="px-3.5 py-1.5 rounded-full bg-[#FAF7F5] border border-stone-200 text-stone-700"
+                  >
+                    📍 {loc}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 

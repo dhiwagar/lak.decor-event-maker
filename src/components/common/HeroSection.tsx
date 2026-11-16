@@ -104,18 +104,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onVideoClick }) => {
               {/* Category Tag */}
               <div>
                 <span className="text-[11px] sm:text-xs font-bold tracking-[0.25em] uppercase text-[#88245D]">
-                  WEDDING • BIRTHDAY • EVENTS
+                  WEDDING DECORATORS IN PONDICHERRY • LAK.DECOR
                 </span>
               </div>
 
               {/* Main Headline with Romantic Script Accent */}
               <div>
                 <h1 className="text-3xl sm:text-4xl lg:text-[42px] xl:text-[48px] font-serif font-bold text-[#231E26] leading-[1.14] tracking-tight">
-                  Turning Your Special Moments Into
+                  Wedding Decoration in Pondicherry
                 </h1>
                 <div className="flex items-center gap-2 mt-1 sm:mt-2">
                   <span className="font-script text-5xl sm:text-6xl lg:text-7xl text-[#88245D] font-normal leading-none transform -rotate-1 inline-block">
-                    Timeless Memories
+                    Timeless Celebrations
                   </span>
                   {/* Delicate Outline Heart */}
                   <svg
@@ -129,8 +129,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onVideoClick }) => {
 
               {/* Subheading */}
               <p className="text-xs sm:text-sm lg:text-[15px] text-[#554E58] font-normal leading-relaxed max-w-md">
-                Exquisite wedding decorations, birthday celebrations, and custom
-                event setups crafted with creativity, elegance, and love.
+                Premier wedding decorators in Pondicherry crafting grand royal mandaps, reception stages, birthday themes, and bespoke flower decorations across Puducherry.
               </p>
 
               {/* CTA Action Buttons */}

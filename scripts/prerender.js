@@ -401,7 +401,37 @@ for (const route of routes) {
 
   // Gallery route custom preview markup
   let routeCustomSection = '';
-  if (route.path === 'gallery') {
+  if (route.path === '') {
+    routeCustomSection = `
+      <section style="margin: 2rem 0; background: #FFFFFF; border: 1px solid #E7E5E4; border-radius: 1rem; padding: 1.5rem;">
+        <h2 style="font-size: 1.5rem; color: #7A245A; font-family: serif; margin-top: 0;">Premier Wedding Decorators in Pondicherry &amp; Puducherry</h2>
+        <p style="color: #57534E; font-size: 0.9375rem; line-height: 1.6;">
+          Ranked among the best wedding decorators in Pondicherry, <strong>lak.decor &amp; event maker</strong> provides complete turnkey wedding decoration, marriage stage setups, royal Chettinad temple mandaps, crystal reception backdrops, and fresh flower decorations across Puducherry, Cuddalore, and Villupuram.
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1rem;">
+          <div style="border: 1px solid #F5F5F4; border-radius: 0.75rem; padding: 1rem; background: #FAF8F4;">
+            <h3 style="font-size: 1.05rem; margin-top: 0; color: #29251F;"><a href="${BASE_URL}/wedding-decoration-pondicherry" style="color: #7A245A; text-decoration: none;">Wedding Decoration in Pondicherry</a></h3>
+            <p style="font-size: 0.8125rem; color: #78716C; margin-bottom: 0;">Authentic golden gopuram mandaps, Madurai jasmine garlands, sacred banana tree gateways &amp; couple thrones.</p>
+          </div>
+          <div style="border: 1px solid #F5F5F4; border-radius: 0.75rem; padding: 1rem; background: #FAF8F4;">
+            <h3 style="font-size: 1.05rem; margin-top: 0; color: #29251F;"><a href="${BASE_URL}/wedding-stage-decoration-pondicherry" style="color: #7A245A; text-decoration: none;">Wedding Stage Decoration</a></h3>
+            <p style="font-size: 0.8125rem; color: #78716C; margin-bottom: 0;">Grand 20ft–60ft ballroom stages, couple seating lounges, LED ambient wash &amp; photo-calibrated profile spots.</p>
+          </div>
+          <div style="border: 1px solid #F5F5F4; border-radius: 0.75rem; padding: 1rem; background: #FAF8F4;">
+            <h3 style="font-size: 1.05rem; margin-top: 0; color: #29251F;"><a href="${BASE_URL}/floral-wedding-decoration-pondicherry" style="color: #7A245A; text-decoration: none;">Floral Wedding Decoration</a></h3>
+            <p style="font-size: 0.8125rem; color: #78716C; margin-bottom: 0;">Fresh exotic blooms, suspended flower chandeliers, fragrant jasmine torans &amp; outdoor beach lawn setups.</p>
+          </div>
+          <div style="border: 1px solid #F5F5F4; border-radius: 0.75rem; padding: 1rem; background: #FAF8F4;">
+            <h3 style="font-size: 1.05rem; margin-top: 0; color: #29251F;"><a href="${BASE_URL}/reception-decoration-pondicherry" style="color: #7A245A; text-decoration: none;">Reception Stage Decoration</a></h3>
+            <p style="font-size: 0.8125rem; color: #78716C; margin-bottom: 0;">Contemporary 3D sculptural wave stages, crystal chandeliers, floral runways &amp; dynamic ambient lighting.</p>
+          </div>
+        </div>
+        <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #E7E5E4; font-size: 0.8125rem; color: #78716C;">
+          <strong>Service Coverage:</strong> Pondicherry, Puducherry, White Town, Lawspet, Kalapet, ECR Beach Resorts, Villianur, Cuddalore, Villupuram, Tindivanam &amp; Chennai ECR Corridor.
+        </div>
+      </section>
+    `;
+  } else if (route.path === 'gallery') {
     routeCustomSection = `
       <section style="margin: 2rem 0;">
         <h2 style="font-size: 1.5rem; color: #29251F; margin-bottom: 1.5rem;">Event &amp; Wedding Decoration Portfolio Gallery</h2>
