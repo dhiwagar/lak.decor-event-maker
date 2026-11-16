@@ -6,6 +6,8 @@ import { siteConfig } from '../../data/siteConfig';
 import { PageBanner } from '../../components/common/PageBanner';
 import { SectionHeading } from '../../components/common/SectionHeading';
 import { SpotlightCard } from '../../components/animations/SpotlightCard';
+import { SEO } from '../../components/common/SEO';
+import { getLocalBusinessSchema, getBreadcrumbSchema } from '../../utils/seoSchemas';
 
 export const ServicesPage: React.FC = () => {
   const [filter, setFilter] = useState<string>('all');
@@ -47,6 +49,19 @@ export const ServicesPage: React.FC = () => {
 
   return (
     <div>
+      <SEO
+        title="Event & Wedding Decoration Services in Pondicherry | lak.decor & event maker"
+        description="Comprehensive decoration services in Pondicherry: luxury wedding mandaps, engagement stages, birthday theme backdrops, reception setups, and traditional flower decor across Puducherry."
+        canonicalUrl="https://www.lakdecor.com/services"
+        keywords="wedding decoration services pondicherry, event decorators pondicherry, reception stage decoration puducherry, birthday party decorators pondicherry"
+        structuredData={[
+          getLocalBusinessSchema(),
+          getBreadcrumbSchema([
+            { name: 'Home', url: 'https://www.lakdecor.com/' },
+            { name: 'Services', url: 'https://www.lakdecor.com/services' },
+          ]),
+        ]}
+      />
       {/* Banner */}
       <PageBanner
         title="Bespoke Event Decoration Services"

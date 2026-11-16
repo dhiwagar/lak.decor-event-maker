@@ -5,10 +5,25 @@ import { GalleryGrid } from '../../components/gallery/GalleryGrid';
 import { Link } from 'react-router-dom';
 import { Calendar, MessageCircle } from 'lucide-react';
 import { siteConfig } from '../../data/siteConfig';
+import { SEO } from '../../components/common/SEO';
+import { getLocalBusinessSchema, getBreadcrumbSchema } from '../../utils/seoSchemas';
 
 export const GalleryPage: React.FC = () => {
   return (
     <div>
+      <SEO
+        title="Event Decoration Gallery Pondicherry | Mandap, Reception & Birthday Photos"
+        description="Browse our portfolio of wedding mandaps, reception stages, birthday themes, and flower decorations crafted in Pondicherry by lak.decor & event maker."
+        canonicalUrl="https://www.lakdecor.com/gallery"
+        keywords="wedding decoration photos pondicherry, reception stage gallery puducherry, birthday stage photos pondicherry"
+        structuredData={[
+          getLocalBusinessSchema(),
+          getBreadcrumbSchema([
+            { name: 'Home', url: 'https://www.lakdecor.com/' },
+            { name: 'Gallery', url: 'https://www.lakdecor.com/gallery' },
+          ]),
+        ]}
+      />
       {/* Banner */}
       <PageBanner
         title="Visual Symphony Portfolio"

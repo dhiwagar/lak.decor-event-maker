@@ -1,0 +1,108 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const distDir = path.resolve(__dirname, '../dist');
+
+console.log('=== LAK.DECOR SEO VERIFICATION SUITE ===\n');
+
+let passCount = 0;
+let failCount = 0;
+
+function assert(condition, message) {
+  if (condition) {
+    console.log(`[PASS] ${message}`);
+    passCount++;
+  } else {
+    console.error(`[FAIL] ${message}`);
+    failCount++;
+  }
+}
+
+// 1. Verify robots.txt
+const robotsPath = path.join(distDir, 'robots.txt');
+assert(fs.existsSync(robotsPath), 'dist/robots.txt exists');
+if (fs.existsSync(robotsPath)) {
+  const robots = fs.readFileSync(robotsPath, 'utf-8');
+  assert(robots.includes('User-agent: *'), 'robots.txt specifies User-agent: *');
+  assert(robots.includes('Sitemap: https://www.lakdecor.com/sitemap.xml'), 'robots.txt specifies correct sitemap URL');
+  assert(robots.includes('google499fb3e8a1e16a57.html'), 'robots.txt allows Google verification file');
+}
+
+// 2. Verify sitemap.xml
+const sitemapPath = path.join(distDir, 'sitemap.xml');
+assert(fs.existsSync(sitemapPath), 'dist/sitemap.xml exists');
+if (fs.existsSync(sitemapPath)) {
+  const sitemap = fs.readFileSync(sitemapPath, 'utf-8');
+  assert(sitemap.startsWith('<?xml'), 'sitemap.xml has valid XML declaration');
+  assert(sitemap.includes('<loc>https://www.lakdecor.com/</loc>'), 'sitemap.xml contains homepage');
+  assert(sitemap.includes('<loc>https://www.lakdecor.com/wedding-decoration-pondicherry</loc>'), 'sitemap.xml contains wedding-decoration-pondicherry');
+  assert(sitemap.includes('<loc>https://www.lakdecor.com/birthday-decoration-pondicherry</loc>'), 'sitemap.xml contains birthday-decoration-pondicherry');
+  assert(sitemap.includes('<loc>https://www.lakdecor.com/engagement-decoration-pondicherry</loc>'), 'sitemap.xml contains engagement-decoration-pondicherry');
+  assert(sitemap.includes('<loc>https://www.lakdecor.com/reception-decoration-pondicherry</loc>'), 'sitemap.xml contains reception-decoration-pondicherry');
+  assert(sitemap.includes('<loc>https://www.lakdecor.com/event-decorators-pondicherry</loc>'), 'sitemap.xml contains event-decorators-pondicherry');
+  const urlCount = (sitemap.match(/<url>/g) || []).length;
+  assert(urlCount >= 28, `sitemap.xml contains all ${urlCount} canonical URLs (>= 28 expected)`);
+}
+
+// 3. Verify Google Search Console verification file
+const gscPath = path.join(distDir, 'google499fb3e8a1e16a57.html');
+assert(fs.existsSync(gscPath), 'dist/google499fb3e8a1e16a57.html exists in root');
+if (fs.existsSync(gscPath)) {
+  const content = fs.readFileSync(gscPath, 'utf-8');
+  assert(content.includes('google499fb3e8a1e16a57'), 'Verification file contains correct verification code');
+}
+
+// 4. Verify Local SEO Routes & Pre-rendered HTML Pages
+const routesToTest = [
+  { path: 'index.html', title: 'Wedding Decorators in Pondicherry' },
+  { path: 'wedding-decoration-pondicherry/index.html', title: 'Wedding Decorators in Pondicherry' },
+  { path: 'birthday-decoration-pondicherry/index.html', title: 'Birthday Decoration in Pondicherry' },
+  { path: 'engagement-decoration-pondicherry/index.html', title: 'Engagement Decoration Pondicherry' },
+  { path: 'reception-decoration-pondicherry/index.html', title: 'Reception Stage Decoration Pondicherry' },
+  { path: 'event-decorators-pondicherry/index.html', title: 'Event Decorators in Pondicherry' },
+  { path: 'services/wedding-decorations/index.html', title: 'Wedding Decorations in Pondicherry' },
+  { path: 'our-work/signature-royal-kalyana-mandap/index.html', title: 'Signature Royal Kalyana Mandap Project' },
+  { path: 'about/index.html', title: 'About Us' },
+  { path: 'contact/index.html', title: 'Contact Wedding & Event Decorators in Pondicherry' },
+];
+
+for (const r of routesToTest) {
+  const filePath = path.join(distDir, r.path);
+  assert(fs.existsSync(filePath), `Pre-rendered file exists: ${r.path}`);
+  if (fs.existsSync(filePath)) {
+    const html = fs.readFileSync(filePath, 'utf-8');
+    assert(html.includes(`<title>${r.title}`), `${r.path} has correct <title>`);
+    assert(html.includes('<meta name="description"'), `${r.path} has <meta name="description">`);
+    assert(html.includes('rel="canonical"'), `${r.path} has canonical tag`);
+    assert(html.includes('property="og:image"'), `${r.path} has og:image`);
+    assert(html.includes('name="geo.region" content="IN-PY"'), `${r.path} has geo.region IN-PY`);
+    assert(html.includes('name="google-site-verification" content="google499fb3e8a1e16a57"'), `${r.path} has google verification tag`);
+    assert(html.includes('+91 95972 65450'), `${r.path} has verified contact phone in pre-rendered body`);
+  }
+}
+
+// 5. Verify Favicon Suite
+const favicons = [
+  'favicon.ico',
+  'favicon.svg',
+  'favicon-32x32.png',
+  'favicon-16x16.png',
+  'apple-touch-icon.png',
+  'favicon-512.png',
+];
+for (const fav of favicons) {
+  assert(fs.existsSync(path.join(distDir, fav)), `dist/${fav} exists`);
+}
+
+console.log(`\n========================================`);
+console.log(`TOTAL TESTS: ${passCount + failCount}`);
+console.log(`PASSED: ${passCount}`);
+console.log(`FAILED: ${failCount}`);
+console.log(`========================================\n`);
+
+if (failCount > 0) {
+  process.exit(1);
+}

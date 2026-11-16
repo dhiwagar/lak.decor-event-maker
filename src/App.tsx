@@ -16,6 +16,7 @@ import { OurWorkPage } from './pages/OurWork';
 import { ProjectDetailsPage } from './pages/ProjectDetails';
 import { TestimonialsPage } from './pages/Testimonials';
 import { ContactPage } from './pages/Contact';
+import { LocalSeoPage } from './pages/LocalSeo/LocalSeoPage';
 
 export const App: React.FC = () => {
   return (
@@ -37,6 +38,29 @@ export const App: React.FC = () => {
             <Route path="/our-work/:slug" element={<ProjectDetailsPage />} />
             <Route path="/testimonials" element={<TestimonialsPage />} />
             <Route path="/contact" element={<ContactPage />} />
+
+            {/* Targeted Local SEO Routes for Pondicherry */}
+            <Route
+              path="/wedding-decoration-pondicherry"
+              element={<LocalSeoPage customSlug="wedding-decoration-pondicherry" />}
+            />
+            <Route
+              path="/birthday-decoration-pondicherry"
+              element={<LocalSeoPage customSlug="birthday-decoration-pondicherry" />}
+            />
+            <Route
+              path="/engagement-decoration-pondicherry"
+              element={<LocalSeoPage customSlug="engagement-decoration-pondicherry" />}
+            />
+            <Route
+              path="/reception-decoration-pondicherry"
+              element={<LocalSeoPage customSlug="reception-decoration-pondicherry" />}
+            />
+            <Route
+              path="/event-decorators-pondicherry"
+              element={<LocalSeoPage customSlug="event-decorators-pondicherry" />}
+            />
+
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>

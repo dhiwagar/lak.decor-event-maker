@@ -24,6 +24,8 @@ import { HeroSection } from '../../components/common/HeroSection';
 import { GalleryGrid } from '../../components/gallery/GalleryGrid';
 import { TestimonialSlider } from '../../components/common/TestimonialSlider';
 import { VideoModal } from '../../components/common/VideoModal';
+import { SEO } from '../../components/common/SEO';
+import { getLocalBusinessSchema } from '../../utils/seoSchemas';
 
 export const HomePage: React.FC = () => {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
@@ -82,6 +84,14 @@ export const HomePage: React.FC = () => {
 
   return (
     <div className="overflow-hidden bg-[#FAF7F5]">
+      <SEO
+        title="Wedding Decorators in Pondicherry"
+        description="Discover beautiful wedding, birthday, engagement and reception decorations in Pondicherry. Explore our event portfolio and plan your celebration with lak.decor & event maker."
+        canonical="/"
+        image="/assets/images/real/signature-royal-wedding-mandap.webp"
+        schema={getLocalBusinessSchema()}
+      />
+
       {/* 1. CINEMATIC HERO SECTION (Exact layout with arched photo, cursive script, badges & floating strip) */}
       <HeroSection onVideoClick={() => setVideoModalOpen(true)} />
 

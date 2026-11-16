@@ -16,6 +16,8 @@ import { PageBanner } from '../../components/common/PageBanner';
 import { SectionHeading } from '../../components/common/SectionHeading';
 import { TestimonialSlider } from '../../components/common/TestimonialSlider';
 import { SpotlightCard } from '../../components/animations/SpotlightCard';
+import { SEO } from '../../components/common/SEO';
+import { getLocalBusinessSchema, getBreadcrumbSchema } from '../../utils/seoSchemas';
 
 export const TestimonialsPage: React.FC = () => {
   const [filter, setFilter] = useState<string>('all');
@@ -40,6 +42,19 @@ export const TestimonialsPage: React.FC = () => {
 
   return (
     <div>
+      <SEO
+        title="Client Reviews & Testimonials | lak.decor & event maker Pondicherry"
+        description="Read real client testimonials and reviews for lak.decor & event maker. Trusted wedding and birthday party decoration specialists in Pondicherry & Puducherry."
+        canonicalUrl="https://www.lakdecor.com/testimonials"
+        keywords="wedding decorator reviews pondicherry, event decorator ratings puducherry, lak decor customer feedback"
+        structuredData={[
+          getLocalBusinessSchema(),
+          getBreadcrumbSchema([
+            { name: 'Home', url: 'https://www.lakdecor.com/' },
+            { name: 'Testimonials', url: 'https://www.lakdecor.com/testimonials' },
+          ]),
+        ]}
+      />
       {/* Banner */}
       <PageBanner
         title="Client Stories & Celebratory Love"

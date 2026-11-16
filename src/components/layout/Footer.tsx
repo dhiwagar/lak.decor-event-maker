@@ -252,6 +252,41 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
+        {/* Local SEO Services in Pondicherry Bar */}
+        <div className="py-8 my-4 border-t border-stone-800/80">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div>
+              <span className="text-[11px] font-bold uppercase tracking-widest text-[#B18B59] block mb-1">
+                Local Event Decoration in Pondicherry & Puducherry
+              </span>
+              <p className="text-xs text-stone-400">
+                Specialized wedding mandaps, reception stages, and milestone birthday decor across Pondicherry, Cuddalore, Villupuram & ECR.
+              </p>
+            </div>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-stone-300">
+              <Link to="/wedding-decoration-pondicherry" className="hover:text-amber-200 transition-colors">
+                Wedding Decorators Pondicherry
+              </Link>
+              <span className="text-stone-700">•</span>
+              <Link to="/birthday-decoration-pondicherry" className="hover:text-amber-200 transition-colors">
+                Birthday Decoration Pondicherry
+              </Link>
+              <span className="text-stone-700">•</span>
+              <Link to="/engagement-decoration-pondicherry" className="hover:text-amber-200 transition-colors">
+                Engagement Decoration Pondicherry
+              </Link>
+              <span className="text-stone-700">•</span>
+              <Link to="/reception-decoration-pondicherry" className="hover:text-amber-200 transition-colors">
+                Reception Stage Decor Pondicherry
+              </Link>
+              <span className="text-stone-700">•</span>
+              <Link to="/event-decorators-pondicherry" className="hover:text-amber-200 transition-colors">
+                Event Decorators Puducherry
+              </Link>
+            </div>
+          </div>
+        </div>
+
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-400 gap-4">
           <p>

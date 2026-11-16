@@ -1,0 +1,15 @@
+# Robots.txt for lak.decor & event maker
+# Website: https://www.lakdecor.com
+
+User-agent: *
+Allow: /
+
+# Disallow build and internal metadata files if accessed directly
+Disallow: /node_modules/
+Disallow: /*.json$
+
+# Google Site Verification File
+Allow: /google499fb3e8a1e16a57.html
+
+# Sitemap
+Sitemap: https://www.lakdecor.com/sitemap.xml

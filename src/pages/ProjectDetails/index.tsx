@@ -17,6 +17,8 @@ import { siteConfig } from '../../data/siteConfig';
 import { PageBanner } from '../../components/common/PageBanner';
 import { SectionHeading } from '../../components/common/SectionHeading';
 import { SpotlightCard } from '../../components/animations/SpotlightCard';
+import { SEO } from '../../components/common/SEO';
+import { getBreadcrumbSchema } from '../../utils/seoSchemas';
 
 export const ProjectDetailsPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -33,6 +35,19 @@ export const ProjectDetailsPage: React.FC = () => {
 
   return (
     <div>
+      <SEO
+        title={`${project.title} | lak.decor & event maker Pondicherry`}
+        description={`${project.concept.slice(0, 155)}... Event decoration case study in Pondicherry.`}
+        canonicalUrl={`https://www.lakdecor.com/our-work/${project.slug}`}
+        keywords={`${project.title.toLowerCase()}, wedding decorators pondicherry, event decoration puducherry`}
+        structuredData={[
+          getBreadcrumbSchema([
+            { name: 'Home', url: 'https://www.lakdecor.com/' },
+            { name: 'Our Work', url: 'https://www.lakdecor.com/our-work' },
+            { name: project.title, url: `https://www.lakdecor.com/our-work/${project.slug}` },
+          ]),
+        ]}
+      />
       {/* Banner */}
       <PageBanner
         title={project.title}

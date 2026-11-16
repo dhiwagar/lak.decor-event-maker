@@ -14,10 +14,25 @@ import { siteConfig } from '../../data/siteConfig';
 import { PageBanner } from '../../components/common/PageBanner';
 import { SectionHeading } from '../../components/common/SectionHeading';
 import { EventEnquiryForm } from '../../components/forms/EventEnquiryForm';
+import { SEO } from '../../components/common/SEO';
+import { getLocalBusinessSchema, getBreadcrumbSchema } from '../../utils/seoSchemas';
 
 export const ContactPage: React.FC = () => {
   return (
     <div>
+      <SEO
+        title="Contact Wedding & Event Decorators in Pondicherry | lak.decor & event maker"
+        description="Get in touch with lak.decor & event maker for wedding, birthday, and celebration decorations in Pondicherry. Studio at Ganapathichettikulam. Call +91 95972 65450 or book via WhatsApp."
+        canonicalUrl="https://www.lakdecor.com/contact"
+        keywords="contact wedding decorator pondicherry, book event decorator puducherry, ganapathichettikulam stage decorator"
+        structuredData={[
+          getLocalBusinessSchema(),
+          getBreadcrumbSchema([
+            { name: 'Home', url: 'https://www.lakdecor.com/' },
+            { name: 'Contact', url: 'https://www.lakdecor.com/contact' },
+          ]),
+        ]}
+      />
       {/* Banner */}
       <PageBanner
         title="Let’s Create Something Beautiful Together"

@@ -4,6 +4,8 @@ import { MapPin, Users, Calendar } from 'lucide-react';
 import { projectsData } from '../../data/projects';
 import { PageBanner } from '../../components/common/PageBanner';
 import { SpotlightCard } from '../../components/animations/SpotlightCard';
+import { SEO } from '../../components/common/SEO';
+import { getLocalBusinessSchema, getBreadcrumbSchema } from '../../utils/seoSchemas';
 
 export const OurWorkPage: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -25,6 +27,19 @@ export const OurWorkPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#FAF8F4]">
+      <SEO
+        title="Our Work & Featured Projects | Event Decorators in Pondicherry"
+        description="Explore real event decoration case studies in Pondicherry: royal weddings, reception stages, outdoor lawn ceremonies, and milestone celebrations by lak.decor & event maker."
+        canonicalUrl="https://www.lakdecor.com/our-work"
+        keywords="event decoration projects pondicherry, wedding stage case studies puducherry, lak decor portfolio"
+        structuredData={[
+          getLocalBusinessSchema(),
+          getBreadcrumbSchema([
+            { name: 'Home', url: 'https://www.lakdecor.com/' },
+            { name: 'Our Work', url: 'https://www.lakdecor.com/our-work' },
+          ]),
+        ]}
+      />
       <PageBanner
         badge="REAL CELEBRATIONS"
         title="Our Featured Event Portfolio"

@@ -17,6 +17,8 @@ import { PageBanner } from '../../components/common/PageBanner';
 import { SectionHeading } from '../../components/common/SectionHeading';
 import { EventEnquiryForm } from '../../components/forms/EventEnquiryForm';
 import { SpotlightCard } from '../../components/animations/SpotlightCard';
+import { SEO } from '../../components/common/SEO';
+import { getServiceSchema, getBreadcrumbSchema, getFaqSchema } from '../../utils/seoSchemas';
 
 export const ServiceDetailsPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -32,8 +34,33 @@ export const ServiceDetailsPage: React.FC = () => {
     setActiveFaq(activeFaq === index ? null : index);
   };
 
+  const schemas = [
+    getServiceSchema({
+      name: `${service.title} in Pondicherry`,
+      description: service.shortDescription,
+      url: `https://www.lakdecor.com/services/${service.slug}`,
+      image: `https://www.lakdecor.com${service.heroImage}`,
+      serviceType: service.title,
+    }),
+    getBreadcrumbSchema([
+      { name: 'Home', url: 'https://www.lakdecor.com/' },
+      { name: 'Services', url: 'https://www.lakdecor.com/services' },
+      { name: service.title, url: `https://www.lakdecor.com/services/${service.slug}` },
+    ]),
+    ...(service.faq && service.faq.length > 0
+      ? [getFaqSchema(service.faq)]
+      : []),
+  ];
+
   return (
     <div>
+      <SEO
+        title={`${service.title} in Pondicherry | lak.decor & event maker`}
+        description={`${service.shortDescription} Premier event decoration services in Pondicherry & Puducherry by lak.decor & event maker.`}
+        canonicalUrl={`https://www.lakdecor.com/services/${service.slug}`}
+        keywords={`${service.title.toLowerCase()} pondicherry, ${service.title.toLowerCase()} puducherry, stage decoration pondicherry, event decorators pondicherry`}
+        structuredData={schemas}
+      />
       {/* Page Banner */}
       <PageBanner
         title={service.title}

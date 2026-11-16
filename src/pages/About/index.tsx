@@ -19,35 +19,10 @@ import { PageBanner } from '../../components/common/PageBanner';
 import { SectionHeading } from '../../components/common/SectionHeading';
 import { SpotlightCard } from '../../components/animations/SpotlightCard';
 import { ScrollReveal } from '../../components/animations/ScrollReveal';
+import { SEO } from '../../components/common/SEO';
+import { getLocalBusinessSchema, getBreadcrumbSchema } from '../../utils/seoSchemas';
 
 export const AboutPage: React.FC = () => {
-  const teamMembers = [
-    {
-      name: 'Lakshmanan K.',
-      role: 'Founder & Principal Creative Director',
-      bio: 'Over 10 years crafting bespoke event narratives, luxury mandaps, and signature wedding aesthetics across South India.',
-      image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80',
-    },
-    {
-      name: 'Vandhana Murugan',
-      role: 'Master Floral Architect',
-      bio: 'Trained in classical South Indian temple garlands and European botanical arrangements with exotic hydrangeas and orchids.',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80',
-    },
-    {
-      name: 'Arunachalam S.',
-      role: 'Head of Structural Production',
-      bio: 'Pioneer of modular aluminum stage rigging and safety-certified structures capable of supporting grand chandeliers and flower walls.',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80',
-    },
-    {
-      name: 'Kavitha R.',
-      role: 'Client Experience & 3D Visualizer',
-      bio: 'Brings clients’ dreams into photorealistic 3D renders, ensuring exact aesthetic synchronization before a single flower is cut.',
-      image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80',
-    },
-  ];
-
   const milestones = [
     {
       year: '2016',
@@ -73,6 +48,19 @@ export const AboutPage: React.FC = () => {
 
   return (
     <div>
+      <SEO
+        title="About Us | lak.decor & event maker | Wedding Decorators in Pondicherry"
+        description="Learn about lak.decor & event maker, Pondicherry's premier wedding and event decorators. Crafting bespoke luxury floral mandaps, reception stages, and birthday setups across Puducherry."
+        canonicalUrl="https://www.lakdecor.com/about"
+        keywords="about lak decor, wedding decorators pondicherry, event styling puducherry, luxury stage decorators"
+        structuredData={[
+          getLocalBusinessSchema(),
+          getBreadcrumbSchema([
+            { name: 'Home', url: 'https://www.lakdecor.com/' },
+            { name: 'About Us', url: 'https://www.lakdecor.com/about' },
+          ]),
+        ]}
+      />
       {/* Banner */}
       <PageBanner
         title="Our Story & Creative Philosophy"
@@ -240,46 +228,6 @@ export const AboutPage: React.FC = () => {
                 service.
               </p>
             </SpotlightCard>
-          </div>
-        </div>
-      </section>
-
-      {/* Team Presentation */}
-      <section className="py-20 lg:py-28 bg-[#FAF8F4]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            badge="CREATIVE MINDS"
-            title="Meet The Artisans"
-            highlightText="Behind Your Dream Stage"
-            subtitle="The passionate designers, florists, and production managers who bring magic to life."
-          />
-
-          <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member) => (
-              <div
-                key={member.name}
-                className="bg-white rounded-3xl overflow-hidden border border-stone-200/80 shadow-md hover:shadow-xl transition-all duration-300 group"
-              >
-                <div className="h-72 overflow-hidden bg-stone-100">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-6">
-                  <h4 className="text-lg font-serif font-medium text-[#29251F]">
-                    {member.name}
-                  </h4>
-                  <span className="text-xs font-semibold text-[#7A245A] uppercase tracking-wider block mt-1">
-                    {member.role}
-                  </span>
-                  <p className="text-xs text-stone-500 font-light mt-3 leading-relaxed">
-                    {member.bio}
-                  </p>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
