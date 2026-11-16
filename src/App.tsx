@@ -45,6 +45,14 @@ export const App: React.FC = () => {
               element={<LocalSeoPage customSlug="wedding-decoration-pondicherry" />}
             />
             <Route
+              path="/wedding-stage-decoration-pondicherry"
+              element={<LocalSeoPage customSlug="wedding-stage-decoration-pondicherry" />}
+            />
+            <Route
+              path="/floral-wedding-decoration-pondicherry"
+              element={<LocalSeoPage customSlug="floral-wedding-decoration-pondicherry" />}
+            />
+            <Route
               path="/birthday-decoration-pondicherry"
               element={<LocalSeoPage customSlug="birthday-decoration-pondicherry" />}
             />

@@ -21,86 +21,100 @@ const routes = [
   {
     path: '',
     title: 'Wedding Decorators in Pondicherry | lak.decor & event maker',
-    description: 'Discover beautiful wedding, birthday, engagement and reception decorations in Pondicherry. Explore our luxury event portfolio and plan your celebration with lak.decor & event maker.',
-    keywords: 'Wedding Decorators in Pondicherry, Wedding Decoration in Pondicherry, Event Decorators in Pondicherry, Birthday Decoration in Pondicherry, Marriage Decoration in Puducherry',
+    description: 'Discover exquisite wedding, birthday, engagement & reception decorations in Pondicherry. Explore our luxury portfolio & plan your event with lak.decor.',
+    keywords: 'Wedding Decoration in Pondicherry, Wedding Decorators in Pondicherry, Best Wedding Decorators in Pondicherry, Wedding Stage Decoration in Pondicherry, Marriage Decoration in Pondicherry',
     image: '/assets/images/real/signature-royal-wedding-mandap.webp',
   },
   {
     path: 'about',
-    title: 'About Us | lak.decor & event maker | Wedding Decorators in Pondicherry',
-    description: 'Learn about lak.decor & event maker, Pondicherry premier wedding and event decorators. Crafting bespoke luxury floral mandaps, reception stages, and birthday setups across Puducherry.',
+    title: 'About Us | lak.decor & event maker | Wedding Decorators',
+    description: 'Learn about lak.decor, Pondicherry premier wedding & event decorators crafting bespoke luxury floral mandaps, reception stages & birthday setups.',
     keywords: 'about lak decor, wedding decorators pondicherry, event styling puducherry, luxury stage decorators',
     image: '/assets/images/ai-hero-mandap.webp',
   },
   {
     path: 'services',
-    title: 'Event & Wedding Decoration Services in Pondicherry | lak.decor & event maker',
-    description: 'Comprehensive decoration services in Pondicherry: luxury wedding mandaps, engagement stages, birthday theme backdrops, reception setups, and traditional flower decor across Puducherry.',
+    title: 'Wedding & Event Decoration Services in Pondicherry | lak.decor',
+    description: 'Decoration services in Pondicherry: luxury wedding mandaps, engagement stages, birthday theme backdrops, reception setups & flower decor.',
     keywords: 'wedding decoration services pondicherry, event decorators pondicherry, reception stage decoration puducherry, birthday party decorators pondicherry',
     image: '/assets/images/ai-reception-stage.webp',
   },
   {
     path: 'gallery',
-    title: 'Event Decoration Gallery Pondicherry | Mandap, Reception & Birthday Photos',
-    description: 'Browse our portfolio of wedding mandaps, reception stages, birthday themes, and flower decorations crafted in Pondicherry by lak.decor & event maker.',
+    title: 'Event & Wedding Decoration Gallery Pondicherry | lak.decor',
+    description: 'Browse our photo gallery of wedding mandaps, reception stages, birthday themes & flower decorations crafted in Pondicherry by lak.decor.',
     keywords: 'wedding decoration photos pondicherry, reception stage gallery puducherry, birthday stage photos pondicherry',
     image: '/assets/images/real/signature-royal-wedding-mandap.webp',
   },
   {
     path: 'our-work',
-    title: 'Our Work & Featured Projects | Event Decorators in Pondicherry',
-    description: 'Explore real event decoration case studies in Pondicherry: royal weddings, reception stages, outdoor lawn ceremonies, and milestone celebrations by lak.decor & event maker.',
+    title: 'Our Work & Featured Projects | Wedding Decorators Pondicherry',
+    description: 'Explore real wedding decoration case studies in Pondicherry: royal mandaps, reception stages, lawn ceremonies & milestone celebrations.',
     keywords: 'event decoration projects pondicherry, wedding stage case studies puducherry, lak decor portfolio',
     image: '/assets/images/real/signature-royal-wedding-mandap.webp',
   },
   {
     path: 'testimonials',
-    title: 'Client Reviews & Testimonials | lak.decor & event maker Pondicherry',
-    description: 'Read real client testimonials and reviews for lak.decor & event maker. Trusted wedding and birthday party decoration specialists in Pondicherry & Puducherry.',
+    title: 'Client Reviews & Testimonials | Wedding Decorators Pondicherry',
+    description: 'Read real client testimonials for lak.decor & event maker. Trusted wedding and birthday party decoration specialists in Pondicherry & Puducherry.',
     keywords: 'wedding decorator reviews pondicherry, event decorator ratings puducherry, lak decor customer feedback',
     image: '/assets/images/ai-reception-stage.webp',
   },
   {
     path: 'contact',
-    title: 'Contact Wedding & Event Decorators in Pondicherry | lak.decor & event maker',
-    description: 'Get in touch with lak.decor & event maker for wedding, birthday, and celebration decorations in Pondicherry. Studio at Ganapathichettikulam. Call +91 95972 65450 or book via WhatsApp.',
+    title: 'Contact Wedding & Event Decorators in Pondicherry | lak.decor',
+    description: 'Contact lak.decor for wedding, birthday & celebration decorations in Pondicherry. Studio at Ganapathichettikulam. Call +91 95972 65450.',
     keywords: 'contact wedding decorator pondicherry, book event decorator puducherry, ganapathichettikulam stage decorator',
     image: '/assets/images/ai-hero-mandap.webp',
   },
 
-  // 5 Local SEO Dedicated Routes for Pondicherry
+  // 7 Dedicated Local SEO Routes for Pondicherry
   {
     path: 'wedding-decoration-pondicherry',
-    title: 'Wedding Decorators in Pondicherry | Royal Mandap & Stage Decoration Puducherry',
-    description: 'Best wedding decorators in Pondicherry & Puducherry. Grand royal temple mandaps, flower decoration, luxury couple seating & complete marriage stage setups.',
-    keywords: 'Wedding Decorators in Pondicherry, Wedding Decoration in Pondicherry, Marriage Decoration in Puducherry, Wedding Stage Decoration Pondicherry, Flower Decoration Pondicherry',
+    title: 'Wedding Decoration in Pondicherry | Best Wedding Decorators',
+    description: 'Best wedding decorators in Pondicherry. Grand royal mandaps, marriage stage decoration & fresh flower setups across Puducherry. Call +91 95972 65450.',
+    keywords: 'Wedding Decoration in Pondicherry, Wedding Decorators in Pondicherry, Best Wedding Decorators in Pondicherry, Marriage Decoration in Pondicherry, Wedding Event Planner in Pondicherry',
     image: '/assets/images/real/signature-royal-wedding-mandap.webp',
   },
   {
+    path: 'wedding-stage-decoration-pondicherry',
+    title: 'Wedding Stage Decoration in Pondicherry | Mandap Decorators',
+    description: 'Exquisite wedding stage decoration in Pondicherry. Luxury floral mandaps, couple thrones, lighting & marriage backdrops in Puducherry. Call +91 95972 65450.',
+    keywords: 'Wedding Stage Decoration in Pondicherry, Mandap Decoration in Pondicherry, Marriage Decoration in Pondicherry, Wedding Decorators in Pondicherry',
+    image: '/assets/images/real/wedding-royal-golden-mandap.webp',
+  },
+  {
+    path: 'floral-wedding-decoration-pondicherry',
+    title: 'Floral Wedding Decoration Pondicherry | Flower Decorators',
+    description: 'Exotic floral wedding decoration in Pondicherry. Fresh Madurai jasmine, rose arches, temple garlands & outdoor setups in Puducherry. Call +91 95972 65450.',
+    keywords: 'Floral Wedding Decoration Pondicherry, Outdoor Wedding Decoration in Pondicherry, Wedding Decoration in Pondicherry, Mandap Decoration in Pondicherry',
+    image: '/assets/images/real/wedding-grand-floral-chandelier.webp',
+  },
+  {
     path: 'birthday-decoration-pondicherry',
-    title: 'Birthday Decoration in Pondicherry | 1st Birthday & Theme Decorators Puducherry',
-    description: 'Creative birthday party decoration in Pondicherry. Organic pastel balloon arches, LED marquee numbers, customized cartoon backdrops and dessert table setups.',
+    title: 'Birthday Decoration in Pondicherry | 1st Birthday Decorators',
+    description: 'Creative birthday party decoration in Pondicherry. Organic pastel balloon arches, 3D marquee letters & theme styling across Puducherry. Call +91 95972 65450.',
     keywords: 'Birthday Decoration in Pondicherry, Birthday Decorators in Puducherry, 1st Birthday stage decor, balloon decoration pondicherry',
     image: '/assets/images/real/birthday-sarvesh-balloon-clouds.webp',
   },
   {
     path: 'engagement-decoration-pondicherry',
-    title: 'Engagement Decoration Pondicherry | Ring Ceremony Stage Stylists Puducherry',
-    description: 'Romantic engagement stage decoration in Pondicherry. Circular floral rings, infinity couple arches, neon signs, and fresh flower photo booths.',
-    keywords: 'Engagement Decoration Pondicherry, Ring Ceremony Stage Pondicherry, Engagement Decorators Puducherry, infinity floral ring stage',
+    title: 'Engagement Decoration in Pondicherry | Ring Ceremony Stages',
+    description: 'Romantic engagement decoration in Pondicherry. Circular floral rings, couple arches, neon signs & ring ceremony stages in Puducherry. Call +91 95972 65450.',
+    keywords: 'Engagement Decoration in Pondicherry, Ring Ceremony Stage Pondicherry, Engagement Decorators Puducherry, infinity floral ring stage',
     image: '/assets/images/real/engagement-infinity-floral-ring.webp',
   },
   {
     path: 'reception-decoration-pondicherry',
-    title: 'Reception Stage Decoration Pondicherry | Modern Floral Backdrops Puducherry',
-    description: 'Grand wedding reception stage decoration in Pondicherry. Sculptural petal backdrops, crystal chandeliers, truss lighting, and red carpet walk-ins.',
-    keywords: 'Reception Stage Decoration Pondicherry, Wedding Reception Decorators Puducherry, modern wedding stage pondicherry',
+    title: 'Reception Decoration in Pondicherry | Wedding Stage Backdrops',
+    description: 'Grand wedding reception decoration in Pondicherry. Sculptural wave stages, crystal chandeliers, floral runways & couple seating. Call +91 95972 65450.',
+    keywords: 'Reception Decoration in Pondicherry, Wedding Reception Decorators Puducherry, modern wedding stage pondicherry',
     image: '/assets/images/real/reception-modern-petal-stage.webp',
   },
   {
     path: 'event-decorators-pondicherry',
-    title: 'Event Decorators in Pondicherry | Full-Service Event Decoration Services Puducherry',
-    description: 'Top rated event decorators in Pondicherry for weddings, corporate galas, baby showers, anniversaries, and festive celebrations. Custom 3D design & setup.',
+    title: 'Event Decorators in Pondicherry | Wedding & Party Planners',
+    description: 'Top event decorators in Pondicherry for weddings, birthdays, baby showers & corporate galas. Full-service event planning & decor. Call +91 95972 65450.',
     keywords: 'Event Decorators in Pondicherry, Event Decoration Services in Puducherry, event makers pondicherry, party decorators puducherry',
     image: '/assets/images/real/signature-royal-wedding-mandap.webp',
   },
@@ -464,6 +478,8 @@ for (const route of routes) {
           <h2 style="font-size: 1.25rem; color: #29251F; margin-bottom: 1rem; font-family: serif;">Popular Celebration Services in Pondicherry</h2>
           <ul style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem; list-style: none; padding: 0;">
             <li><a href="${BASE_URL}/wedding-decoration-pondicherry" style="color: #7A245A; font-weight: 500;">• Wedding Decorators in Pondicherry</a></li>
+            <li><a href="${BASE_URL}/wedding-stage-decoration-pondicherry" style="color: #7A245A; font-weight: 500;">• Wedding Stage Decoration in Pondicherry</a></li>
+            <li><a href="${BASE_URL}/floral-wedding-decoration-pondicherry" style="color: #7A245A; font-weight: 500;">• Floral Wedding Decoration Pondicherry</a></li>
             <li><a href="${BASE_URL}/birthday-decoration-pondicherry" style="color: #7A245A; font-weight: 500;">• Birthday Decoration in Pondicherry</a></li>
             <li><a href="${BASE_URL}/engagement-decoration-pondicherry" style="color: #7A245A; font-weight: 500;">• Engagement Decoration Pondicherry</a></li>
             <li><a href="${BASE_URL}/reception-decoration-pondicherry" style="color: #7A245A; font-weight: 500;">• Reception Stage Decoration Pondicherry</a></li>

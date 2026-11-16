@@ -43,12 +43,14 @@ if (fs.existsSync(sitemapPath)) {
   assert(sitemap.includes('<loc>https://www.lakdecor.com/services</loc>'), 'sitemap.xml contains /services');
   assert(sitemap.includes('<loc>https://www.lakdecor.com/contact</loc>'), 'sitemap.xml contains /contact');
   assert(sitemap.includes('<loc>https://www.lakdecor.com/wedding-decoration-pondicherry</loc>'), 'sitemap.xml contains wedding-decoration-pondicherry');
+  assert(sitemap.includes('<loc>https://www.lakdecor.com/wedding-stage-decoration-pondicherry</loc>'), 'sitemap.xml contains wedding-stage-decoration-pondicherry');
+  assert(sitemap.includes('<loc>https://www.lakdecor.com/floral-wedding-decoration-pondicherry</loc>'), 'sitemap.xml contains floral-wedding-decoration-pondicherry');
   assert(sitemap.includes('<loc>https://www.lakdecor.com/birthday-decoration-pondicherry</loc>'), 'sitemap.xml contains birthday-decoration-pondicherry');
   assert(sitemap.includes('<loc>https://www.lakdecor.com/engagement-decoration-pondicherry</loc>'), 'sitemap.xml contains engagement-decoration-pondicherry');
   assert(sitemap.includes('<loc>https://www.lakdecor.com/reception-decoration-pondicherry</loc>'), 'sitemap.xml contains reception-decoration-pondicherry');
   assert(sitemap.includes('<loc>https://www.lakdecor.com/event-decorators-pondicherry</loc>'), 'sitemap.xml contains event-decorators-pondicherry');
   const urlCount = (sitemap.match(/<url>/g) || []).length;
-  assert(urlCount >= 28, `sitemap.xml contains all ${urlCount} canonical URLs (>= 28 expected)`);
+  assert(urlCount >= 30, `sitemap.xml contains all ${urlCount} canonical URLs (>= 30 expected)`);
 }
 
 // 3. Verify vercel.json configuration
@@ -73,7 +75,7 @@ const galleryHtmlPath = path.join(distDir, 'gallery.html');
 assert(fs.existsSync(galleryHtmlPath), 'dist/gallery.html exists for cleanUrls');
 if (fs.existsSync(galleryHtmlPath)) {
   const gHtml = fs.readFileSync(galleryHtmlPath, 'utf-8');
-  assert(gHtml.includes('Event Decoration Gallery Pondicherry'), 'gallery.html has optimized title');
+  assert(gHtml.includes('Event & Wedding Decoration Gallery Pondicherry'), 'gallery.html has optimized title');
   assert(gHtml.includes('rel="canonical" href="https://www.lakdecor.com/gallery"'), 'gallery.html has exact canonical tag');
   assert(gHtml.includes('alt="Wedding Decorators in Pondicherry'), 'gallery.html has crawlable images with local keywords');
 }
@@ -81,13 +83,15 @@ if (fs.existsSync(galleryHtmlPath)) {
 // 6. Verify Local SEO Routes & Pre-rendered HTML Pages
 const routesToTest = [
   { path: 'index.html', title: 'Wedding Decorators in Pondicherry' },
-  { path: 'gallery.html', title: 'Event Decoration Gallery Pondicherry' },
-  { path: 'services.html', title: 'Event & Wedding Decoration Services in Pondicherry' },
+  { path: 'gallery.html', title: 'Event & Wedding Decoration Gallery Pondicherry' },
+  { path: 'services.html', title: 'Wedding & Event Decoration Services in Pondicherry' },
   { path: 'contact.html', title: 'Contact Wedding & Event Decorators in Pondicherry' },
-  { path: 'wedding-decoration-pondicherry/index.html', title: 'Wedding Decorators in Pondicherry' },
+  { path: 'wedding-decoration-pondicherry/index.html', title: 'Wedding Decoration in Pondicherry' },
+  { path: 'wedding-stage-decoration-pondicherry/index.html', title: 'Wedding Stage Decoration in Pondicherry' },
+  { path: 'floral-wedding-decoration-pondicherry/index.html', title: 'Floral Wedding Decoration Pondicherry' },
   { path: 'birthday-decoration-pondicherry/index.html', title: 'Birthday Decoration in Pondicherry' },
-  { path: 'engagement-decoration-pondicherry/index.html', title: 'Engagement Decoration Pondicherry' },
-  { path: 'reception-decoration-pondicherry/index.html', title: 'Reception Stage Decoration Pondicherry' },
+  { path: 'engagement-decoration-pondicherry/index.html', title: 'Engagement Decoration in Pondicherry' },
+  { path: 'reception-decoration-pondicherry/index.html', title: 'Reception Decoration in Pondicherry' },
   { path: 'event-decorators-pondicherry/index.html', title: 'Event Decorators in Pondicherry' },
   { path: 'services/wedding-decorations/index.html', title: 'Wedding Decorations in Pondicherry' },
   { path: 'our-work/signature-royal-kalyana-mandap/index.html', title: 'Signature Royal Kalyana Mandap Project' },
@@ -101,6 +105,14 @@ for (const r of routesToTest) {
     const html = fs.readFileSync(filePath, 'utf-8');
     assert(html.includes(`<title>${r.title}`), `${r.path} has correct <title>`);
     assert(html.includes('<meta name="description"'), `${r.path} has <meta name="description">`);
+
+    // Check Meta Description character length (Target: between 50 and 160 characters)
+    const descMatch = html.match(/<meta\s+name=["']description["']\s+content=["'](.*?)["']/i);
+    if (descMatch) {
+      const descLen = descMatch[1].length;
+      assert(descLen >= 50 && descLen <= 160, `${r.path} meta description length (${descLen} chars) is within recommended 50-160 range`);
+    }
+
     assert(html.includes('rel="canonical"'), `${r.path} has canonical tag`);
     assert(html.includes('property="og:image"'), `${r.path} has og:image`);
     assert(html.includes('name="geo.region" content="IN-PY"'), `${r.path} has geo.region IN-PY`);

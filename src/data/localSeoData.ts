@@ -28,13 +28,13 @@ export const localSeoPages: Record<string, LocalSeoPageData> = {
   'wedding-decoration-pondicherry': {
     slug: 'wedding-decoration-pondicherry',
     path: '/wedding-decoration-pondicherry',
-    metaTitle: 'Wedding Decorators in Pondicherry | Royal Mandap & Stage Decorators',
+    metaTitle: 'Wedding Decoration in Pondicherry | Best Wedding Decorators',
     metaDescription:
-      'Premier wedding decorators in Pondicherry & Puducherry. Specializing in grand royal temple mandaps, fresh jasmine floral aisles, and luxury reception stages. Call +91 95972 65450.',
-    h1: 'Wedding Decorators in Pondicherry & Puducherry',
+      'Best wedding decorators in Pondicherry. Grand royal mandaps, marriage stage decoration & fresh flower setups across Puducherry. Call +91 95972 65450.',
+    h1: 'Wedding Decoration & Decorators in Pondicherry',
     badge: 'PONDICHERRY WEDDING SPECIALISTS',
     leadParagraph:
-      'From regal Chettinad temple Kalyana mandaps adorned with Madurai jasmine to breezy French-heritage coastal wedding themes along the ECR, lak.decor & event maker creates unforgettable sacred wedding settings in Pondicherry.',
+      'Ranked among the best wedding decorators in Pondicherry, lak.decor & event maker creates grand marriage stage decorations, traditional temple Kalyana mandaps adorned with Madurai jasmine, and luxury outdoor wedding setups across Puducherry.',
     heroImage: '/assets/images/real/signature-royal-wedding-mandap.webp',
     popularVenues: [
       'Leading Kalyana Mandapams across Pondicherry & Puducherry',
@@ -62,7 +62,7 @@ export const localSeoPages: Record<string, LocalSeoPageData> = {
           'Pondicherry’s coastal humidity requires specialized floral preservation. We utilize cold-chain storage and hydration micro-misting protocols so every petal remains vibrant throughout your Muhurtham.',
       },
       {
-        title: 'Seamless On-Site Execution',
+        title: 'Complete Wedding Event Planning',
         description:
           'Our production team handles structural load tests, municipal venue permits, power distributions, and strict overnight deadlines with zero stress for the bride, groom, and family.',
       },
@@ -91,6 +91,11 @@ export const localSeoPages: Record<string, LocalSeoPageData> = {
     ],
     faqs: [
       {
+        question: 'Who are the best wedding decorators in Pondicherry?',
+        answer:
+          'lak.decor & event maker is recognized among the premier wedding decorators in Pondicherry, known for authentic South Indian temple mandaps, contemporary floral stages, and turnkey marriage event execution.',
+      },
+      {
         question: 'How early should we book our wedding decoration in Pondicherry?',
         answer:
           'For peak Tamil wedding Muhurtham dates (especially Thai, Vaikasi, and Aavani months), we advise booking 2 to 5 months in advance to guarantee date reservation and dedicated fabrication crew.',
@@ -108,12 +113,168 @@ export const localSeoPages: Record<string, LocalSeoPageData> = {
     ],
   },
 
+  'wedding-stage-decoration-pondicherry': {
+    slug: 'wedding-stage-decoration-pondicherry',
+    path: '/wedding-stage-decoration-pondicherry',
+    metaTitle: 'Wedding Stage Decoration in Pondicherry | Mandap Decorators',
+    metaDescription:
+      'Exquisite wedding stage decoration in Pondicherry. Luxury floral mandaps, couple thrones, lighting & marriage backdrops in Puducherry. Call +91 95972 65450.',
+    h1: 'Wedding Stage & Mandap Decoration in Pondicherry',
+    badge: 'STAGE ARTISTRY & MANDAP SPECIALISTS',
+    leadParagraph:
+      'Transform your marriage ceremony with breathtaking wedding stage decoration in Pondicherry. From traditional golden gopuram mandaps to modern LED-illuminated floral arches, we build stages that leave lasting impressions.',
+    heroImage: '/assets/images/real/wedding-royal-golden-mandap.webp',
+    popularVenues: [
+      'Pondicherry Marriage Halls & Kalyana Mandapams',
+      'Luxury Hotels & Air-Conditioned Ballrooms in Puducherry',
+      'Outdoor Resort Lawns on East Coast Road (ECR)',
+      'Community Halls in Lawspet, Villianur, and Cuddalore',
+    ],
+    keyInclusions: [
+      'Heavy-Duty Structural Stage Platform and Backdrop Framing',
+      'Grand Royal Couple Thrones or Designer Velvet Sofas',
+      'Custom Mandap Canopy with Fresh Floral Hangings and Torans',
+      'Professional Warm Stage Wash & Profile Follow Spotlights',
+      'Matching VIP Entrance Pathway with Red Carpet and Urn Florals',
+      'Dedicated Stage Styling Crew on Site Throughout the Event',
+    ],
+    features: [
+      {
+        title: 'Custom Stage Proportions & Sizing',
+        description:
+          'We engineer stages customized for intimate 20-foot family gatherings up to grand 60-foot banquet stages with dynamic multi-tier levels and depth.',
+      },
+      {
+        title: 'Photo & Video Friendly Lighting',
+        description:
+          'Calibrated 3000K warm illumination ensures stunning high-definition wedding photos and 4K video recording with zero glare or unsightly shadows.',
+      },
+      {
+        title: 'Authentic Traditional & Fusion Options',
+        description:
+          'Choose between traditional Chettinad woodwork with brass urlis or modern geometric archways draped in imported hydrangeas and orchids.',
+      },
+    ],
+    galleryImages: [
+      {
+        url: '/assets/images/real/wedding-royal-golden-mandap.webp',
+        title: 'Royal Golden Stage & Mandap',
+        caption: 'Gilded temple pillar mandap with cascading rose and jasmine garlands.',
+      },
+      {
+        url: '/assets/images/real/wedding-traditional-temple-stage.webp',
+        title: 'Traditional Temple Stage Setting',
+        caption: 'Intricately sculpted heritage backdrop for classical wedding ceremonies.',
+      },
+      {
+        url: '/assets/images/real/signature-royal-wedding-mandap.webp',
+        title: 'Grand Kalyana Mandap Stage',
+        caption: 'Complete stage setup featuring elevated couple seating and floral ceiling.',
+      },
+      {
+        url: '/assets/images/real/wedding-grand-floral-chandelier.webp',
+        title: 'Chandelier Crowned Wedding Stage',
+        caption: 'Overhead floral crown with crystal chandeliers framing the main stage.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'What is included in your wedding stage decoration in Pondicherry?',
+        answer:
+          'Our packages include stage structural rigging, customized backdrop, floral draping, couple seating thrones, warm focus lighting, carpet aisle, entrance gate, and full setup/teardown.',
+      },
+      {
+        question: 'Can you build outdoor wedding stages on beach lawns in Pondicherry?',
+        answer:
+          'Yes, we specialize in outdoor and beach wedding stage decorations along the ECR, featuring anchored wind-safe trusses and coastal-proof floral hydration.',
+      },
+    ],
+  },
+
+  'floral-wedding-decoration-pondicherry': {
+    slug: 'floral-wedding-decoration-pondicherry',
+    path: '/floral-wedding-decoration-pondicherry',
+    metaTitle: 'Floral Wedding Decoration Pondicherry | Flower Decorators',
+    metaDescription:
+      'Exotic floral wedding decoration in Pondicherry. Fresh Madurai jasmine, rose arches, temple garlands & outdoor setups in Puducherry. Call +91 95972 65450.',
+    h1: 'Floral Wedding Decoration in Pondicherry',
+    badge: 'FRESH FLOWER & BOTANICAL ARTISTRY',
+    leadParagraph:
+      'Immerse your celebration in the natural fragrance and elegance of fresh flowers with premier floral wedding decoration in Pondicherry. From Madurai malli cascades to imported Dutch hydrangeas, our florists create living masterpieces.',
+    heroImage: '/assets/images/real/wedding-grand-floral-chandelier.webp',
+    popularVenues: [
+      'Open-Air Garden Lawns and Beach Resorts along ECR Pondicherry',
+      'Heritage French Quarter Courtyards in White Town',
+      'Kalyana Mandapams across Pondicherry & Puducherry',
+      'Boutique Farmhouses in Auroville and Kalapet',
+    ],
+    keyInclusions: [
+      '100% Guaranteed Fresh Grade-A Blooms Sourced Daily',
+      'Grand Floral Entrance Arches & Suspended Floral Chandeliers',
+      'Traditional Jasmine & Lotus Garlands for Mandap Pillars',
+      'Floral Petal Rangoli & Brass Urli Water Displays with Floating Candles',
+      'Dining Table Floral Runners and Guest Table Centerpieces',
+      'Temperature-Controlled Cold Storage Delivery to Venue',
+    ],
+    features: [
+      {
+        title: 'Direct Botanical Sourcing',
+        description:
+          'We source fresh blooms directly from farmers in Madurai, Bengaluru, and Ooty, ensuring vibrant color saturation and maximum fragrance longevity.',
+      },
+      {
+        title: 'Bespoke Floral Color Harmonies',
+        description:
+          'We blend classic auspicious marigolds and jasmine with modern pastel peonies, baby’s breath clouds, and orchids to complement your bridal palette.',
+      },
+      {
+        title: 'Eco-Friendly Floral Recycling',
+        description:
+          'After the event, we partner with local composting and temple vermiculture initiatives so every flower is returned naturally to the earth.',
+      },
+    ],
+    galleryImages: [
+      {
+        url: '/assets/images/real/wedding-grand-floral-chandelier.webp',
+        title: 'Grand Floral Chandelier Canopy',
+        caption: 'Overhead suspended floral chandelier with crystal drops and roses.',
+      },
+      {
+        url: '/assets/images/real/engagement-floral-halo-ring.webp',
+        title: 'Blush Rose & Orchid Floral Halo',
+        caption: 'Circular floral halo arch loaded with fresh imported roses and greenery.',
+      },
+      {
+        url: '/assets/images/real/haldi-marigold-traditional-swing.webp',
+        title: 'Marigold Botanical Grid Wall',
+        caption: 'Vibrant yellow marigold wall with hanging brass urlis and traditional swing.',
+      },
+      {
+        url: '/assets/images/real/signature-royal-wedding-mandap.webp',
+        title: 'Jasmine Draped Mandap Pillars',
+        caption: 'Fresh Madurai jasmine garlands woven around temple-carved pillars.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'How do you keep flowers fresh in Pondicherry coastal humidity?',
+        answer:
+          'We use refrigerated cold storage transport, water-tubed stems, and micro-misting hydration protocols so every petal remains crisp and radiant throughout your ceremony.',
+      },
+      {
+        question: 'Do you provide flower decoration for outdoor and temple ceremonies?',
+        answer:
+          'Yes, we provide specialized flower decoration for temple ceremonies, beach lawns, outdoor receptions, and intimate home wedding rituals.',
+      },
+    ],
+  },
+
   'birthday-decoration-pondicherry': {
     slug: 'birthday-decoration-pondicherry',
     path: '/birthday-decoration-pondicherry',
-    metaTitle: 'Birthday Decoration in Pondicherry | 1st Birthday & Theme Decorators',
+    metaTitle: 'Birthday Decoration in Pondicherry | 1st Birthday Decorators',
     metaDescription:
-      'Best birthday party decorators in Pondicherry. Organic balloon arches, illuminated 3D marquee numbers, cartoon themes, and dessert table styling. Call +91 95972 65450.',
+      'Creative birthday party decoration in Pondicherry. Organic pastel balloon arches, 3D marquee letters & theme styling across Puducherry. Call +91 95972 65450.',
     h1: 'Birthday Party Decoration in Pondicherry',
     badge: 'MILESTONE BIRTHDAY ARTISTRY',
     leadParagraph:
@@ -189,9 +350,9 @@ export const localSeoPages: Record<string, LocalSeoPageData> = {
   'engagement-decoration-pondicherry': {
     slug: 'engagement-decoration-pondicherry',
     path: '/engagement-decoration-pondicherry',
-    metaTitle: 'Engagement Decoration Pondicherry | Romantic Rings & Stages',
+    metaTitle: 'Engagement Decoration in Pondicherry | Ring Ceremony Stages',
     metaDescription:
-      'Romantic engagement ceremony decorators in Pondicherry. Circular infinity floral rings, elegant drapery, ring pedestals, and fairy-lit backdrops. Call +91 95972 65450.',
+      'Romantic engagement decoration in Pondicherry. Circular floral rings, couple arches, neon signs & ring ceremony stages in Puducherry. Call +91 95972 65450.',
     h1: 'Engagement Ceremony Decoration in Pondicherry',
     badge: 'ROMANTIC ENGAGEMENT DESIGNS',
     leadParagraph:
@@ -267,9 +428,9 @@ export const localSeoPages: Record<string, LocalSeoPageData> = {
   'reception-decoration-pondicherry': {
     slug: 'reception-decoration-pondicherry',
     path: '/reception-decoration-pondicherry',
-    metaTitle: 'Reception Stage Decoration Pondicherry | Grand Ballroom Stages',
+    metaTitle: 'Reception Decoration in Pondicherry | Wedding Stage Backdrops',
     metaDescription:
-      'Luxury wedding reception stage decorators in Pondicherry. Sculptural wave backdrops, crystal chandeliers, floral runways, and royal couple lounges. Call +91 95972 65450.',
+      'Grand wedding reception decoration in Pondicherry. Sculptural wave stages, crystal chandeliers, floral runways & couple seating. Call +91 95972 65450.',
     h1: 'Reception Stage Decoration in Pondicherry',
     badge: 'GRAND BALLROOM & RECEPTION STAGES',
     leadParagraph:
@@ -345,9 +506,9 @@ export const localSeoPages: Record<string, LocalSeoPageData> = {
   'event-decorators-pondicherry': {
     slug: 'event-decorators-pondicherry',
     path: '/event-decorators-pondicherry',
-    metaTitle: 'Event Decorators in Pondicherry | Full-Service Event Styling Studio',
+    metaTitle: 'Event Decorators in Pondicherry | Wedding & Party Planners',
     metaDescription:
-      'Top-rated event decorators in Pondicherry for weddings, corporate galas, baby showers, and cultural milestones. Bespoke design & turnkey execution. Call +91 95972 65450.',
+      'Top event decorators in Pondicherry for weddings, birthdays, baby showers & corporate galas. Full-service event planning & decor. Call +91 95972 65450.',
     h1: 'Event Decorators in Pondicherry & Puducherry',
     badge: 'FULL-SERVICE EVENT DECORATION STUDIO',
     leadParagraph:
