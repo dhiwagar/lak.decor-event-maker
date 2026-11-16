@@ -110,7 +110,7 @@ for (const r of routesToTest) {
   }
 }
 
-// 7. Verify Favicon Suite
+// 7. Verify Favicon Suite and Web Manifest
 const favicons = [
   'favicon.ico',
   'favicon.svg',
@@ -118,9 +118,28 @@ const favicons = [
   'favicon-16x16.png',
   'apple-touch-icon.png',
   'favicon-512.png',
+  'site.webmanifest',
 ];
 for (const fav of favicons) {
   assert(fs.existsSync(path.join(distDir, fav)), `dist/${fav} exists`);
+}
+
+// 8. Verify Enhanced Technical SEO Signals on dist/index.html
+const rootIndexHtml = path.join(distDir, 'index.html');
+if (fs.existsSync(rootIndexHtml)) {
+  const rootHtml = fs.readFileSync(rootIndexHtml, 'utf-8');
+  assert(rootHtml.includes('property="og:image:alt"'), 'index.html has og:image:alt');
+  assert(rootHtml.includes('name="twitter:site" content="@lakdecors"'), 'index.html has twitter:site');
+  assert(rootHtml.includes('name="twitter:creator" content="@lakdecors"'), 'index.html has twitter:creator');
+  assert(rootHtml.includes('name="twitter:image:alt"'), 'index.html has twitter:image:alt');
+  assert(rootHtml.includes('name="googlebot"'), 'index.html has googlebot robots directive');
+  assert(rootHtml.includes('name="referrer" content="strict-origin-when-cross-origin"'), 'index.html has strict-origin referrer policy');
+  assert(rootHtml.includes('<link rel="manifest" href="/site.webmanifest" />'), 'index.html links to site.webmanifest');
+  assert(rootHtml.includes('id="static-schema-graph"'), 'index.html contains comprehensive JSON-LD schema graph');
+  assert(rootHtml.includes('"@type": "WebSite"'), 'JSON-LD schema contains WebSite');
+  assert(rootHtml.includes('"LocalBusiness"') && rootHtml.includes('"Organization"'), 'JSON-LD schema contains LocalBusiness & Organization');
+  assert(rootHtml.includes('"@type": "SearchAction"'), 'JSON-LD schema contains SearchAction');
+  assert(rootHtml.includes('<h1'), 'index.html has crawlable <h1> tag');
 }
 
 console.log(`\n========================================`);

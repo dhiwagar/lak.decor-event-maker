@@ -208,6 +208,138 @@ export const getBreadcrumbSchema = (items: Array<{ name: string; url: string }>)
   };
 };
 
+export const getFullSiteGraphSchema = (options?: {
+  pageTitle?: string;
+  pageDescription?: string;
+  pageUrl?: string;
+  breadcrumbs?: Array<{ name: string; url: string }>;
+}) => {
+  const pageUrl = options?.pageUrl || `${BASE_URL}/`;
+  const pageTitle = options?.pageTitle || `Wedding Decorators in Pondicherry | ${siteConfig.name}`;
+  const pageDescription =
+    options?.pageDescription ||
+    'Discover exquisite wedding, birthday, engagement & reception decorations in Pondicherry. Explore our luxury portfolio & plan your event with lak.decor.';
+  const breadcrumbs = options?.breadcrumbs || [{ name: 'Home', url: `${BASE_URL}/` }];
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        '@id': `${BASE_URL}/#website`,
+        url: `${BASE_URL}/`,
+        name: siteConfig.name,
+        description: 'Wedding and Event Decorators in Pondicherry',
+        publisher: {
+          '@id': `${BASE_URL}/#organization`,
+        },
+        potentialAction: [
+          {
+            '@type': 'SearchAction',
+            target: {
+              '@type': 'EntryPoint',
+              urlTemplate: `${BASE_URL}/gallery?search={search_term_string}`,
+            },
+            'query-input': 'required name=search_term_string',
+          },
+        ],
+        inLanguage: 'en-US',
+      },
+      {
+        '@type': ['Organization', 'LocalBusiness', 'ProfessionalService'],
+        '@id': `${BASE_URL}/#organization`,
+        name: siteConfig.name,
+        alternateName: ['LAK Decors & Events', 'lakdecor', 'LAK Event Maker'],
+        url: `${BASE_URL}/`,
+        logo: {
+          '@type': 'ImageObject',
+          '@id': `${BASE_URL}/#logo`,
+          inLanguage: 'en-US',
+          url: `${BASE_URL}/favicon-512.png`,
+          contentUrl: `${BASE_URL}/favicon-512.png`,
+          width: 512,
+          height: 512,
+          caption: siteConfig.name,
+        },
+        image: {
+          '@id': `${BASE_URL}/#logo`,
+        },
+        telephone: `+91${siteConfig.phone}`,
+        email: siteConfig.email,
+        priceRange: '₹₹ - ₹₹₹',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: `${siteConfig.address.line1}, ${siteConfig.address.line2}`,
+          addressLocality: siteConfig.address.city,
+          addressRegion: siteConfig.address.state,
+          postalCode: siteConfig.address.pincode,
+          addressCountry: 'IN',
+        },
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: 12.0238,
+          longitude: 79.8542,
+        },
+        openingHoursSpecification: [
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: [
+              'Monday',
+              'Tuesday',
+              'Wednesday',
+              'Thursday',
+              'Friday',
+              'Saturday',
+              'Sunday',
+            ],
+            opens: '09:00',
+            closes: '21:00',
+          },
+        ],
+        sameAs: [
+          siteConfig.social.instagram,
+          siteConfig.social.facebook,
+          siteConfig.social.pinterest,
+        ].filter(Boolean),
+        areaServed: [
+          { '@type': 'City', name: 'Pondicherry' },
+          { '@type': 'City', name: 'Puducherry' },
+          { '@type': 'AdministrativeArea', name: 'Cuddalore' },
+          { '@type': 'AdministrativeArea', name: 'Villupuram' },
+          { '@type': 'AdministrativeArea', name: 'Chennai ECR' },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: pageTitle,
+        isPartOf: {
+          '@id': `${BASE_URL}/#website`,
+        },
+        about: {
+          '@id': `${BASE_URL}/#organization`,
+        },
+        description: pageDescription,
+        breadcrumb: {
+          '@id': `${pageUrl}#breadcrumb`,
+        },
+        inLanguage: 'en-US',
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${pageUrl}#breadcrumb`,
+        itemListElement: breadcrumbs.map((b, idx) => ({
+          '@type': 'ListItem',
+          position: idx + 1,
+          name: b.name,
+          item: b.url.startsWith('http') ? b.url : `${BASE_URL}${b.url.startsWith('/') ? b.url : `/${b.url}`}`,
+        })),
+      },
+    ],
+  };
+};
+
 export const getFaqSchema = (faqs: Array<{ question: string; answer: string }>) => {
   return {
     '@context': 'https://schema.org',

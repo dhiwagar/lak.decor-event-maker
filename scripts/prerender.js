@@ -260,6 +260,10 @@ for (const route of routes) {
     `<meta property="og:description" content="${route.description}" />`);
   html = html.replace(/<meta\s+property=["']og:image["']\s+content=["'].*?["']\s*\/?>/i,
     `<meta property="og:image" content="${routeImage}" />`);
+  html = html.replace(/<meta\s+property=["']og:image:secure_url["']\s+content=["'].*?["']\s*\/?>/i,
+    `<meta property="og:image:secure_url" content="${routeImage}" />`);
+  html = html.replace(/<meta\s+property=["']og:image:alt["']\s+content=["'].*?["']\s*\/?>/i,
+    `<meta property="og:image:alt" content="${route.title} - lak.decor & event maker" />`);
 
   // Twitter Card URL, Title, Desc, Image
   html = html.replace(/<meta\s+name=["']twitter:title["']\s+content=["'].*?["']\s*\/?>/i,
@@ -268,6 +272,118 @@ for (const route of routes) {
     `<meta name="twitter:description" content="${route.description}" />`);
   html = html.replace(/<meta\s+name=["']twitter:image["']\s+content=["'].*?["']\s*\/?>/i,
     `<meta name="twitter:image" content="${routeImage}" />`);
+  html = html.replace(/<meta\s+name=["']twitter:image:alt["']\s+content=["'].*?["']\s*\/?>/i,
+    `<meta name="twitter:image:alt" content="${route.title} - lak.decor & event maker" />`);
+
+  // Route-specific JSON-LD Schema Graph
+  const routeSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": `${BASE_URL}/#website`,
+        "url": `${BASE_URL}/`,
+        "name": "lak.decor & event maker",
+        "description": "Wedding and Event Decorators in Pondicherry",
+        "publisher": { "@id": `${BASE_URL}/#organization` },
+        "potentialAction": [
+          {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": `${BASE_URL}/gallery?search={search_term_string}`
+            },
+            "query-input": "required name=search_term_string"
+          }
+        ],
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
+        "@id": `${BASE_URL}/#organization`,
+        "name": "lak.decor & event maker",
+        "alternateName": ["LAK Decors & Events", "lakdecor", "LAK Event Maker"],
+        "url": `${BASE_URL}/`,
+        "logo": {
+          "@type": "ImageObject",
+          "@id": `${BASE_URL}/#logo`,
+          "inLanguage": "en-US",
+          "url": `${BASE_URL}/favicon-512.png`,
+          "contentUrl": `${BASE_URL}/favicon-512.png`,
+          "width": 512,
+          "height": 512,
+          "caption": "lak.decor & event maker"
+        },
+        "image": { "@id": `${BASE_URL}/#logo` },
+        "telephone": "+919597265450",
+        "email": "dhivakar234@gmail.com",
+        "priceRange": "₹₹ - ₹₹₹",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "52, SH 49, Ellaitharisu, Ganapathichettikulam",
+          "addressLocality": "Pondicherry",
+          "addressRegion": "Tamil Nadu",
+          "postalCode": "605014",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 12.0238,
+          "longitude": 79.8542
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "09:00",
+            "closes": "21:00"
+          }
+        ],
+        "sameAs": [
+          "https://www.instagram.com/lak.decors?rpxt=OG55bXduNDNwamdv&utm_source=qr"
+        ],
+        "areaServed": [
+          { "@type": "City", "name": "Pondicherry" },
+          { "@type": "City", "name": "Puducherry" },
+          { "@type": "AdministrativeArea", "name": "Cuddalore" },
+          { "@type": "AdministrativeArea", "name": "Villupuram" },
+          { "@type": "AdministrativeArea", "name": "Chennai ECR" }
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${routeCanonical}#webpage`,
+        "url": routeCanonical,
+        "name": route.title,
+        "isPartOf": { "@id": `${BASE_URL}/#website` },
+        "about": { "@id": `${BASE_URL}/#organization` },
+        "description": route.description,
+        "breadcrumb": { "@id": `${routeCanonical}#breadcrumb` },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${routeCanonical}#breadcrumb`,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": `${BASE_URL}/`
+          },
+          ...(route.path ? [{
+            "@type": "ListItem",
+            "position": 2,
+            "name": route.title.split('|')[0].trim(),
+            "item": routeCanonical
+          }] : [])
+        ]
+      }
+    ]
+  };
+
+  const schemaScript = `<script type="application/ld+json" id="static-schema-graph">\n    ${JSON.stringify(routeSchema, null, 2)}\n    </script>`;
+  html = html.replace(/<script\s+type=["']application\/ld\+json["']\s+id=["']static-schema-graph["']>[\s\S]*?<\/script>/i, schemaScript);
 
   // Gallery route custom preview markup
   let routeCustomSection = '';
@@ -417,6 +533,9 @@ if (fs.existsSync(path.join(publicDir, 'sitemap.xml'))) {
 }
 if (fs.existsSync(path.join(publicDir, 'robots.txt'))) {
   fs.copyFileSync(path.join(publicDir, 'robots.txt'), path.join(distDir, 'robots.txt'));
+}
+if (fs.existsSync(path.join(publicDir, 'site.webmanifest'))) {
+  fs.copyFileSync(path.join(publicDir, 'site.webmanifest'), path.join(distDir, 'site.webmanifest'));
 }
 
 console.log(`Successfully generated ${generatedCount} static prerendered HTML route files in dist/!`);
