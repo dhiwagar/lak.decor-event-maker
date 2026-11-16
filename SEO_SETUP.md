@@ -164,7 +164,7 @@ The website currently uses all confirmed business data. Here are optional items 
 | **Studio Address** | `52, SH 49, Ellaitharisu, Ganapathichettikulam, Pondicherry 605014` | Configured |
 | **Service Area** | Pondicherry, Puducherry, Cuddalore, Villupuram | Configured |
 | **Google Maps Embed** | Ganapathichettikulam Studio | Configured |
-| **Instagram Profile** | `siteConfig.social.instagram` | Ensure handle is live |
+| **Instagram Profile** | `https://www.instagram.com/lak.decors` | Configured |
 | **Facebook Page** | `siteConfig.social.facebook` | Ensure handle is live |
 | **GSTIN (Optional)** | Can be added to footer / invoice schema if registered | Optional |
 | **Business Hours** | 09:00 AM – 09:00 PM (Monday – Sunday) | Configured |

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useTransition } from 'react';
 import confetti from 'canvas-confetti';
 import {
   Send,
@@ -39,6 +39,7 @@ export const EventEnquiryForm: React.FC<EventEnquiryFormProps> = ({
   const [errors, setErrors] = useState<Partial<Record<keyof EnquiryFormData, string>>>({});
   const [submitted, setSubmitted] = useState(false);
   const [whatsappUrl, setWhatsappUrl] = useState('');
+  const [, startTransition] = useTransition();
 
   const validate = () => {
     const newErrors: Partial<Record<keyof EnquiryFormData, string>> = {};
@@ -101,23 +102,27 @@ _Sent from lak.decor website enquiry form._`;
 
     const encoded = encodeURIComponent(message);
     const targetUrl = `https://wa.me/91${siteConfig.whatsapp}?text=${encoded}`;
-    setWhatsappUrl(targetUrl);
-    setSubmitted(true);
 
-    // Trigger celebration confetti
-    try {
-      confetti({
-        particleCount: 80,
-        spread: 70,
-        origin: { y: 0.6 },
-        colors: ['#B18B59', '#7A245A', '#E8C585', '#FFF1DC'],
-      });
-    } catch {
-      // Confetti fallback
-    }
+    startTransition(() => {
+      setWhatsappUrl(targetUrl);
+      setSubmitted(true);
+    });
 
-    // Try to open WhatsApp in new tab
-    window.open(targetUrl, '_blank', 'noopener,noreferrer');
+    // Trigger celebration confetti and open WhatsApp on next tick
+    window.requestAnimationFrame(() => {
+      try {
+        confetti({
+          particleCount: 80,
+          spread: 70,
+          origin: { y: 0.6 },
+          colors: ['#B18B59', '#7A245A', '#E8C585', '#FFF1DC'],
+        });
+      } catch {
+        // Confetti fallback
+      }
+
+      window.open(targetUrl, '_blank', 'noopener,noreferrer');
+    });
   };
 
   return (

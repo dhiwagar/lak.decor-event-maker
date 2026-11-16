@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useTransition, useCallback } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import {
   MapPin,
@@ -39,6 +39,7 @@ export const LocalSeoPage: React.FC<LocalSeoPageProps> = ({ customSlug }) => {
 
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   const [selectedGalleryImg, setSelectedGalleryImg] = useState<any | null>(null);
+  const [, startTransition] = useTransition();
 
   // Generate Compound JSON-LD Schema
   const schemaList = [
@@ -70,19 +71,35 @@ export const LocalSeoPage: React.FC<LocalSeoPageProps> = ({ customSlug }) => {
     location: 'Pondicherry',
   }));
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     if (!selectedGalleryImg) return;
     const idx = galleryItems.findIndex((g) => g.id === selectedGalleryImg.id);
     const nextIdx = (idx + 1) % galleryItems.length;
-    setSelectedGalleryImg(galleryItems[nextIdx]);
-  };
+    startTransition(() => {
+      setSelectedGalleryImg(galleryItems[nextIdx]);
+    });
+  }, [selectedGalleryImg, galleryItems, startTransition]);
 
-  const handlePrev = () => {
+  const handlePrev = useCallback(() => {
     if (!selectedGalleryImg) return;
     const idx = galleryItems.findIndex((g) => g.id === selectedGalleryImg.id);
     const prevIdx = idx === 0 ? galleryItems.length - 1 : idx - 1;
-    setSelectedGalleryImg(galleryItems[prevIdx]);
-  };
+    startTransition(() => {
+      setSelectedGalleryImg(galleryItems[prevIdx]);
+    });
+  }, [selectedGalleryImg, galleryItems, startTransition]);
+
+  const handleSelectGalleryItem = useCallback((item: any) => {
+    startTransition(() => {
+      setSelectedGalleryImg(item);
+    });
+  }, [startTransition]);
+
+  const handleToggleFaq = useCallback((idx: number) => {
+    startTransition(() => {
+      setOpenFaqIndex((prev) => (prev === idx ? null : idx));
+    });
+  }, [startTransition]);
 
   const whatsappMessage = encodeURIComponent(
     `Hello lak.decor & event maker, I would like to enquire about ${pageData.h1}. Please share your packages and availability.`
@@ -267,19 +284,20 @@ export const LocalSeoPage: React.FC<LocalSeoPageProps> = ({ customSlug }) => {
             subtitle="Authentic event photographs crafted by lak.decor & event maker with 100% verified execution."
           />
 
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 touch-manipulation">
             {galleryItems.map((item) => (
               <div
                 key={item.id}
-                className="group rounded-3xl overflow-hidden bg-white border border-stone-200/80 shadow-xs hover:shadow-xl transition-all duration-500 cursor-pointer flex flex-col"
-                onClick={() => setSelectedGalleryImg(item)}
+                className="group rounded-3xl overflow-hidden bg-white border border-stone-200/80 shadow-xs hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col touch-manipulation transform-gpu will-change-transform"
+                onClick={() => handleSelectGalleryItem(item)}
               >
                 <div className="relative h-64 overflow-hidden bg-stone-100">
                   <img
                     src={item.image}
                     alt={`${item.title} — ${pageData.h1}`}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300 transform-gpu will-change-transform"
                     loading="lazy"
+                    decoding="async"
                   />
                 </div>
 
@@ -336,8 +354,8 @@ export const LocalSeoPage: React.FC<LocalSeoPageProps> = ({ customSlug }) => {
                   className="rounded-2xl bg-white border border-stone-200/80 overflow-hidden shadow-xs transition-all"
                 >
                   <button
-                    onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
-                    className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-serif text-base sm:text-lg font-bold text-[#29251F] hover:text-[#7A245A] transition-colors"
+                    onClick={() => handleToggleFaq(idx)}
+                    className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-serif text-base sm:text-lg font-bold text-[#29251F] hover:text-[#7A245A] transition-colors touch-manipulation cursor-pointer"
                   >
                     <span>{faq.question}</span>
                     <ChevronDown
@@ -389,7 +407,7 @@ export const LocalSeoPage: React.FC<LocalSeoPageProps> = ({ customSlug }) => {
       <GalleryLightbox
         item={selectedGalleryImg}
         items={galleryItems}
-        onClose={() => setSelectedGalleryImg(null)}
+        onClose={() => handleSelectGalleryItem(null)}
         onNext={handleNext}
         onPrev={handlePrev}
       />

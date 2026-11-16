@@ -1,4 +1,4 @@
-import React, { useRef, useState, MouseEvent } from 'react';
+import React, { useRef, useState, useCallback, MouseEvent } from 'react';
 
 interface SpotlightCardProps {
   children: React.ReactNode;
@@ -12,52 +12,59 @@ export const SpotlightCard: React.FC<SpotlightCardProps> = ({
   spotlightColor = 'rgba(177, 139, 89, 0.12)',
 }) => {
   const divRef = useRef<HTMLDivElement>(null);
-  const [isFocused, setIsFocused] = useState(false);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const spotlightRef = useRef<HTMLDivElement>(null);
+  const rafRef = useRef<number | null>(null);
   const [opacity, setOpacity] = useState(0);
 
-  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
-    if (!divRef.current || isFocused) return;
+  const handleMouseMove = useCallback(
+    (e: MouseEvent<HTMLDivElement>) => {
+      if (!divRef.current || !spotlightRef.current) return;
 
-    const div = divRef.current;
-    const rect = div.getBoundingClientRect();
+      const clientX = e.clientX;
+      const clientY = e.clientY;
 
-    setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-  };
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+      }
 
-  const handleFocus = () => {
-    setIsFocused(true);
-    setOpacity(1);
-  };
+      rafRef.current = requestAnimationFrame(() => {
+        if (!divRef.current || !spotlightRef.current) return;
+        const rect = divRef.current.getBoundingClientRect();
+        const x = clientX - rect.left;
+        const y = clientY - rect.top;
+        spotlightRef.current.style.background = `radial-gradient(600px circle at ${x}px ${y}px, ${spotlightColor}, transparent 40%)`;
+      });
+    },
+    [spotlightColor]
+  );
 
-  const handleBlur = () => {
-    setIsFocused(false);
-    setOpacity(0);
-  };
+  const handleMouseEnter = useCallback(() => {
+    React.startTransition(() => {
+      setOpacity(1);
+    });
+  }, []);
 
-  const handleMouseEnter = () => {
-    setOpacity(1);
-  };
-
-  const handleMouseLeave = () => {
-    setOpacity(0);
-  };
+  const handleMouseLeave = useCallback(() => {
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    React.startTransition(() => {
+      setOpacity(0);
+    });
+  }, []);
 
   return (
     <div
       ref={divRef}
       onMouseMove={handleMouseMove}
-      onFocus={handleFocus}
-      onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`relative rounded-2xl border border-[#FAF8F4]/20 overflow-hidden ${className}`}
+      className={`relative rounded-2xl border border-[#FAF8F4]/20 overflow-hidden transform-gpu will-change-transform ${className}`}
     >
       <div
+        ref={spotlightRef}
         className="pointer-events-none absolute -inset-px transition-opacity duration-300"
         style={{
           opacity,
-          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 40%)`,
+          background: `radial-gradient(600px circle at 0px 0px, ${spotlightColor}, transparent 40%)`,
         }}
       />
       {children}

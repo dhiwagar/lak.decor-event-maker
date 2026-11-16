@@ -17,7 +17,7 @@ export const siteConfig: SiteConfig = {
     pincode: "605014",
   },
   social: {
-    instagram: "https://instagram.com/lak.decor",
+    instagram: "https://www.instagram.com/lak.decors?rpxt=OG55bXduNDNwamdv&utm_source=qr",
     facebook: "https://facebook.com/lakdecor.events",
     whatsapp: "https://wa.me/919597265450",
     pinterest: "https://pinterest.com/lakdecor",

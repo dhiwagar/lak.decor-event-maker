@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useTransition, useCallback } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import {
   CheckCircle2,
@@ -25,14 +25,23 @@ export const ServiceDetailsPage: React.FC = () => {
   const service = servicesData.find((s) => s.slug === slug);
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [selectedGalleryImg, setSelectedGalleryImg] = useState<string | null>(null);
+  const [, startTransition] = useTransition();
 
   if (!service) {
     return <Navigate to="/services" replace />;
   }
 
-  const toggleFaq = (index: number) => {
-    setActiveFaq(activeFaq === index ? null : index);
-  };
+  const toggleFaq = useCallback((index: number) => {
+    startTransition(() => {
+      setActiveFaq((prev) => (prev === index ? null : index));
+    });
+  }, [startTransition]);
+
+  const handleSelectGalleryImg = useCallback((img: string | null) => {
+    startTransition(() => {
+      setSelectedGalleryImg(img);
+    });
+  }, [startTransition]);
 
   const schemas = [
     getServiceSchema({
@@ -118,18 +127,24 @@ export const ServiceDetailsPage: React.FC = () => {
                   <h3 className="text-2xl font-serif font-medium text-[#29251F] mb-6">
                     Popular Themes & Color Palettes:
                   </h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 touch-manipulation">
                     {service.popularThemes.map((theme, i) => (
                       <div
                         key={i}
-                        className="bg-white rounded-2xl overflow-hidden border border-stone-200/80 shadow-sm hover:shadow-md transition-shadow group"
+                        onClick={() => handleSelectGalleryImg(theme.image)}
+                        className="bg-white rounded-2xl overflow-hidden border border-stone-200/80 shadow-sm hover:shadow-md transition-shadow group cursor-pointer transform-gpu will-change-transform touch-manipulation"
                       >
-                        <div className="h-44 overflow-hidden bg-stone-100">
+                        <div className="h-44 overflow-hidden bg-stone-100 relative">
                           <img
                             src={theme.image}
                             alt={theme.name}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            loading="lazy"
+                            decoding="async"
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 transform-gpu will-change-transform"
                           />
+                          <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/40 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                            <Maximize2 className="w-4 h-4" />
+                          </div>
                         </div>
                         <div className="p-4">
                           <h4 className="text-base font-serif font-semibold text-[#29251F] group-hover:text-[#7A245A] transition-colors">
@@ -236,17 +251,19 @@ export const ServiceDetailsPage: React.FC = () => {
               subtitle="Browse through real event setups created by our specialized team."
             />
 
-            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 touch-manipulation">
               {service.galleryImages.map((img, i) => (
                 <div
                   key={i}
-                  className="relative h-64 rounded-2xl overflow-hidden shadow-md group cursor-pointer bg-stone-100"
-                  onClick={() => setSelectedGalleryImg(img)}
+                  className="relative h-64 rounded-2xl overflow-hidden shadow-md group cursor-pointer bg-stone-100 transform-gpu will-change-transform touch-manipulation"
+                  onClick={() => handleSelectGalleryImg(img)}
                 >
                   <img
                     src={img}
                     alt={`${service.title} gallery ${i + 1}`}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 transform-gpu will-change-transform"
                   />
                 </div>
               ))}
@@ -295,13 +312,14 @@ export const ServiceDetailsPage: React.FC = () => {
       {/* Lightbox for single clicked image */}
       {selectedGalleryImg && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
-          onClick={() => setSelectedGalleryImg(null)}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 touch-manipulation"
+          onClick={() => handleSelectGalleryImg(null)}
         >
           <img
             src={selectedGalleryImg}
             alt="Preview"
-            className="max-h-[85vh] max-w-full rounded-2xl shadow-2xl object-contain"
+            decoding="async"
+            className="max-h-[85vh] max-w-full rounded-2xl shadow-2xl object-contain select-none pointer-events-none"
           />
         </div>
       )}
