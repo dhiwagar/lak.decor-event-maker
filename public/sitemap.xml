@@ -49,13 +49,25 @@
   <!-- Local SEO Dedicated Pages for Pondicherry -->
   <url>
     <loc>https://www.lakdecor.com/wedding-decoration-pondicherry</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.lakdecor.com/wedding-decorators-pondicherry</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://www.lakdecor.com/wedding-stage-decoration-pondicherry</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.lakdecor.com/wedding-stage-decorators-pondicherry</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>

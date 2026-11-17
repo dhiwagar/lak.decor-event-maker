@@ -43,14 +43,16 @@ if (fs.existsSync(sitemapPath)) {
   assert(sitemap.includes('<loc>https://www.lakdecor.com/services</loc>'), 'sitemap.xml contains /services');
   assert(sitemap.includes('<loc>https://www.lakdecor.com/contact</loc>'), 'sitemap.xml contains /contact');
   assert(sitemap.includes('<loc>https://www.lakdecor.com/wedding-decoration-pondicherry</loc>'), 'sitemap.xml contains wedding-decoration-pondicherry');
+  assert(sitemap.includes('<loc>https://www.lakdecor.com/wedding-decorators-pondicherry</loc>'), 'sitemap.xml contains wedding-decorators-pondicherry');
   assert(sitemap.includes('<loc>https://www.lakdecor.com/wedding-stage-decoration-pondicherry</loc>'), 'sitemap.xml contains wedding-stage-decoration-pondicherry');
+  assert(sitemap.includes('<loc>https://www.lakdecor.com/wedding-stage-decorators-pondicherry</loc>'), 'sitemap.xml contains wedding-stage-decorators-pondicherry');
   assert(sitemap.includes('<loc>https://www.lakdecor.com/floral-wedding-decoration-pondicherry</loc>'), 'sitemap.xml contains floral-wedding-decoration-pondicherry');
   assert(sitemap.includes('<loc>https://www.lakdecor.com/birthday-decoration-pondicherry</loc>'), 'sitemap.xml contains birthday-decoration-pondicherry');
   assert(sitemap.includes('<loc>https://www.lakdecor.com/engagement-decoration-pondicherry</loc>'), 'sitemap.xml contains engagement-decoration-pondicherry');
   assert(sitemap.includes('<loc>https://www.lakdecor.com/reception-decoration-pondicherry</loc>'), 'sitemap.xml contains reception-decoration-pondicherry');
   assert(sitemap.includes('<loc>https://www.lakdecor.com/event-decorators-pondicherry</loc>'), 'sitemap.xml contains event-decorators-pondicherry');
   const urlCount = (sitemap.match(/<url>/g) || []).length;
-  assert(urlCount >= 30, `sitemap.xml contains all ${urlCount} canonical URLs (>= 30 expected)`);
+  assert(urlCount >= 32, `sitemap.xml contains all ${urlCount} canonical URLs (>= 32 expected)`);
 }
 
 // 3. Verify vercel.json configuration
@@ -86,8 +88,10 @@ const routesToTest = [
   { path: 'gallery.html', title: 'Event & Wedding Decoration Gallery Pondicherry' },
   { path: 'services.html', title: 'Wedding & Event Decoration Services in Pondicherry' },
   { path: 'contact.html', title: 'Contact Wedding & Event Decorators in Pondicherry' },
-  { path: 'wedding-decoration-pondicherry/index.html', title: 'Wedding Decoration in Pondicherry' },
-  { path: 'wedding-stage-decoration-pondicherry/index.html', title: 'Wedding Stage Decoration in Pondicherry' },
+  { path: 'wedding-decoration-pondicherry/index.html', title: 'Wedding Decorators in Pondicherry' },
+  { path: 'wedding-decorators-pondicherry/index.html', title: 'Wedding Decorators in Pondicherry' },
+  { path: 'wedding-stage-decoration-pondicherry/index.html', title: 'Wedding Stage Decorators in Pondicherry' },
+  { path: 'wedding-stage-decorators-pondicherry/index.html', title: 'Wedding Stage Decorators in Pondicherry' },
   { path: 'floral-wedding-decoration-pondicherry/index.html', title: 'Floral Wedding Decoration Pondicherry' },
   { path: 'birthday-decoration-pondicherry/index.html', title: 'Birthday Decoration in Pondicherry' },
   { path: 'engagement-decoration-pondicherry/index.html', title: 'Engagement Decoration in Pondicherry' },

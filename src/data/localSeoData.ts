@@ -28,19 +28,21 @@ export const localSeoPages: Record<string, LocalSeoPageData> = {
   'wedding-decoration-pondicherry': {
     slug: 'wedding-decoration-pondicherry',
     path: '/wedding-decoration-pondicherry',
-    metaTitle: 'Wedding Decoration in Pondicherry | Best Wedding Decorators',
+    metaTitle: 'Wedding Decorators in Pondicherry | Wedding Decoration',
     metaDescription:
       'Best wedding decorators in Pondicherry. Grand royal mandaps, marriage stage decoration & fresh flower setups across Puducherry. Call +91 95972 65450.',
-    h1: 'Wedding Decoration & Decorators in Pondicherry',
+    h1: 'Wedding Decorators & Wedding Decoration in Pondicherry',
     badge: 'PONDICHERRY WEDDING SPECIALISTS',
     leadParagraph:
       'Ranked among the best wedding decorators in Pondicherry, lak.decor & event maker creates grand marriage stage decorations, traditional temple Kalyana mandaps adorned with Madurai jasmine, and luxury outdoor wedding setups across Puducherry.',
     heroImage: '/assets/images/real/signature-royal-wedding-mandap.webp',
     popularVenues: [
-      'Leading Kalyana Mandapams across Pondicherry & Puducherry',
+      'Accord Puducherry & Shenbaga Convention Centre',
+      'The Sunway Manor & Anandha Inn Convention Centre',
       'Beachside Lawns & Resorts along Pondicherry East Coast Road (ECR)',
       'Heritage Courtyard Villas in White Town (French Quarter)',
-      'Grand Banquet Halls in Cuddalore, Villupuram, & Tindivanam',
+      'Anandha Thirumana Nilayam, AVRK Mahal & NT Mahal',
+      'Grand Banquet Halls in Lawspet, Kalapet, Cuddalore & Villupuram',
     ],
     keyInclusions: [
       'Traditional Temple Architecture Mandap with Hand-Carved Gopuram Pillars',
@@ -116,19 +118,25 @@ export const localSeoPages: Record<string, LocalSeoPageData> = {
   'wedding-stage-decoration-pondicherry': {
     slug: 'wedding-stage-decoration-pondicherry',
     path: '/wedding-stage-decoration-pondicherry',
-    metaTitle: 'Wedding Stage Decoration in Pondicherry | Mandap Decorators',
+    metaTitle: 'Wedding Stage Decorators in Pondicherry | Stage Decoration',
     metaDescription:
-      'Exquisite wedding stage decoration in Pondicherry. Luxury floral mandaps, couple thrones, lighting & marriage backdrops in Puducherry. Call +91 95972 65450.',
-    h1: 'Wedding Stage & Mandap Decoration in Pondicherry',
+      'Best wedding stage decorators in Pondicherry. Luxury floral mandaps, couple thrones, lighting & marriage backdrops in Puducherry. Call +91 95972 65450.',
+    h1: 'Wedding Stage Decorators in Pondicherry',
     badge: 'STAGE ARTISTRY & MANDAP SPECIALISTS',
     leadParagraph:
-      'Transform your marriage ceremony with breathtaking wedding stage decoration in Pondicherry. From traditional golden gopuram mandaps to modern LED-illuminated floral arches, we build stages that leave lasting impressions.',
+      'As leading wedding stage decorators in Pondicherry, lak.decor & event maker transforms marriage venues with breathtaking stage backdrops, traditional golden gopuram mandaps, 3D floral waves, and royal couple seating across Puducherry.',
     heroImage: '/assets/images/real/wedding-royal-golden-mandap.webp',
     popularVenues: [
-      'Pondicherry Marriage Halls & Kalyana Mandapams',
-      'Luxury Hotels & Air-Conditioned Ballrooms in Puducherry',
-      'Outdoor Resort Lawns on East Coast Road (ECR)',
-      'Community Halls in Lawspet, Villianur, and Cuddalore',
+      'Accord Puducherry (Grand Ballroom & Lawn Wedding Stages)',
+      'Shenbaga Hotel and Convention Centre, Puducherry',
+      'The Sunway Manor (Luxury Banquet & Floral Mandaps)',
+      'Anandha Inn Convention Centre & Anandha Thirumana Nilayam',
+      'RKN Beach Resort & Ashok Beach Resort along Pondicherry ECR',
+      'Grand Serenaa Hotel & Resort, Puducherry',
+      'Le Royal Park Hotel & Atithi Hotel, Pondicherry',
+      'AVRK Mahal & NT Mahal (Traditional Marriage Stages)',
+      'Heritage French Quarter Courtyards in White Town',
+      'Marriage Mandapams across Lawspet, Kalapet, Villianur & Cuddalore',
     ],
     keyInclusions: [
       'Heavy-Duty Structural Stage Platform and Backdrop Framing',

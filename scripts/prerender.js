@@ -68,19 +68,33 @@ const routes = [
     image: '/assets/images/ai-hero-mandap.webp',
   },
 
-  // 7 Dedicated Local SEO Routes for Pondicherry
+  // Dedicated Local SEO Routes for Pondicherry
   {
     path: 'wedding-decoration-pondicherry',
-    title: 'Wedding Decoration in Pondicherry | Best Wedding Decorators',
+    title: 'Wedding Decorators in Pondicherry | Wedding Decoration',
     description: 'Best wedding decorators in Pondicherry. Grand royal mandaps, marriage stage decoration & fresh flower setups across Puducherry. Call +91 95972 65450.',
     keywords: 'Wedding Decoration in Pondicherry, Wedding Decorators in Pondicherry, Best Wedding Decorators in Pondicherry, Marriage Decoration in Pondicherry, Wedding Event Planner in Pondicherry',
     image: '/assets/images/real/signature-royal-wedding-mandap.webp',
   },
   {
+    path: 'wedding-decorators-pondicherry',
+    title: 'Wedding Decorators in Pondicherry | lak.decor & event maker',
+    description: 'Best wedding decorators in Pondicherry. Grand royal mandaps, marriage stage decoration & fresh flower setups across Puducherry. Call +91 95972 65450.',
+    keywords: 'Wedding Decorators in Pondicherry, Best Wedding Decorators in Pondicherry, Wedding Decoration in Pondicherry',
+    image: '/assets/images/real/signature-royal-wedding-mandap.webp',
+  },
+  {
     path: 'wedding-stage-decoration-pondicherry',
-    title: 'Wedding Stage Decoration in Pondicherry | Mandap Decorators',
-    description: 'Exquisite wedding stage decoration in Pondicherry. Luxury floral mandaps, couple thrones, lighting & marriage backdrops in Puducherry. Call +91 95972 65450.',
-    keywords: 'Wedding Stage Decoration in Pondicherry, Mandap Decoration in Pondicherry, Marriage Decoration in Pondicherry, Wedding Decorators in Pondicherry',
+    title: 'Wedding Stage Decorators in Pondicherry | Stage Decoration',
+    description: 'Best wedding stage decorators in Pondicherry. Luxury floral mandaps, couple thrones, lighting & marriage backdrops in Puducherry. Call +91 95972 65450.',
+    keywords: 'Wedding Stage Decorators in Pondicherry, Wedding Stage Decoration in Pondicherry, Mandap Decoration in Pondicherry, Marriage Decoration in Pondicherry',
+    image: '/assets/images/real/wedding-royal-golden-mandap.webp',
+  },
+  {
+    path: 'wedding-stage-decorators-pondicherry',
+    title: 'Wedding Stage Decorators in Pondicherry | lak.decor',
+    description: 'Best wedding stage decorators in Pondicherry. Luxury floral mandaps, couple thrones, lighting & marriage backdrops in Puducherry. Call +91 95972 65450.',
+    keywords: 'Wedding Stage Decorators in Pondicherry, Wedding Stage Decoration in Pondicherry, Stage Decorators Pondicherry',
     image: '/assets/images/real/wedding-royal-golden-mandap.webp',
   },
   {
