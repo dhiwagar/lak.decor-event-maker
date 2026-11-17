@@ -439,9 +439,17 @@ for (const route of routes) {
             <h3 style="font-size: 1.05rem; margin-top: 0; color: #29251F;"><a href="${BASE_URL}/reception-decoration-pondicherry" style="color: #7A245A; text-decoration: none;">Reception Stage Decoration</a></h3>
             <p style="font-size: 0.8125rem; color: #78716C; margin-bottom: 0;">Contemporary 3D sculptural wave stages, crystal chandeliers, floral runways &amp; dynamic ambient lighting.</p>
           </div>
+          <div style="border: 1px solid #F5F5F4; border-radius: 0.75rem; padding: 1rem; background: #FAF8F4;">
+            <h3 style="font-size: 1.05rem; margin-top: 0; color: #29251F;"><a href="${BASE_URL}/event-decorators-pondicherry" style="color: #7A245A; text-decoration: none;">Traditional Ceremonies &amp; Events</a></h3>
+            <p style="font-size: 0.8125rem; color: #78716C; margin-bottom: 0;">Seemantham / Valaikappu (Baby Shower), Puberty Function (Manjal Neerattu Vizha), Housewarming &amp; Naming Ceremonies.</p>
+          </div>
+          <div style="border: 1px solid #F5F5F4; border-radius: 0.75rem; padding: 1rem; background: #FAF8F4;">
+            <h3 style="font-size: 1.05rem; margin-top: 0; color: #29251F;"><a href="${BASE_URL}/birthday-decoration-pondicherry" style="color: #7A245A; text-decoration: none;">Birthday &amp; Party Decoration</a></h3>
+            <p style="font-size: 0.8125rem; color: #78716C; margin-bottom: 0;">Kids 1st birthday themes, organic pastel balloon arches, 3D marquee numbers &amp; home celebrations.</p>
+          </div>
         </div>
-        <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #E7E5E4; font-size: 0.8125rem; color: #78716C;">
-          <strong>Service Coverage:</strong> Pondicherry, Puducherry, White Town, Lawspet, Kalapet, ECR Beach Resorts, Villianur, Cuddalore, Villupuram, Tindivanam &amp; Chennai ECR Corridor.
+        <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #E7E5E4; font-size: 0.8125rem; color: #78716C; line-height: 1.7;">
+          <strong>Pondicherry Neighborhood Coverage:</strong> White Town, Lawspet, Mudaliarpet, Ariyankuppam, Villianur, Oulgaret, Kalapet, Muthialpet, ECR Beach Resorts, Cuddalore, Villupuram, Tindivanam &amp; Chennai ECR Corridor.
         </div>
       </section>
     `;
@@ -520,14 +528,20 @@ for (const route of routes) {
 
         <section style="margin-bottom: 2.5rem;">
           <h2 style="font-size: 1.25rem; color: #29251F; margin-bottom: 1rem; font-family: serif;">Popular Celebration Services in Pondicherry</h2>
-          <ul style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem; list-style: none; padding: 0;">
+          <ul style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.75rem; list-style: none; padding: 0;">
             <li><a href="${BASE_URL}/wedding-decoration-pondicherry" style="color: #7A245A; font-weight: 500;">• Wedding Decorators in Pondicherry</a></li>
             <li><a href="${BASE_URL}/wedding-stage-decoration-pondicherry" style="color: #7A245A; font-weight: 500;">• Wedding Stage Decoration in Pondicherry</a></li>
+            <li><a href="${BASE_URL}/wedding-stage-decorators-pondicherry" style="color: #7A245A; font-weight: 500;">• Wedding Stage Decorators in Pondicherry</a></li>
             <li><a href="${BASE_URL}/floral-wedding-decoration-pondicherry" style="color: #7A245A; font-weight: 500;">• Floral Wedding Decoration Pondicherry</a></li>
             <li><a href="${BASE_URL}/birthday-decoration-pondicherry" style="color: #7A245A; font-weight: 500;">• Birthday Decoration in Pondicherry</a></li>
             <li><a href="${BASE_URL}/engagement-decoration-pondicherry" style="color: #7A245A; font-weight: 500;">• Engagement Decoration Pondicherry</a></li>
             <li><a href="${BASE_URL}/reception-decoration-pondicherry" style="color: #7A245A; font-weight: 500;">• Reception Stage Decoration Pondicherry</a></li>
             <li><a href="${BASE_URL}/event-decorators-pondicherry" style="color: #7A245A; font-weight: 500;">• Event Decorators in Puducherry</a></li>
+            <li><a href="${BASE_URL}/event-decorators-pondicherry" style="color: #7A245A; font-weight: 500;">• Seemantham &amp; Baby Shower Decoration</a></li>
+            <li><a href="${BASE_URL}/event-decorators-pondicherry" style="color: #7A245A; font-weight: 500;">• Puberty Function Decoration Pondicherry</a></li>
+            <li><a href="${BASE_URL}/event-decorators-pondicherry" style="color: #7A245A; font-weight: 500;">• Housewarming &amp; Naming Ceremony Decor</a></li>
+            <li><a href="${BASE_URL}/wedding-decorators-pondicherry" style="color: #7A245A; font-weight: 500;">• Wedding Decorators Near Me Pondicherry</a></li>
+            <li><a href="${BASE_URL}/wedding-decoration-pondicherry" style="color: #7A245A; font-weight: 500;">• White Town, Lawspet, Mudaliarpet &amp; Villianur Decor</a></li>
           </ul>
         </section>
 

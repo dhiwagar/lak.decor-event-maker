@@ -156,6 +156,9 @@ if (fs.existsSync(rootIndexHtml)) {
   assert(rootHtml.includes('"LocalBusiness"') && rootHtml.includes('"Organization"'), 'JSON-LD schema contains LocalBusiness & Organization');
   assert(rootHtml.includes('"@type": "SearchAction"'), 'JSON-LD schema contains SearchAction');
   assert(rootHtml.includes('<h1'), 'index.html has crawlable <h1> tag');
+  assert(rootHtml.includes('Mudaliarpet') && rootHtml.includes('Ariyankuppam'), 'index.html covers key localities Mudaliarpet and Ariyankuppam');
+  assert(rootHtml.includes('Villianur') && rootHtml.includes('Oulgaret'), 'index.html covers key localities Villianur and Oulgaret');
+  assert(rootHtml.includes('Seemantham') && rootHtml.includes('Puberty Function'), 'index.html covers traditional Tamil ceremonies Seemantham & Puberty Function');
 }
 
 console.log(`\n========================================`);

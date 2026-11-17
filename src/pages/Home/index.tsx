@@ -22,6 +22,7 @@ import {
   Flower2,
 } from 'lucide-react';
 import { siteConfig } from '../../data/siteConfig';
+import { TARGET_SEO_KEYWORDS_100 } from '../../data/seoKeywords';
 import { HeroSection } from '../../components/common/HeroSection';
 import { GalleryGrid } from '../../components/gallery/GalleryGrid';
 import { TestimonialSlider } from '../../components/common/TestimonialSlider';
@@ -526,9 +527,12 @@ export const HomePage: React.FC = () => {
                   'Pondicherry City',
                   'White Town (French Quarter)',
                   'Lawspet',
+                  'Mudaliarpet',
+                  'Ariyankuppam',
+                  'Villianur',
+                  'Oulgaret',
                   'Kalapet',
                   'ECR Beach Resorts',
-                  'Villianur',
                   'Muthialpet',
                   'Cuddalore',
                   'Villupuram',
@@ -543,6 +547,79 @@ export const HomePage: React.FC = () => {
                   </span>
                 ))}
               </div>
+            </div>
+          </div>
+
+          {/* 100 Targeted Local SEO Keywords & Celebration Directory */}
+          <div className="mt-12 bg-white rounded-3xl p-6 sm:p-8 border border-stone-200/80 shadow-sm">
+            <div className="text-center max-w-3xl mx-auto mb-8">
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#88245D] block mb-2">
+                COMPLETE CELEBRATION DIRECTORY
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#231E26]">
+                Popular Event &amp; Decoration Services in Pondicherry
+              </h3>
+              <p className="text-xs sm:text-sm text-stone-600 mt-2">
+                Find exactly what you need for your wedding, reception, birthday, or family ceremony across Puducherry.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {TARGET_SEO_KEYWORDS_100.map((cluster) => {
+                const getClusterLink = (id: string) => {
+                  switch (id) {
+                    case 'wedding-stage':
+                      return '/wedding-stage-decoration-pondicherry';
+                    case 'wedding-decorators':
+                      return '/wedding-decoration-pondicherry';
+                    case 'reception-engagement':
+                      return '/reception-decoration-pondicherry';
+                    case 'birthday-party':
+                      return '/birthday-decoration-pondicherry';
+                    case 'event-function':
+                      return '/event-decorators-pondicherry';
+                    case 'location-near-me':
+                    default:
+                      return '/wedding-decorators-pondicherry';
+                  }
+                };
+
+                return (
+                  <div
+                    key={cluster.id}
+                    className="p-5 rounded-2xl bg-[#FAF8F4] border border-stone-200/70 flex flex-col justify-between"
+                  >
+                    <div>
+                      <h4 className="text-sm font-serif font-bold text-[#231E26] mb-1.5 text-[#88245D]">
+                        {cluster.name.replace(/^\d+\.\s*/, '')}
+                      </h4>
+                      <p className="text-[11px] text-stone-500 mb-3.5 leading-snug">
+                        {cluster.description}
+                      </p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {cluster.keywords.map((kw, idx) => (
+                          <Link
+                            key={idx}
+                            to={getClusterLink(cluster.id)}
+                            className="px-2.5 py-1 rounded-md bg-white border border-stone-200/80 text-[11px] font-medium text-stone-700 hover:border-[#88245D] hover:text-[#88245D] transition-colors"
+                          >
+                            {kw}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="mt-4 pt-3 border-t border-stone-200/60 text-right">
+                      <Link
+                        to={getClusterLink(cluster.id)}
+                        className="text-xs font-bold text-[#88245D] inline-flex items-center gap-1 hover:gap-1.5 transition-all"
+                      >
+                        <span>Explore services</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
 

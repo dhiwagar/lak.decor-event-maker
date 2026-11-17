@@ -329,6 +329,52 @@ export const LocalSeoPage: React.FC<LocalSeoPageProps> = ({ customSlug }) => {
         </div>
       </section>
 
+      {/* 5.5 Targeted Searches & Neighborhood Coverage */}
+      {pageData.targetKeywords && pageData.targetKeywords.length > 0 && (
+        <section className="py-12 bg-white border-b border-stone-200/80">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-[#FAF8F4] rounded-3xl p-6 sm:p-8 border border-stone-200/80">
+              <div className="flex items-center gap-2 mb-3">
+                <Sparkles className="w-4 h-4 text-[#88245D]" />
+                <h3 className="text-sm font-bold tracking-wider uppercase text-[#88245D]">
+                  Related Popular Searches &amp; Services in Pondicherry
+                </h3>
+              </div>
+              <p className="text-xs sm:text-sm text-stone-600 mb-5 max-w-3xl">
+                Serving clients across all major Puducherry localities with bespoke stage setups, authentic floral designs, and complete celebration decor.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {pageData.targetKeywords.map((kw, i) => (
+                  <span
+                    key={i}
+                    className="px-3 py-1.5 rounded-full bg-white border border-stone-200 text-stone-700 text-xs font-medium shadow-2xs hover:border-[#88245D] hover:text-[#88245D] transition-colors"
+                  >
+                    ✓ {kw}
+                  </span>
+                ))}
+              </div>
+
+              {pageData.serviceAreas && pageData.serviceAreas.length > 0 && (
+                <div className="mt-6 pt-6 border-t border-stone-200/60 flex flex-wrap items-center gap-2">
+                  <span className="text-xs font-bold text-stone-800 mr-2 flex items-center gap-1">
+                    <MapPin className="w-3.5 h-3.5 text-[#88245D]" />
+                    Coverage Hubs:
+                  </span>
+                  {pageData.serviceAreas.map((area, i) => (
+                    <span
+                      key={i}
+                      className="px-2.5 py-1 rounded-md bg-stone-100 text-stone-600 text-[11px] font-medium"
+                    >
+                      📍 {area}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* 6. Local FAQ Accordion */}
       <section className="py-16 sm:py-24 bg-[#FAF8F4]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
